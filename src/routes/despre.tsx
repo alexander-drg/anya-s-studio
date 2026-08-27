@@ -118,13 +118,11 @@ function Despre() {
             urmează să fie furnizate.]
           </p>
           <ul className="mt-8 space-y-4">
-            {["[An] — [Formare / curs]", "[An] — [Formare / curs]", "[An] — [Formare / curs]"].map(
-              (row) => (
-                <li key={row} className="label-xs border-t border-border pt-4">
-                  {row}
-                </li>
-              ),
-            )}
+            {[1, 2, 3].map((n) => (
+              <li key={n} className="label-xs border-t border-border pt-4">
+                [An] — [Formare / curs]
+              </li>
+            ))}
           </ul>
         </Reveal>
       </section>

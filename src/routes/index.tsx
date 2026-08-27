@@ -43,7 +43,7 @@ function Home() {
   return (
     <>
       {/* 1. Hero */}
-      <section className="relative mx-auto grid min-h-[82vh] max-w-[110rem] gap-10 px-6 pt-6 pb-20 md:grid-cols-12 md:px-12">
+      <section className="relative mx-auto grid max-w-[110rem] items-end gap-10 px-6 pt-4 pb-20 md:grid-cols-12 md:px-12 md:pb-32">
         <div className="md:col-span-7">
           <div
             className="overflow-hidden"
