@@ -6,6 +6,7 @@ import { ContinuousLine } from "@/components/ContinuousLine";
 import { Placeholder } from "@/components/Placeholder";
 import { Reveal } from "@/components/Reveal";
 import { galleryItems, presenceMoments, testimonials, values } from "@/content/site";
+import { useT } from "@/lib/i18n";
 
 export const Route = createFileRoute("/")({
   head: () => ({
@@ -39,6 +40,7 @@ function useScrollY() {
 
 function Home() {
   const scrollY = useScrollY();
+  const t = useT();
 
   return (
     <>
@@ -56,7 +58,7 @@ function Home() {
           <Reveal>
             <p className="font-serif text-[1.9rem] leading-[1.25] font-light italic md:text-[2.6rem]">
               „Călătorind în interiorul emoțiilor tale ca într-un Montagne-Russe, cu o linie
-              continuă și culori.”
+              continuă și culori."
             </p>
             <ContinuousLine className="mt-10 h-6 w-full text-[var(--color-terracotta)]" />
             <a href="#introducere" className="label-xs quiet-link mt-10 inline-block">
@@ -100,13 +102,13 @@ function Home() {
         <Reveal>
           <p className="label-xs mb-8">Prezență</p>
           <h2 className="max-w-4xl font-serif text-[2.2rem] leading-[1.15] font-light md:text-[4rem]">
-            „A învăța să fii cu adevărat prezent.”
+            „A învăța să fii cu adevărat prezent."
           </h2>
         </Reveal>
 
         <div className="mt-24 space-y-28 md:space-y-40">
           {presenceMoments.map((m, i) => (
-            <Reveal key={m.title}>
+            <Reveal key={t(m.title)}>
               <div
                 className={`grid items-center gap-8 md:grid-cols-12 ${i % 2 === 1 ? "md:[direction:rtl]" : ""}`}
               >
@@ -119,10 +121,10 @@ function Home() {
                   </div>
                 </div>
                 <div className="md:col-span-4 [direction:ltr]">
-                  <h3 className="font-serif text-3xl font-light md:text-4xl">{m.title}</h3>
+                  <h3 className="font-serif text-3xl font-light md:text-4xl">{t(m.title)}</h3>
                   <ul className="mt-6 space-y-1 text-muted-foreground">
                     {m.words.map((w) => (
-                      <li key={w}>{w}</li>
+                      <li key={t(w)}>{t(w)}</li>
                     ))}
                   </ul>
                 </div>
@@ -169,16 +171,16 @@ function Home() {
         </Reveal>
         <div className="space-y-16 md:space-y-24">
           {values.map((v, i) => (
-            <Reveal key={v.title} delay={i * 60}>
+            <Reveal key={t(v.title)} delay={i * 60}>
               <div
                 className="grid items-baseline gap-4 border-t border-border pt-8 md:grid-cols-12"
                 style={{ marginLeft: `${(i % 2) * 7}%` }}
               >
                 <h3 className="font-serif text-4xl font-light md:col-span-6 md:text-7xl">
-                  {v.title}
+                  {t(v.title)}
                 </h3>
                 <p className="max-w-md text-muted-foreground md:col-span-5 md:col-start-8">
-                  {v.line}
+                  {t(v.line)}
                 </p>
               </div>
             </Reveal>
@@ -217,7 +219,7 @@ function Home() {
         </Reveal>
         <div className="space-y-24">
           {testimonials.slice(0, 3).map((tst, i) => (
-            <Reveal key={tst.attribution} delay={i * 80}>
+            <Reveal key={t(tst.attribution)} delay={i * 80}>
               <div className="grid gap-8 md:grid-cols-12">
                 {i === 1 && (
                   <div className="md:col-span-3">
@@ -228,9 +230,9 @@ function Home() {
                   className={`md:col-span-8 ${i === 1 ? "md:col-start-5" : i === 2 ? "md:col-start-4" : ""}`}
                 >
                   <p className="font-serif text-2xl leading-snug font-light italic md:text-4xl">
-                    {tst.quote ?? "[Mărturie de completat — text real furnizat de client]"}
+                    {tst.quote ? t(tst.quote) : "[Mărturie de completat — text real furnizat de client]"}
                   </p>
-                  <footer className="label-xs mt-6">{tst.attribution}</footer>
+                  <footer className="label-xs mt-6">{t(tst.attribution)}</footer>
                 </blockquote>
               </div>
             </Reveal>
