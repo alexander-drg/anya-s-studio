@@ -17,21 +17,18 @@ import { SiteFooter } from "@/components/SiteFooter";
 
 function NotFoundComponent() {
   return (
-    <div className="flex min-h-screen items-center justify-center bg-background px-4">
-      <div className="max-w-md text-center">
-        <h1 className="text-7xl font-bold text-foreground">404</h1>
-        <h2 className="mt-4 text-xl font-semibold text-foreground">Page not found</h2>
-        <p className="mt-2 text-sm text-muted-foreground">
-          The page you're looking for doesn't exist or has been moved.
-        </p>
-        <div className="mt-6">
-          <Link
-            to="/"
-            className="inline-flex items-center justify-center rounded-md bg-primary px-4 py-2 text-sm font-medium text-primary-foreground transition-colors hover:bg-primary/90"
-          >
-            Go home
-          </Link>
-        </div>
+    <div className="flex min-h-screen flex-col items-center justify-center bg-background px-6 text-center">
+      <p className="label-xs">404</p>
+      <h1 className="mt-6 max-w-lg font-serif text-4xl font-light md:text-6xl">
+        Pagina nu a fost găsită
+      </h1>
+      <p className="mt-6 max-w-sm text-muted-foreground">
+        Calea pe care o cauți nu există sau s-a mutat. Poți reveni acasă.
+      </p>
+      <div className="mt-10">
+        <Link to="/" className="label-xs quiet-link">
+          ← Înapoi acasă
+        </Link>
       </div>
     </div>
   );
@@ -45,31 +42,28 @@ function ErrorComponent({ error, reset }: { error: Error; reset: () => void }) {
   }, [error]);
 
   return (
-    <div className="flex min-h-screen items-center justify-center bg-background px-4">
-      <div className="max-w-md text-center">
-        <h1 className="text-xl font-semibold tracking-tight text-foreground">
-          This page didn't load
-        </h1>
-        <p className="mt-2 text-sm text-muted-foreground">
-          Something went wrong on our end. You can try refreshing or head back home.
-        </p>
-        <div className="mt-6 flex flex-wrap justify-center gap-2">
-          <button
-            onClick={() => {
-              router.invalidate();
-              reset();
-            }}
-            className="inline-flex items-center justify-center rounded-md bg-primary px-4 py-2 text-sm font-medium text-primary-foreground transition-colors hover:bg-primary/90"
-          >
-            Try again
-          </button>
-          <a
-            href="/"
-            className="inline-flex items-center justify-center rounded-md border border-input bg-background px-4 py-2 text-sm font-medium text-foreground transition-colors hover:bg-accent"
-          >
-            Go home
-          </a>
-        </div>
+    <div className="flex min-h-screen flex-col items-center justify-center bg-background px-6 text-center">
+      <p className="label-xs">Eroare</p>
+      <h1 className="mt-6 max-w-lg font-serif text-4xl font-light md:text-6xl">
+        Ceva nu a mers bine
+      </h1>
+      <p className="mt-6 max-w-sm text-muted-foreground">
+        Pagina nu a putut fi încărcată. Poți încerca din nou sau reveni acasă.
+      </p>
+      <div className="mt-10 flex flex-wrap items-center justify-center gap-8">
+        <button
+          type="button"
+          onClick={() => {
+            router.invalidate();
+            reset();
+          }}
+          className="label-xs quiet-link"
+        >
+          Încearcă din nou →
+        </button>
+        <Link to="/" className="label-xs quiet-link">
+          ← Înapoi acasă
+        </Link>
       </div>
     </div>
   );
@@ -80,7 +74,7 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
     meta: [
       { charSet: "utf-8" },
       { name: "viewport", content: "width=device-width, initial-scale=1" },
-      { name: "author", content: "[NUME ARTIST]" },
+      { name: "author", content: "Brândușa Nicolescu" },
       { property: "og:type", content: "website" },
       { name: "twitter:card", content: "summary_large_image" },
     ],
