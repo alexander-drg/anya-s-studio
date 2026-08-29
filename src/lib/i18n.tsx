@@ -21,6 +21,7 @@ export function LanguageProvider({ children }: { children: ReactNode }) {
 
   useEffect(() => {
     const stored = window.localStorage.getItem("lang");
+    console.log("[LanguageProvider] stored:", stored);
     if (stored === "ro" || stored === "en") setLang(stored);
   }, []);
 
@@ -29,6 +30,7 @@ export function LanguageProvider({ children }: { children: ReactNode }) {
   }, [lang]);
 
   const value = useMemo(() => ({ lang, setLang }), [lang]);
+  console.log("[LanguageProvider] render lang:", lang);
   return <LangContext.Provider value={value}>{children}</LangContext.Provider>;
 }
 
