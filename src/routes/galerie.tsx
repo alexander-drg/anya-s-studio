@@ -1,9 +1,10 @@
 import { createFileRoute } from "@tanstack/react-router";
-import { useEffect, useState } from "react";
+import { useEffect, useMemo, useState } from "react";
 
 import { Placeholder } from "@/components/Placeholder";
 import { Reveal } from "@/components/Reveal";
 import { galleryItems, type GalleryItem } from "@/content/site";
+import { useT } from "@/lib/i18n";
 
 export const Route = createFileRoute("/galerie")({
   head: () => ({
@@ -24,14 +25,25 @@ export const Route = createFileRoute("/galerie")({
   component: Galerie,
 });
 
-const categories = ["Toate", "Desen Fractal", "Pictură", "Proces"] as const;
-
 function Galerie() {
-  const [active, setActive] = useState<(typeof categories)[number]>("Toate");
+  const t = useT();
+  const categories = useMemo(
+    () => [
+      { key: "all", label: { ro: "Toate", en: "All" } },
+      { key: "fractal", label: { ro: "Desen Fractal", en: "Fractal Drawing" } },
+      { key: "painting", label: { ro: "Pictură", en: "Painting" } },
+      { key: "process", label: { ro: "Proces", en: "Process" } },
+    ],
+    [],
+  );
+
+  const [active, setActive] = useState<(typeof categories)[number]["key"]>("all");
   const [lightbox, setLightbox] = useState<GalleryItem | null>(null);
 
   const items =
-    active === "Toate" ? galleryItems : galleryItems.filter((i) => i.category === active);
+    active === "all"
+      ? galleryItems
+      : galleryItems.filter((i) => t(i.category) === categories.find((c) => c.key === active)!.label[t({ ro: "ro", en: "en" })]);
 
   useEffect(() => {
     const onKey = (e: KeyboardEvent) => e.key === "Escape" && setLightbox(null);
@@ -56,12 +68,12 @@ function Galerie() {
           <div className="label-xs mt-12 flex flex-wrap gap-6">
             {categories.map((c) => (
               <button
-                key={c}
+                key={c.key}
                 type="button"
-                onClick={() => setActive(c)}
-                className={`quiet-link ${active === c ? "text-foreground" : "hover:text-foreground"}`}
+                onClick={() => setActive(c.key)}
+                className={`quiet-link ${active === c.key ? "text-foreground" : "hover:text-foreground"}`}
               >
-                {c}
+                {t(c.label)}
               </button>
             ))}
           </div>
@@ -77,7 +89,7 @@ function Galerie() {
               className="img-zoom block w-full text-left"
             >
               <Placeholder label={item.placeholder} ratio={item.ratio} />
-              <span className="label-xs mt-3 block">{item.category}</span>
+              <span className="label-xs mt-3 block">{t(item.category)}</span>
             </button>
           </Reveal>
         ))}
@@ -100,7 +112,7 @@ function Galerie() {
           </button>
           <div className="w-full max-w-3xl" onClick={(e) => e.stopPropagation()}>
             <Placeholder label={lightbox.placeholder} ratio={lightbox.ratio} />
-            <p className="label-xs mt-4">{lightbox.category}</p>
+            <p className="label-xs mt-4">{t(lightbox.category)}</p>
           </div>
         </div>
       )}
