@@ -40,10 +40,11 @@ function Galerie() {
   const [active, setActive] = useState<(typeof categories)[number]["key"]>("all");
   const [lightbox, setLightbox] = useState<GalleryItem | null>(null);
 
+  const activeLabel = categories.find((c) => c.key === active)?.label;
   const items =
-    active === "all"
+    active === "all" || !activeLabel
       ? galleryItems
-      : galleryItems.filter((i) => t(i.category) === categories.find((c) => c.key === active)!.label[t({ ro: "ro", en: "en" })]);
+      : galleryItems.filter((i) => t(i.category) === t(activeLabel));
 
   useEffect(() => {
     const onKey = (e: KeyboardEvent) => e.key === "Escape" && setLightbox(null);
