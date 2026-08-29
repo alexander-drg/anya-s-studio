@@ -4,6 +4,7 @@ import { ContinuousLine } from "@/components/ContinuousLine";
 import { Placeholder } from "@/components/Placeholder";
 import { Reveal } from "@/components/Reveal";
 import { testimonials } from "@/content/site";
+import { useT } from "@/lib/i18n";
 
 export const Route = createFileRoute("/desen-fractal")({
   head: () => ({
@@ -25,6 +26,8 @@ export const Route = createFileRoute("/desen-fractal")({
 });
 
 function DesenFractal() {
+  const t = useT();
+
   return (
     <div className="mx-auto max-w-[110rem] px-6 pb-32 md:px-12">
       {/* Hero */}
@@ -153,8 +156,8 @@ function DesenFractal() {
           <h2 className="label-xs mb-16">Mărturii</h2>
         </Reveal>
         <div className="space-y-24">
-          {testimonials.map((t, i) => (
-            <Reveal key={t.attribution} delay={i * 60}>
+          {testimonials.map((tItem, i) => (
+            <Reveal key={t(tItem.attribution)} delay={i * 60}>
               <div className="grid gap-8 md:grid-cols-12">
                 {i % 2 === 1 && (
                   <div className="md:col-span-3">
@@ -165,9 +168,9 @@ function DesenFractal() {
                   className={`md:col-span-8 ${i % 2 === 1 ? "md:col-start-5" : i % 3 === 0 ? "" : "md:col-start-3"}`}
                 >
                   <p className="font-serif text-2xl leading-snug font-light italic md:text-4xl">
-                    {t.quote ?? "[Mărturie de completat — text real furnizat de client]"}
+                    {tItem.quote ? t(tItem.quote) : "[Mărturie de completat — text real furnizat de client]"}
                   </p>
-                  <footer className="label-xs mt-6">{t.attribution}</footer>
+                  <footer className="label-xs mt-6">{t(tItem.attribution)}</footer>
                 </blockquote>
               </div>
             </Reveal>
