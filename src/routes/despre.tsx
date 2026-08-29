@@ -5,6 +5,7 @@ import { ContinuousLine } from "@/components/ContinuousLine";
 import { Placeholder } from "@/components/Placeholder";
 import { Reveal } from "@/components/Reveal";
 import { values } from "@/content/site";
+import { useT } from "@/lib/i18n";
 
 export const Route = createFileRoute("/despre")({
   head: () => ({
@@ -26,6 +27,8 @@ export const Route = createFileRoute("/despre")({
 });
 
 function Despre() {
+  const t = useT();
+
   return (
     <div className="mx-auto max-w-[110rem] px-6 pb-32 md:px-12">
       <section className="grid gap-12 py-16 md:grid-cols-12 md:py-28">
@@ -94,13 +97,13 @@ function Despre() {
         </Reveal>
         <div className="space-y-14">
           {values.map((v, i) => (
-            <Reveal key={v.title} delay={i * 60}>
+            <Reveal key={t(v.title)} delay={i * 60}>
               <div className="grid gap-4 border-t border-border pt-6 md:grid-cols-12">
                 <h3 className="font-serif text-3xl font-light md:col-span-5 md:text-5xl">
-                  {v.title}
+                  {t(v.title)}
                 </h3>
                 <p className="max-w-md text-muted-foreground md:col-span-6 md:col-start-7">
-                  {v.line}
+                  {t(v.line)}
                 </p>
               </div>
             </Reveal>
