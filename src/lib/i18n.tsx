@@ -21,15 +21,18 @@ export function LanguageProvider({ children }: { children: ReactNode }) {
 
   useEffect(() => {
     const stored = window.localStorage.getItem("lang");
+    console.log("[LP] stored:", stored);
     if (stored === "ro" || stored === "en") setLang(stored);
   }, []);
 
   useEffect(() => {
     window.localStorage.setItem("lang", lang);
     document.documentElement.lang = lang;
+    console.log("[LP] lang changed:", lang);
   }, [lang]);
 
   const value = useMemo(() => ({ lang, setLang }), [lang]);
+  console.log("[LP] render:", lang);
   return <LangContext.Provider value={value}>{children}</LangContext.Provider>;
 }
 
