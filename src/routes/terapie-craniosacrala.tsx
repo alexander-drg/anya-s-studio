@@ -1,8 +1,13 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
 
 import { ContinuousLine } from "@/components/ContinuousLine";
-import { Placeholder } from "@/components/Placeholder";
 import { Reveal } from "@/components/Reveal";
+import art14 from "@/assets/desen_fractal_14.webp.asset.json";
+import art12 from "@/assets/desen_fractal_12.webp.asset.json";
+import art11 from "@/assets/desen_fractal_11.webp.asset.json";
+import art09 from "@/assets/desen_fractal_09.webp.asset.json";
+import art07 from "@/assets/desen_fractal_07.webp.asset.json";
+import art05 from "@/assets/desen_fractal_05.webp.asset.json";
 
 export const Route = createFileRoute("/terapie-craniosacrala")({
   head: () => ({
@@ -46,7 +51,7 @@ function Craniosacrala() {
           <ContinuousLine className="mt-10 h-6 w-full text-[var(--color-sage)]" />
         </Reveal>
         <Reveal delay={120} className="md:col-span-6 md:col-start-7">
-          <Placeholder label="[Craniosacral therapy image]" ratio="4 / 3" />
+          <img src={art14.url} alt="Desen fractal colorat, forme organice suprapuse" className="w-full object-cover" loading="eager" />
         </Reveal>
       </section>
 
@@ -84,7 +89,7 @@ function Craniosacrala() {
 
       <section className="grid gap-10 py-16 md:grid-cols-12 md:py-28">
         <Reveal className="md:col-span-6">
-          <Placeholder label="[Detaliu mâini / ascultare]" ratio="4 / 3" />
+          <img src={art09.url} alt="Desen fractal în tonuri de roz și verde" className="w-full object-cover" loading="lazy" />
         </Reveal>
         <Reveal delay={120} className="md:col-span-5 md:col-start-8 md:pt-16">
           <h2 className="font-serif text-3xl font-light md:text-4xl">Prezență și corp</h2>
@@ -117,6 +122,19 @@ function Craniosacrala() {
           </p>
           <ToBeCompleted note="Conținut de completat — formare, experiență și mod de lucru." />
         </Reveal>
+      </section>
+
+      <section className="grid gap-6 py-10 sm:grid-cols-2 md:py-20">
+        {[
+          { src: art11.url, alt: "Desen fractal în galben, portocaliu și albastru" },
+          { src: art12.url, alt: "Desen fractal cu forme geometrice colorate" },
+          { src: art07.url, alt: "Desen fractal cu forme ascuțite, verde și gri" },
+          { src: art05.url, alt: "Desen fractal cu triunghiuri în tonuri pastelate" },
+        ].map((img, i) => (
+          <Reveal key={img.src} delay={(i % 2) * 80} className="img-zoom">
+            <img src={img.src} alt={img.alt} className="w-full object-cover" loading="lazy" />
+          </Reveal>
+        ))}
       </section>
 
       <Reveal>
