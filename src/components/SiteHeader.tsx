@@ -39,7 +39,8 @@ export function SiteHeader() {
   );
 
   return (
-    <header className="sticky top-0 z-50 bg-background/90 backdrop-blur-sm">
+    <>
+    <header className={`sticky top-0 z-[80] bg-background/90 ${open ? "" : "backdrop-blur-sm"}`}>
       <div className="mx-auto flex max-w-[110rem] items-center justify-between px-6 py-5 md:px-12 md:py-7">
         <Link
           to="/"
@@ -48,7 +49,7 @@ export function SiteHeader() {
           aria-label={ARTIST_NAME}
         >
           <img src={logo.url} alt="" width={40} height={30} className="h-7 w-auto" />
-          <span className="font-serif text-base tracking-[0.16em] uppercase">
+          <span className="font-serif text-sm tracking-[0.16em] uppercase sm:text-base">
             {ARTIST_NAME}
           </span>
         </Link>
@@ -76,38 +77,42 @@ export function SiteHeader() {
             aria-label={open ? "Închide meniul" : "Deschide meniul"}
             aria-expanded={open}
             onClick={() => setOpen((v) => !v)}
-            className="flex h-6 w-7 flex-col justify-center gap-1.5"
+            className="relative z-[80] flex h-6 w-7 flex-col justify-center gap-1.5"
           >
             <span
-              className={`block h-px w-full bg-foreground transition-transform duration-500 ${open ? "translate-y-[3px] rotate-6" : ""}`}
+              className={`block h-px w-full bg-foreground transition-transform duration-300 ${open ? "translate-y-[3px] rotate-45" : ""}`}
             />
             <span
-              className={`block h-px w-full bg-foreground transition-transform duration-500 ${open ? "-translate-y-[3px] -rotate-6" : ""}`}
+              className={`block h-px w-full bg-foreground transition-transform duration-300 ${open ? "-translate-y-[3px] -rotate-45" : ""}`}
             />
           </button>
         </div>
       </div>
+      </header>
 
       {open && (
-        <div className="fixed inset-0 top-[72px] z-40 bg-background px-6 pt-10 lg:hidden">
+        <div
+          className="fixed inset-0 z-[70] overflow-y-auto bg-background px-6 pt-28 pb-16 lg:hidden"
+          role="dialog"
+          aria-modal="true"
+        >
           <ul className="space-y-6">
             {nav.map((item) => (
               <li key={item.to}>
                 <Link
                   to={item.to}
                   onClick={() => setOpen(false)}
-                  className="font-serif text-3xl font-light"
+                  className="block font-serif text-3xl font-light"
+                  activeProps={{ className: "italic" }}
                 >
                   {t(item.label)}
                 </Link>
               </li>
             ))}
           </ul>
-          <div className="mt-10">
-            <LangToggle mobile />
-          </div>
         </div>
       )}
-    </header>
+    </>
   );
 }
+
