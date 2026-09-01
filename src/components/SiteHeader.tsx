@@ -39,7 +39,8 @@ export function SiteHeader() {
   );
 
   return (
-    <header className="sticky top-0 z-50 bg-background/90 backdrop-blur-sm">
+    <>
+    <header className={`sticky top-0 z-[80] bg-background/90 ${open ? "" : "backdrop-blur-sm"}`}>
       <div className="mx-auto flex max-w-[110rem] items-center justify-between px-6 py-5 md:px-12 md:py-7">
         <Link
           to="/"
