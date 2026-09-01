@@ -110,9 +110,6 @@ export function SiteHeader() {
               </li>
             ))}
           </ul>
-          <div className="mt-12">
-            <LangToggle mobile />
-          </div>
         </div>
       )}
     </>
