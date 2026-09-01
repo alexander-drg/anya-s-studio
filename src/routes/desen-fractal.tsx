@@ -3,6 +3,10 @@ import { createFileRoute, Link } from "@tanstack/react-router";
 import { ContinuousLine } from "@/components/ContinuousLine";
 import { Placeholder } from "@/components/Placeholder";
 import { Reveal } from "@/components/Reveal";
+import pencils from "@/assets/prezentare_1.jpeg.asset.json";
+import lineWork from "@/assets/desen_fractal_16-1.webp.asset.json";
+import dots from "@/assets/desen_fractal_15.webp.asset.json";
+import groupWork from "@/assets/desenfractal_17.webp.asset.json";
 import { testimonials } from "@/content/site";
 import { useT } from "@/lib/i18n";
 
@@ -43,7 +47,7 @@ function DesenFractal() {
           <ContinuousLine className="mt-10 h-6 w-full text-[var(--color-terracotta)]" />
         </Reveal>
         <Reveal delay={120} className="md:col-span-6 md:col-start-7">
-          <Placeholder label="[Fractal artwork hero]" ratio="4 / 3" />
+          <img src={pencils.url} alt="Creioane colorate așezate peste o linie continuă desenată pe hârtie" className="w-full object-cover" loading="eager" />
         </Reveal>
       </section>
 
@@ -83,7 +87,7 @@ function DesenFractal() {
                 </p>
               </div>
               <div className="img-zoom md:col-span-7 md:col-start-6">
-                <Placeholder label="[Desen fractal — linia]" ratio="3 / 2" />
+                <img src={lineWork.url} alt="Desen fractal alb-negru cu o singură linie continuă" className="w-full object-cover" loading="lazy" />
               </div>
             </div>
           </Reveal>
@@ -91,7 +95,7 @@ function DesenFractal() {
           <Reveal>
             <div className="grid items-center gap-10 md:grid-cols-12">
               <div className="img-zoom md:col-span-6">
-                <Placeholder label="[Desen fractal — culoare]" ratio="4 / 3" />
+                <img src={dots.url} alt="Exercițiu de culoare: rânduri de puncte colorate pe hârtie" className="w-full object-cover" loading="lazy" />
               </div>
               <div className="md:col-span-4 md:col-start-8">
                 <h3 className="font-serif text-4xl font-light md:text-6xl">Culoarea</h3>
@@ -121,7 +125,7 @@ function DesenFractal() {
       {/* În grup */}
       <section className="grid gap-10 py-24 md:grid-cols-12 md:py-40">
         <Reveal className="md:col-span-5">
-          <Placeholder label="[Desen fractal în grup]" ratio="4 / 3" />
+          <img src={groupWork.url} alt="Doi copii desenând fractal la aceeași masă, sub lumina lămpii" className="w-full object-cover" loading="lazy" />
         </Reveal>
         <Reveal delay={120} className="md:col-span-5 md:col-start-7 md:pt-10">
           <h2 className="font-serif text-3xl font-light md:text-4xl">Desenul fractal în grup</h2>
