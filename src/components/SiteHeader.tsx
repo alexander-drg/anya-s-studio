@@ -88,10 +88,11 @@ export function SiteHeader() {
           </button>
         </div>
       </div>
+      </header>
 
       {open && (
         <div
-          className="fixed inset-0 z-[70] overflow-y-auto bg-background px-6 pt-24 pb-16 lg:hidden"
+          className="fixed inset-0 z-[70] overflow-y-auto bg-background px-6 pt-28 pb-16 lg:hidden"
           role="dialog"
           aria-modal="true"
         >
@@ -114,7 +115,7 @@ export function SiteHeader() {
           </div>
         </div>
       )}
-    </header>
+    </>
   );
 }
 
