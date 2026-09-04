@@ -7,9 +7,17 @@ import {
   type ReactNode,
 } from "react";
 
-export type Lang = "ro" | "en";
+export type Lang = "ro" | "en" | "it";
 
-export type Copy = { ro: string; en: string };
+export const LANGS: Lang[] = ["ro", "en", "it"];
+
+/**
+ * Bilingual/trilingual copy.
+ * `ro` is the source of truth. `en` and `it` are optional so that missing
+ * translations fall back to Romanian instead of showing invented content —
+ * add the real translation later and it appears automatically.
+ */
+export type Copy = { ro: string; en?: string; it?: string };
 
 const LangContext = createContext<{
   lang: Lang;
@@ -21,7 +29,7 @@ export function LanguageProvider({ children }: { children: ReactNode }) {
 
   useEffect(() => {
     const stored = window.localStorage.getItem("lang");
-    if (stored === "ro" || stored === "en") setLang(stored);
+    if (stored === "ro" || stored === "en" || stored === "it") setLang(stored);
   }, []);
 
   useEffect(() => {
@@ -37,8 +45,8 @@ export function useLang() {
   return useContext(LangContext);
 }
 
-/** Resolve a bilingual string for the active language. */
+/** Resolve a localized string for the active language, falling back to Romanian. */
 export function useT() {
   const { lang } = useLang();
-  return (copy: Copy) => copy[lang];
+  return (copy: Copy) => copy[lang] ?? copy.ro;
 }

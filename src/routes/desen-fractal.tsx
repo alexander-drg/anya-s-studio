@@ -13,13 +13,13 @@ import { useT } from "@/lib/i18n";
 export const Route = createFileRoute("/desen-fractal")({
   head: () => ({
     meta: [
-      { title: "Metoda Desenului Fractal — Brândușa Nicolescu" },
+      { title: "Metoda Desenului Fractal — Brîndușa Nicolescu" },
       {
         name: "description",
         content:
           "Metoda Desenului Fractal: o linie continuă, 36 de creioane colorate și un proces de explorare personală prin desen, culoare și curiozitate.",
       },
-      { property: "og:title", content: "Metoda Desenului Fractal — Brândușa Nicolescu" },
+      { property: "og:title", content: "Metoda Desenului Fractal — Brîndușa Nicolescu" },
       {
         property: "og:description",
         content: "O linie continuă, culoare și curiozitatea de a descoperi ce apare.",
@@ -136,7 +136,7 @@ function DesenFractal() {
         </Reveal>
       </section>
 
-      {/* Abordarea Brândușei */}
+      {/* Abordarea Brîndușei */}
       <section className="grid gap-10 py-16 md:grid-cols-12 md:py-24">
         <Reveal className="md:col-span-3">
           <h2 className="label-xs">Abordarea mea</h2>
@@ -147,9 +147,9 @@ function DesenFractal() {
             începutul metodei și de refacere în procesul terapeutic ce conține un număr de desene
             realizate după recomandările mele.
           </p>
-          <p className="label-xs mt-6">© Brândușa Nicolescu</p>
+          <p className="label-xs mt-6">© Brîndușa Nicolescu</p>
           <p className="mt-10 text-muted-foreground">
-            [Spațiu rezervat pentru explicații suplimentare despre abordarea Brândușei.]
+            [Spațiu rezervat pentru explicații suplimentare despre abordarea Brîndușei.]
           </p>
         </Reveal>
       </section>

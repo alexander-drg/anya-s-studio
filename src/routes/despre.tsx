@@ -10,13 +10,13 @@ import { useT } from "@/lib/i18n";
 export const Route = createFileRoute("/despre")({
   head: () => ({
     meta: [
-      { title: "Despre — Brândușa Nicolescu" },
+      { title: "Despre — Brîndușa Nicolescu" },
       {
         name: "description",
         content:
-          "Despre Brândușa Nicolescu: relația dintre artă, culoare, emoții, corp și prezență, și felul în care Desenul Fractal și terapia craniosacrală se întâlnesc.",
+          "Despre Brîndușa Nicolescu: relația dintre artă, culoare, emoții, corp și prezență, și felul în care Desenul Fractal și terapia craniosacrală se întâlnesc.",
       },
-      { property: "og:title", content: "Despre — Brândușa Nicolescu" },
+      { property: "og:title", content: "Despre — Brîndușa Nicolescu" },
       {
         property: "og:description",
         content: "Cum se întâlnesc arta, corpul, emoțiile și prezența într-o singură practică.",
@@ -34,7 +34,7 @@ function Despre() {
       <section className="grid gap-12 py-16 md:grid-cols-12 md:py-28">
         <Reveal className="md:col-span-6">
           <h1 className="font-serif text-[2.6rem] leading-[1.05] font-light md:text-[4.5rem]">
-            Brândușa Nicolescu
+            Brîndușa Nicolescu
           </h1>
           <p className="mt-8 max-w-lg font-serif text-xl leading-relaxed font-light md:text-2xl">
             Artă, culoare, emoție, corp și prezență — pentru mine, toate acestea sunt feluri
@@ -44,7 +44,7 @@ function Despre() {
         <Reveal delay={120} className="md:col-span-5 md:col-start-8">
           <img
             src={brandusa}
-            alt="Portret Brândușa Nicolescu"
+            alt="Portret Brîndușa Nicolescu"
             className="w-full object-cover"
           />
         </Reveal>
@@ -56,7 +56,7 @@ function Despre() {
         </Reveal>
         <Reveal delay={100} className="md:col-span-7 md:col-start-5">
           <p className="font-serif text-2xl leading-relaxed font-light md:text-3xl">
-            [Spațiu rezervat pentru povestea reală a Brândușei.]
+            [Spațiu rezervat pentru povestea reală a Brîndușei.]
           </p>
           <p className="mt-6 max-w-xl text-muted-foreground">
             Această secțiune urmează să fie completată cu textul biografic real. Structura este

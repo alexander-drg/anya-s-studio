@@ -8,13 +8,13 @@ import { contact } from "@/content/site";
 export const Route = createFileRoute("/contact")({
   head: () => ({
     meta: [
-      { title: "Contact — Brândușa Nicolescu" },
+      { title: "Contact — Brîndușa Nicolescu" },
       {
         name: "description",
         content:
-          "Scrie-i Brândușei Nicolescu: Desen Fractal, terapie craniosacrală sau orice altă întrebare. Trieste, Italia și București, România.",
+          "Scrie-i Brîndușei Nicolescu: Desen Fractal, terapie craniosacrală sau orice altă întrebare. Trieste, Italia și București, România.",
       },
-      { property: "og:title", content: "Contact — Brândușa Nicolescu" },
+      { property: "og:title", content: "Contact — Brîndușa Nicolescu" },
       {
         property: "og:description",
         content: "Dacă simți că vrei să afli mai mult, putem începe de aici.",
@@ -47,7 +47,7 @@ function Contact() {
 
           <div className="mt-14 space-y-6">
             <div>
-              <p className="label-xs">Brândușa Nicolescu</p>
+              <p className="label-xs">Brîndușa Nicolescu</p>
               {contact.locations.map((l) => (
                 <p key={l} className="mt-1">
                   {l}

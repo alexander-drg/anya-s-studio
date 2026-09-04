@@ -1,14 +1,20 @@
 import type { Copy } from "@/lib/i18n";
 
-export const ARTIST_NAME = "Brândușa Nicolescu";
+export const ARTIST_NAME = "Brîndușa Nicolescu";
 
+/**
+ * Navigation uses personal, editorial wording rather than service labels.
+ * Routes stay the same; only the visible words changed.
+ */
 export const nav: { to: string; label: Copy }[] = [
-  { to: "/", label: { ro: "Acasă", en: "Home" } },
-  { to: "/despre", label: { ro: "Despre", en: "About" } },
-  { to: "/desen-fractal", label: { ro: "Desen Fractal", en: "Fractal Drawing" } },
-  { to: "/terapie-craniosacrala", label: { ro: "Terapie Craniosacrală", en: "Craniosacral Therapy" } },
-  { to: "/galerie", label: { ro: "Galerie", en: "Gallery" } },
-  { to: "/contact", label: { ro: "Contact", en: "Contact" } },
+  { to: "/", label: { ro: "Acasă", en: "Home", it: "Home" } },
+  { to: "/desen-fractal", label: { ro: "Desen", en: "Drawing", it: "Disegno" } },
+  { to: "/galerie", label: { ro: "Pânze", en: "Canvases", it: "Tele" } },
+  { to: "/terapie-craniosacrala", label: { ro: "Întâlniri", en: "Encounters", it: "Incontri" } },
+  { to: "/explorari", label: { ro: "Explorări", en: "Explorations", it: "Esplorazioni" } },
+  { to: "/despre", label: { ro: "Povestea mea", en: "My story", it: "La mia storia" } },
+  { to: "/blog", label: { ro: "Blog", en: "Blog", it: "Blog" } },
+  { to: "/contact", label: { ro: "Contact", en: "Contact", it: "Contatti" } },
 ];
 
 export const contact = {
@@ -21,34 +27,73 @@ export const contact = {
 /** The four anchors, in the client's own words. */
 export const values: { title: Copy; line: Copy }[] = [
   {
-    title: { ro: "Prezență", en: "Presence" },
+    title: { ro: "Prezență", en: "Presence", it: "Presenza" },
     line: {
       ro: "„A învăța să fii cu adevărat prezent.\"",
       en: "“Learning to be truly present.”",
+      it: "“Imparare a essere davvero presenti.”",
     },
   },
   {
-    title: { ro: "Curiozitate", en: "Curiosity" },
+    title: { ro: "Curiozitate", en: "Curiosity", it: "Curiosità" },
     line: {
       ro: "„Mirarea copilului care încă poate descoperi.\"",
       en: "“The wonder of a child who can still discover.”",
+      it: "“Lo stupore del bambino che può ancora scoprire.”",
     },
   },
   {
-    title: { ro: "Frumusețe", en: "Beauty" },
+    title: { ro: "Frumusețe", en: "Beauty", it: "Bellezza" },
     line: {
       ro: "Frumusețea care vine din autenticitate, nu din perfecțiune.",
       en: "Beauty that comes from authenticity, not perfection.",
+      it: "La bellezza che nasce dall'autenticità, non dalla perfezione.",
     },
   },
   {
-    title: { ro: "Echilibru", en: "Balance" },
+    title: { ro: "Echilibru", en: "Balance", it: "Equilibrio" },
     line: {
       ro: "Un echilibru viu între corp, minte, emoții și expresie creativă.",
       en: "A living balance between body, mind, emotions, and creative expression.",
+      it: "Un equilibrio vivo tra corpo, mente, emozioni ed espressione creativa.",
     },
   },
 ];
+
+/** Atmosfera atelierului — fragmente din experiența de a crea împreună. */
+export const atelierFragments: { title: Copy; line: Copy; placeholder: string; ratio: string }[] = [
+  {
+    title: { ro: "Mâini și hârtie", en: "Hands and paper", it: "Mani e carta" },
+    line: {
+      ro: "Foaia albă, creioanele aliniate, primul gest.",
+      en: "The blank sheet, the lined-up pencils, the first gesture.",
+      it: "Il foglio bianco, le matite allineate, il primo gesto.",
+    },
+    placeholder: "[Mâini, hârtie, creioane]",
+    ratio: "3 / 2",
+  },
+  {
+    title: { ro: "Desenăm împreună", en: "Drawing together", it: "Disegnare insieme" },
+    line: {
+      ro: "Fiecare pe foaia lui, toți în aceeași liniște.",
+      en: "Each on their own sheet, everyone in the same quiet.",
+      it: "Ognuno sul proprio foglio, tutti nello stesso silenzio.",
+    },
+    placeholder: "[Grup desenând în atelier]",
+    ratio: "4 / 5",
+  },
+  {
+    title: { ro: "Culoare, aproape", en: "Colour, up close", it: "Colore, da vicino" },
+    line: {
+      ro: "Treizeci și șase de culori și timp să alegi una.",
+      en: "Thirty-six colours and time to choose one.",
+      it: "Trentasei colori e il tempo di sceglierne uno.",
+    },
+    placeholder: "[Detaliu culoare]",
+    ratio: "1 / 1",
+  },
+];
+
 
 /** Three expressions of the same idea: presence. */
 export const presenceMoments: {
