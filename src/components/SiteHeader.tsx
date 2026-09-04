@@ -1,7 +1,7 @@
 import { Link } from "@tanstack/react-router";
 import { useEffect, useState } from "react";
 
-import logo from "@/assets/logo.jpeg.asset.json";
+import logo from "@/assets/logo.jpeg";
 import { ARTIST_NAME, nav } from "@/content/site";
 import { useLang, useT, type Lang } from "@/lib/i18n";
 
@@ -48,7 +48,7 @@ export function SiteHeader() {
           className="flex items-center gap-3"
           aria-label={ARTIST_NAME}
         >
-          <img src={logo.url} alt="" width={40} height={30} className="h-7 w-auto" />
+          <img src={logo} alt="" width={40} height={30} className="h-7 w-auto" />
           <span className="font-serif text-sm tracking-[0.16em] uppercase sm:text-base">
             {ARTIST_NAME}
           </span>

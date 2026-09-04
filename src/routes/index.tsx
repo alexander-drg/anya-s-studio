@@ -1,7 +1,7 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
 import { useEffect, useState } from "react";
 
-import brandusa from "@/assets/brandusa.webp.asset.json";
+import brandusa from "@/assets/brandusa.webp";
 import { ContinuousLine } from "@/components/ContinuousLine";
 import { Placeholder } from "@/components/Placeholder";
 import { Reveal } from "@/components/Reveal";
@@ -73,7 +73,7 @@ function Home() {
         <div className="grid gap-12 md:grid-cols-12">
           <Reveal className="md:col-span-4">
             <img
-              src={brandusa.url}
+              src={brandusa}
               alt="Portret Brândușa Nicolescu"
               loading="lazy"
               className="w-full object-cover"
