@@ -1,6 +1,6 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
 
-import brandusa from "@/assets/brandusa.webp.asset.json";
+import brandusa from "@/assets/brandusa.webp";
 import { ContinuousLine } from "@/components/ContinuousLine";
 import { Placeholder } from "@/components/Placeholder";
 import { Reveal } from "@/components/Reveal";
@@ -43,7 +43,7 @@ function Despre() {
         </Reveal>
         <Reveal delay={120} className="md:col-span-5 md:col-start-8">
           <img
-            src={brandusa.url}
+            src={brandusa}
             alt="Portret Brândușa Nicolescu"
             className="w-full object-cover"
           />
