@@ -9,13 +9,13 @@ import { useT } from "@/lib/i18n";
 export const Route = createFileRoute("/galerie")({
   head: () => ({
     meta: [
-      { title: "Galerie — Brândușa Nicolescu" },
+      { title: "Galerie — Brîndușa Nicolescu" },
       {
         name: "description",
         content:
           "Desen fractal, pictură și fragmente din proces. O galerie editorială, fără prețuri și fără vitrine — doar lucrările și spațiul din jurul lor.",
       },
-      { property: "og:title", content: "Galerie — Brândușa Nicolescu" },
+      { property: "og:title", content: "Galerie — Brîndușa Nicolescu" },
       {
         property: "og:description",
         content: "Desen fractal, pictură și fragmente din proces.",

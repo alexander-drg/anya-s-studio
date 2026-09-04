@@ -1,6 +1,6 @@
 import type { Copy } from "@/lib/i18n";
 
-export const ARTIST_NAME = "Brândușa Nicolescu";
+export const ARTIST_NAME = "Brîndușa Nicolescu";
 
 export const nav: { to: string; label: Copy }[] = [
   { to: "/", label: { ro: "Acasă", en: "Home" } },

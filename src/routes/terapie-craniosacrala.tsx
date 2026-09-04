@@ -12,13 +12,13 @@ import art05 from "@/assets/desen_fractal_05.webp";
 export const Route = createFileRoute("/terapie-craniosacrala")({
   head: () => ({
     meta: [
-      { title: "Terapie Craniosacrală — Brândușa Nicolescu" },
+      { title: "Terapie Craniosacrală — Brîndușa Nicolescu" },
       {
         name: "description",
         content:
-          "Un spațiu liniștit pentru ascultare, încetinire și prezență în corp. Pagină în curs de completare cu informațiile despre practica Brândușei Nicolescu.",
+          "Un spațiu liniștit pentru ascultare, încetinire și prezență în corp. Pagină în curs de completare cu informațiile despre practica Brîndușei Nicolescu.",
       },
-      { property: "og:title", content: "Terapie Craniosacrală — Brândușa Nicolescu" },
+      { property: "og:title", content: "Terapie Craniosacrală — Brîndușa Nicolescu" },
       {
         property: "og:description",
         content: "Corp, ascultare, încetinire, prezență.",
@@ -61,7 +61,7 @@ function Craniosacrala() {
         </Reveal>
         <Reveal delay={100} className="md:col-span-7 md:col-start-5">
           <p className="font-serif text-2xl leading-relaxed font-light md:text-3xl">
-            [Descrierea terapiei craniosacrale urmează să fie completată de Brândușa.]
+            [Descrierea terapiei craniosacrale urmează să fie completată de Brîndușa.]
           </p>
           <ToBeCompleted note="Conținut de completat — nu au fost formulate afirmații despre metodă, indicații sau efecte." />
         </Reveal>
@@ -118,7 +118,7 @@ function Craniosacrala() {
         </Reveal>
         <Reveal delay={100} className="md:col-span-7 md:col-start-5">
           <p className="font-serif text-2xl leading-relaxed font-light md:text-3xl">
-            [Spațiu rezervat pentru descrierea reală a abordării și a formării Brândușei.]
+            [Spațiu rezervat pentru descrierea reală a abordării și a formării Brîndușei.]
           </p>
           <ToBeCompleted note="Conținut de completat — formare, experiență și mod de lucru." />
         </Reveal>

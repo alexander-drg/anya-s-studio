@@ -11,13 +11,13 @@ import { useT } from "@/lib/i18n";
 export const Route = createFileRoute("/")({
   head: () => ({
     meta: [
-      { title: "Brândușa Nicolescu — Desen Fractal, terapie craniosacrală și artă" },
+      { title: "Brîndușa Nicolescu — Desen Fractal, terapie craniosacrală și artă" },
       {
         name: "description",
         content:
           "Diferite feluri de a te întoarce la tine: prin creativitate, corp, emoție și prezență. Desen Fractal, terapie craniosacrală și expresie artistică.",
       },
-      { property: "og:title", content: "Brândușa Nicolescu — Desen Fractal și prezență" },
+      { property: "og:title", content: "Brîndușa Nicolescu — Desen Fractal și prezență" },
       {
         property: "og:description",
         content:
@@ -68,20 +68,20 @@ function Home() {
         </div>
       </section>
 
-      {/* 2. Introducere / Brândușa */}
+      {/* 2. Introducere / Brîndușa */}
       <section id="introducere" className="mx-auto max-w-[110rem] px-6 py-24 md:px-12 md:py-40">
         <div className="grid gap-12 md:grid-cols-12">
           <Reveal className="md:col-span-4">
             <img
               src={brandusa}
-              alt="Portret Brândușa Nicolescu"
+              alt="Portret Brîndușa Nicolescu"
               loading="lazy"
               className="w-full object-cover"
             />
           </Reveal>
           <Reveal delay={120} className="md:col-span-6 md:col-start-6 md:pt-16">
             <p className="label-xs mb-6">Introducere</p>
-            <h2 className="font-serif text-4xl font-light md:text-6xl">Brândușa Nicolescu</h2>
+            <h2 className="font-serif text-4xl font-light md:text-6xl">Brîndușa Nicolescu</h2>
             <p className="mt-8 max-w-xl font-serif text-xl leading-relaxed font-light md:text-2xl">
               Explorez diferite forme de conectare cu sine — prin creativitate, prin emoții, prin
               corp și prin prezență. Desenul, culoarea și atingerea sunt, pentru mine, aceeași
@@ -91,7 +91,7 @@ function Home() {
               [Text introductiv provizoriu — biografia reală urmează să fie completată.]
             </p>
             <Link to="/despre" className="label-xs quiet-link mt-10 inline-block">
-              Despre Brândușa →
+              Despre Brîndușa →
             </Link>
           </Reveal>
         </div>
