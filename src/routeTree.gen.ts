@@ -13,6 +13,7 @@ import { Route as IndexRouteImport } from './routes/index'
 import { Route as ContactRouteImport } from './routes/contact'
 import { Route as DesenFractalRouteImport } from './routes/desen-fractal'
 import { Route as DespreRouteImport } from './routes/despre'
+import { Route as ExplorariRouteImport } from './routes/explorari'
 import { Route as GalerieRouteImport } from './routes/galerie'
 import { Route as TerapieCraniosacralaRouteImport } from './routes/terapie-craniosacrala'
 
@@ -36,6 +37,11 @@ const DespreRoute = DespreRouteImport.update({
   path: '/despre',
   getParentRoute: () => rootRouteImport,
 } as any)
+const ExplorariRoute = ExplorariRouteImport.update({
+  id: '/explorari',
+  path: '/explorari',
+  getParentRoute: () => rootRouteImport,
+} as any)
 const GalerieRoute = GalerieRouteImport.update({
   id: '/galerie',
   path: '/galerie',
@@ -52,6 +58,7 @@ export interface FileRoutesByFullPath {
   '/contact': typeof ContactRoute
   '/desen-fractal': typeof DesenFractalRoute
   '/despre': typeof DespreRoute
+  '/explorari': typeof ExplorariRoute
   '/galerie': typeof GalerieRoute
   '/terapie-craniosacrala': typeof TerapieCraniosacralaRoute
 }
@@ -60,6 +67,7 @@ export interface FileRoutesByTo {
   '/contact': typeof ContactRoute
   '/desen-fractal': typeof DesenFractalRoute
   '/despre': typeof DespreRoute
+  '/explorari': typeof ExplorariRoute
   '/galerie': typeof GalerieRoute
   '/terapie-craniosacrala': typeof TerapieCraniosacralaRoute
 }
@@ -69,6 +77,7 @@ export interface FileRoutesById {
   '/contact': typeof ContactRoute
   '/desen-fractal': typeof DesenFractalRoute
   '/despre': typeof DespreRoute
+  '/explorari': typeof ExplorariRoute
   '/galerie': typeof GalerieRoute
   '/terapie-craniosacrala': typeof TerapieCraniosacralaRoute
 }
@@ -79,6 +88,7 @@ export interface FileRouteTypes {
     | '/contact'
     | '/desen-fractal'
     | '/despre'
+    | '/explorari'
     | '/galerie'
     | '/terapie-craniosacrala'
   fileRoutesByTo: FileRoutesByTo
@@ -87,6 +97,7 @@ export interface FileRouteTypes {
     | '/contact'
     | '/desen-fractal'
     | '/despre'
+    | '/explorari'
     | '/galerie'
     | '/terapie-craniosacrala'
   id:
@@ -95,6 +106,7 @@ export interface FileRouteTypes {
     | '/contact'
     | '/desen-fractal'
     | '/despre'
+    | '/explorari'
     | '/galerie'
     | '/terapie-craniosacrala'
   fileRoutesById: FileRoutesById
@@ -104,6 +116,7 @@ export interface RootRouteChildren {
   ContactRoute: typeof ContactRoute
   DesenFractalRoute: typeof DesenFractalRoute
   DespreRoute: typeof DespreRoute
+  ExplorariRoute: typeof ExplorariRoute
   GalerieRoute: typeof GalerieRoute
   TerapieCraniosacralaRoute: typeof TerapieCraniosacralaRoute
 }
@@ -138,6 +151,13 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof DespreRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/explorari': {
+      id: '/explorari'
+      path: '/explorari'
+      fullPath: '/explorari'
+      preLoaderRoute: typeof ExplorariRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/galerie': {
       id: '/galerie'
       path: '/galerie'
@@ -160,6 +180,7 @@ const rootRouteChildren: RootRouteChildren = {
   ContactRoute: ContactRoute,
   DesenFractalRoute: DesenFractalRoute,
   DespreRoute: DespreRoute,
+  ExplorariRoute: ExplorariRoute,
   GalerieRoute: GalerieRoute,
   TerapieCraniosacralaRoute: TerapieCraniosacralaRoute,
 }
