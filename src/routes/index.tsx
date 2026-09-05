@@ -198,20 +198,18 @@ function Home() {
               Un mod de explorare personală prin desen, emoție și creativitate.
             </p>
             <Link to="/desen-fractal" className="label-xs quiet-link mt-8 inline-block">
-              Descoperă Desenul Fractal →
+              Desen →
             </Link>
           </Reveal>
           <Reveal delay={140} className="md:pt-28">
             <Placeholder label="[Craniosacral therapy image]" ratio="4 / 5" />
-            <h3 className="mt-8 font-serif text-3xl font-light md:text-4xl">
-              Terapie Craniosacrală
-            </h3>
+            <h3 className="mt-8 font-serif text-3xl font-light md:text-4xl">Întâlniri</h3>
             <p className="mt-5 max-w-md text-muted-foreground">
               Corpul, ascultarea și încetinirea. Un spațiu liniștit în care atenția coboară în
               corp și revii, treptat, la tine.
             </p>
             <Link to="/terapie-craniosacrala" className="label-xs quiet-link mt-8 inline-block">
-              Descoperă Terapia Craniosacrală →
+              Întâlniri →
             </Link>
           </Reveal>
         </div>
@@ -244,9 +242,9 @@ function Home() {
       {/* 6. Galerie preview */}
       <section className="mx-auto max-w-[110rem] px-6 py-32 md:px-12 md:py-48">
         <Reveal className="mb-14 flex items-end justify-between gap-6">
-          <h2 className="font-serif text-3xl font-light md:text-5xl">Lucrări</h2>
+          <h2 className="font-serif text-3xl font-light md:text-5xl">Pânze</h2>
           <Link to="/galerie" className="label-xs quiet-link">
-            Vezi galeria →
+            Pânze →
           </Link>
         </Reveal>
         <div className="grid gap-x-8 gap-y-16 md:grid-cols-12">
