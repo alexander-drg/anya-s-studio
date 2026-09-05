@@ -5,7 +5,7 @@ import brandusa from "@/assets/brandusa.webp";
 import { ContinuousLine } from "@/components/ContinuousLine";
 import { Placeholder } from "@/components/Placeholder";
 import { Reveal } from "@/components/Reveal";
-import { galleryItems, presenceMoments, testimonials, values } from "@/content/site";
+import { atelierFragments, galleryItems, presenceMoments, testimonials, values } from "@/content/site";
 import { useT } from "@/lib/i18n";
 
 export const Route = createFileRoute("/")({
