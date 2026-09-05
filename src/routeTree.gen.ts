@@ -10,15 +10,22 @@
 
 import { Route as rootRouteImport } from './routes/__root'
 import { Route as IndexRouteImport } from './routes/index'
+import { Route as BlogRouteImport } from './routes/blog'
 import { Route as ContactRouteImport } from './routes/contact'
 import { Route as DesenFractalRouteImport } from './routes/desen-fractal'
 import { Route as DespreRouteImport } from './routes/despre'
+import { Route as ExplorariRouteImport } from './routes/explorari'
 import { Route as GalerieRouteImport } from './routes/galerie'
 import { Route as TerapieCraniosacralaRouteImport } from './routes/terapie-craniosacrala'
 
 const IndexRoute = IndexRouteImport.update({
   id: '/',
   path: '/',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const BlogRoute = BlogRouteImport.update({
+  id: '/blog',
+  path: '/blog',
   getParentRoute: () => rootRouteImport,
 } as any)
 const ContactRoute = ContactRouteImport.update({
@@ -36,6 +43,11 @@ const DespreRoute = DespreRouteImport.update({
   path: '/despre',
   getParentRoute: () => rootRouteImport,
 } as any)
+const ExplorariRoute = ExplorariRouteImport.update({
+  id: '/explorari',
+  path: '/explorari',
+  getParentRoute: () => rootRouteImport,
+} as any)
 const GalerieRoute = GalerieRouteImport.update({
   id: '/galerie',
   path: '/galerie',
@@ -49,26 +61,32 @@ const TerapieCraniosacralaRoute = TerapieCraniosacralaRouteImport.update({
 
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
+  '/blog': typeof BlogRoute
   '/contact': typeof ContactRoute
   '/desen-fractal': typeof DesenFractalRoute
   '/despre': typeof DespreRoute
+  '/explorari': typeof ExplorariRoute
   '/galerie': typeof GalerieRoute
   '/terapie-craniosacrala': typeof TerapieCraniosacralaRoute
 }
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
+  '/blog': typeof BlogRoute
   '/contact': typeof ContactRoute
   '/desen-fractal': typeof DesenFractalRoute
   '/despre': typeof DespreRoute
+  '/explorari': typeof ExplorariRoute
   '/galerie': typeof GalerieRoute
   '/terapie-craniosacrala': typeof TerapieCraniosacralaRoute
 }
 export interface FileRoutesById {
   __root__: typeof rootRouteImport
   '/': typeof IndexRoute
+  '/blog': typeof BlogRoute
   '/contact': typeof ContactRoute
   '/desen-fractal': typeof DesenFractalRoute
   '/despre': typeof DespreRoute
+  '/explorari': typeof ExplorariRoute
   '/galerie': typeof GalerieRoute
   '/terapie-craniosacrala': typeof TerapieCraniosacralaRoute
 }
@@ -76,34 +94,42 @@ export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
   fullPaths:
     | '/'
+    | '/blog'
     | '/contact'
     | '/desen-fractal'
     | '/despre'
+    | '/explorari'
     | '/galerie'
     | '/terapie-craniosacrala'
   fileRoutesByTo: FileRoutesByTo
   to:
     | '/'
+    | '/blog'
     | '/contact'
     | '/desen-fractal'
     | '/despre'
+    | '/explorari'
     | '/galerie'
     | '/terapie-craniosacrala'
   id:
     | '__root__'
     | '/'
+    | '/blog'
     | '/contact'
     | '/desen-fractal'
     | '/despre'
+    | '/explorari'
     | '/galerie'
     | '/terapie-craniosacrala'
   fileRoutesById: FileRoutesById
 }
 export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
+  BlogRoute: typeof BlogRoute
   ContactRoute: typeof ContactRoute
   DesenFractalRoute: typeof DesenFractalRoute
   DespreRoute: typeof DespreRoute
+  ExplorariRoute: typeof ExplorariRoute
   GalerieRoute: typeof GalerieRoute
   TerapieCraniosacralaRoute: typeof TerapieCraniosacralaRoute
 }
@@ -115,6 +141,13 @@ declare module '@tanstack/react-router' {
       path: '/'
       fullPath: '/'
       preLoaderRoute: typeof IndexRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/blog': {
+      id: '/blog'
+      path: '/blog'
+      fullPath: '/blog'
+      preLoaderRoute: typeof BlogRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/contact': {
@@ -138,6 +171,13 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof DespreRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/explorari': {
+      id: '/explorari'
+      path: '/explorari'
+      fullPath: '/explorari'
+      preLoaderRoute: typeof ExplorariRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/galerie': {
       id: '/galerie'
       path: '/galerie'
@@ -157,9 +197,11 @@ declare module '@tanstack/react-router' {
 
 const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
+  BlogRoute: BlogRoute,
   ContactRoute: ContactRoute,
   DesenFractalRoute: DesenFractalRoute,
   DespreRoute: DespreRoute,
+  ExplorariRoute: ExplorariRoute,
   GalerieRoute: GalerieRoute,
   TerapieCraniosacralaRoute: TerapieCraniosacralaRoute,
 }

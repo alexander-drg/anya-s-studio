@@ -117,10 +117,11 @@ function RootComponent() {
       <LanguageProvider>
         <div className="flex min-h-screen flex-col">
           <SiteHeader />
-          <main className="flex-1">
+          <main className="flex-1 pt-[4.5rem] md:pt-[6rem]">
             {/* Required: nested routes render here. */}
             <Outlet />
           </main>
+
           <SiteFooter />
         </div>
       </LanguageProvider>

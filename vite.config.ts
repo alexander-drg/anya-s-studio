@@ -18,7 +18,10 @@ const staticPages = [
   { path: "/desen-fractal" },
   { path: "/terapie-craniosacrala" },
   { path: "/galerie" },
+  { path: "/explorari" },
+  { path: "/blog" },
   { path: "/contact" },
+
 ];
 
 export default defineConfig({
