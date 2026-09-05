@@ -69,7 +69,7 @@ function Home() {
           <div className="reveal reveal-in">
             <p className="max-w-3xl font-serif text-[1.6rem] leading-[1.3] font-light text-white italic drop-shadow-[0_1px_18px_rgba(0,0,0,0.45)] md:text-[2.6rem]">
               „Călătorind în interiorul emoțiilor tale ca într-un montagne russe, cu o linie
-              continuă și culori."
+              continuă și culori.”
             </p>
             <a
               href="#atelier"
