@@ -66,7 +66,7 @@ function Home() {
         <div className="pointer-events-none absolute inset-0 bg-gradient-to-b from-black/35 via-black/10 to-black/45" />
 
         <div className="relative z-10 mx-auto flex h-full max-w-[110rem] flex-col justify-end px-6 pb-20 md:px-12 md:pb-28">
-          <Reveal>
+          <div className="reveal reveal-in">
             <p className="max-w-3xl font-serif text-[1.6rem] leading-[1.3] font-light text-white italic drop-shadow-[0_1px_18px_rgba(0,0,0,0.45)] md:text-[2.6rem]">
               „Călătorind în interiorul emoțiilor tale ca într-un montagne russe, cu o linie
               continuă și culori."
@@ -78,7 +78,7 @@ function Home() {
               <span className="block h-8 w-px bg-white/50" />
               Intră în atelier
             </a>
-          </Reveal>
+          </div>
         </div>
       </section>
 
