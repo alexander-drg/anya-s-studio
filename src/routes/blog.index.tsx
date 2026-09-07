@@ -59,10 +59,14 @@ function Blog() {
         ) : (
           <ul className="space-y-14">
             {posts.map((p) => (
-              <li key={p.title} className="grid gap-4 border-t border-border pt-6 md:grid-cols-12">
+              <li key={p.slug} className="grid gap-4 border-t border-border pt-6 md:grid-cols-12">
                 <p className="label-xs md:col-span-3">{p.date}</p>
                 <div className="md:col-span-7 md:col-start-5">
-                  <h2 className="font-serif text-3xl font-light">{p.title}</h2>
+                  <h2 className="font-serif text-3xl font-light">
+                    <Link to="/blog/$slug" params={{ slug: p.slug }} className="quiet-link">
+                      {p.title}
+                    </Link>
+                  </h2>
                   <p className="mt-4 text-muted-foreground">{p.excerpt}</p>
                 </div>
               </li>
@@ -70,6 +74,9 @@ function Blog() {
           </ul>
         )}
       </section>
+
+      <QuestionSection postSlug="blog" />
+
     </div>
   );
 }
