@@ -1,7 +1,10 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
 
 import { ContinuousLine } from "@/components/ContinuousLine";
+import { QuestionSection } from "@/components/QuestionSection";
 import { Reveal } from "@/components/Reveal";
+import { posts } from "@/content/blog";
+
 
 export const Route = createFileRoute("/blog/")({
   head: () => ({
