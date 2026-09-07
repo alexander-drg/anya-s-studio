@@ -17,6 +17,7 @@ import { Route as ExplorariRouteImport } from './routes/explorari'
 import { Route as GalerieRouteImport } from './routes/galerie'
 import { Route as TerapieCraniosacralaRouteImport } from './routes/terapie-craniosacrala'
 import { Route as BlogIndexRouteImport } from './routes/blog.index'
+import { Route as BlogSlugRouteImport } from './routes/blog.$slug'
 
 const IndexRoute = IndexRouteImport.update({
   id: '/',
@@ -58,6 +59,11 @@ const BlogIndexRoute = BlogIndexRouteImport.update({
   path: '/blog/',
   getParentRoute: () => rootRouteImport,
 } as any)
+const BlogSlugRoute = BlogSlugRouteImport.update({
+  id: '/blog/$slug',
+  path: '/blog/$slug',
+  getParentRoute: () => rootRouteImport,
+} as any)
 
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
@@ -67,6 +73,7 @@ export interface FileRoutesByFullPath {
   '/explorari': typeof ExplorariRoute
   '/galerie': typeof GalerieRoute
   '/terapie-craniosacrala': typeof TerapieCraniosacralaRoute
+  '/blog/$slug': typeof BlogSlugRoute
   '/blog/': typeof BlogIndexRoute
 }
 export interface FileRoutesByTo {
@@ -77,6 +84,7 @@ export interface FileRoutesByTo {
   '/explorari': typeof ExplorariRoute
   '/galerie': typeof GalerieRoute
   '/terapie-craniosacrala': typeof TerapieCraniosacralaRoute
+  '/blog/$slug': typeof BlogSlugRoute
   '/blog': typeof BlogIndexRoute
 }
 export interface FileRoutesById {
@@ -88,6 +96,7 @@ export interface FileRoutesById {
   '/explorari': typeof ExplorariRoute
   '/galerie': typeof GalerieRoute
   '/terapie-craniosacrala': typeof TerapieCraniosacralaRoute
+  '/blog/$slug': typeof BlogSlugRoute
   '/blog/': typeof BlogIndexRoute
 }
 export interface FileRouteTypes {
@@ -100,6 +109,7 @@ export interface FileRouteTypes {
     | '/explorari'
     | '/galerie'
     | '/terapie-craniosacrala'
+    | '/blog/$slug'
     | '/blog/'
   fileRoutesByTo: FileRoutesByTo
   to:
@@ -110,6 +120,7 @@ export interface FileRouteTypes {
     | '/explorari'
     | '/galerie'
     | '/terapie-craniosacrala'
+    | '/blog/$slug'
     | '/blog'
   id:
     | '__root__'
@@ -120,6 +131,7 @@ export interface FileRouteTypes {
     | '/explorari'
     | '/galerie'
     | '/terapie-craniosacrala'
+    | '/blog/$slug'
     | '/blog/'
   fileRoutesById: FileRoutesById
 }
@@ -131,6 +143,7 @@ export interface RootRouteChildren {
   ExplorariRoute: typeof ExplorariRoute
   GalerieRoute: typeof GalerieRoute
   TerapieCraniosacralaRoute: typeof TerapieCraniosacralaRoute
+  BlogSlugRoute: typeof BlogSlugRoute
   BlogIndexRoute: typeof BlogIndexRoute
 }
 
@@ -192,6 +205,13 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof BlogIndexRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/blog/$slug': {
+      id: '/blog/$slug'
+      path: '/blog/$slug'
+      fullPath: '/blog/$slug'
+      preLoaderRoute: typeof BlogSlugRouteImport
+      parentRoute: typeof rootRouteImport
+    }
   }
 }
 
@@ -203,6 +223,7 @@ const rootRouteChildren: RootRouteChildren = {
   ExplorariRoute: ExplorariRoute,
   GalerieRoute: GalerieRoute,
   TerapieCraniosacralaRoute: TerapieCraniosacralaRoute,
+  BlogSlugRoute: BlogSlugRoute,
   BlogIndexRoute: BlogIndexRoute,
 }
 export const routeTree = rootRouteImport
