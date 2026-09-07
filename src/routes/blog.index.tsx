@@ -3,7 +3,7 @@ import { createFileRoute, Link } from "@tanstack/react-router";
 import { ContinuousLine } from "@/components/ContinuousLine";
 import { Reveal } from "@/components/Reveal";
 
-export const Route = createFileRoute("/blog")({
+export const Route = createFileRoute("/blog/")({
   head: () => ({
     meta: [
       { title: "Blog — Brîndușa Nicolescu" },
