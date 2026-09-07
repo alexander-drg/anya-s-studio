@@ -14,10 +14,74 @@ export type Database = {
   }
   public: {
     Tables: {
-      [_ in never]: never
+      blog_questions: {
+        Row: {
+          answer: string | null
+          answered_at: string | null
+          created_at: string
+          email: string | null
+          id: string
+          name: string
+          post_slug: string
+          question: string
+          status: string
+        }
+        Insert: {
+          answer?: string | null
+          answered_at?: string | null
+          created_at?: string
+          email?: string | null
+          id?: string
+          name: string
+          post_slug: string
+          question: string
+          status?: string
+        }
+        Update: {
+          answer?: string | null
+          answered_at?: string | null
+          created_at?: string
+          email?: string | null
+          id?: string
+          name?: string
+          post_slug?: string
+          question?: string
+          status?: string
+        }
+        Relationships: []
+      }
     }
     Views: {
-      [_ in never]: never
+      blog_questions_public: {
+        Row: {
+          answer: string | null
+          answered_at: string | null
+          created_at: string | null
+          id: string | null
+          name: string | null
+          post_slug: string | null
+          question: string | null
+        }
+        Insert: {
+          answer?: string | null
+          answered_at?: string | null
+          created_at?: string | null
+          id?: string | null
+          name?: string | null
+          post_slug?: string | null
+          question?: string | null
+        }
+        Update: {
+          answer?: string | null
+          answered_at?: string | null
+          created_at?: string | null
+          id?: string | null
+          name?: string | null
+          post_slug?: string | null
+          question?: string | null
+        }
+        Relationships: []
+      }
     }
     Functions: {
       [_ in never]: never
