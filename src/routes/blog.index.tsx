@@ -25,8 +25,6 @@ export const Route = createFileRoute("/blog/")({
   component: Blog,
 });
 
-/** Articolele reale urmează; structura este pregătită. */
-const posts: { title: string; date: string; excerpt: string }[] = [];
 
 function Blog() {
   return (
