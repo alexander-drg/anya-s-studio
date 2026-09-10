@@ -57,7 +57,13 @@ function Explorari() {
             <div className="grid items-center gap-8 md:grid-cols-12">
               <div className={`md:col-span-6 ${i % 2 === 1 ? "md:col-start-7" : ""}`}>
                 <div className="img-zoom">
-                  <Placeholder label={f.placeholder} ratio={f.ratio} />
+                  <img
+                    src={f.src}
+                    alt={t(f.title)}
+                    loading="lazy"
+                    style={{ aspectRatio: f.ratio }}
+                    className="w-full object-cover"
+                  />
                 </div>
               </div>
               <div className={`md:col-span-4 ${i % 2 === 1 ? "md:col-start-2 md:row-start-1" : "md:col-start-8"}`}>

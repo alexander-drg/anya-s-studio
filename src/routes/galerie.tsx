@@ -1,120 +1,123 @@
 import { createFileRoute } from "@tanstack/react-router";
-import { useEffect, useMemo, useState } from "react";
+import { useEffect, useState } from "react";
 
-import { Placeholder } from "@/components/Placeholder";
 import { Reveal } from "@/components/Reveal";
-import { galleryItems, type GalleryItem } from "@/content/site";
+import { artworks, seriesInfo, untitledLabel, type Artwork } from "@/content/site";
 import { useT } from "@/lib/i18n";
 
 export const Route = createFileRoute("/galerie")({
   head: () => ({
     meta: [
-      { title: "Galerie — Brîndușa Nicolescu" },
+      { title: "Pânze — Brîndușa Nicolescu" },
       {
         name: "description",
         content:
-          "Desen fractal, pictură și fragmente din proces. O galerie editorială, fără prețuri și fără vitrine — doar lucrările și spațiul din jurul lor.",
+          "Seria Fluid Art: lucrări în acrilic de aproximativ 50 cm, parte dintr-o expoziție din 2024, la Trieste, Italia.",
       },
-      { property: "og:title", content: "Galerie — Brîndușa Nicolescu" },
+      { property: "og:title", content: "Pânze — Brîndușa Nicolescu" },
       {
         property: "og:description",
-        content: "Desen fractal, pictură și fragmente din proces.",
+        content: "Acrilic, tehnica Fluid Art. Trieste, 2024.",
       },
+      { property: "og:type", content: "website" },
+      { name: "twitter:card", content: "summary_large_image" },
     ],
   }),
-  component: Galerie,
+  component: Panze,
 });
 
-function Galerie() {
+function Panze() {
   const t = useT();
-  const categories = useMemo(
-    () => [
-      { key: "all", label: { ro: "Toate", en: "All" } },
-      { key: "fractal", label: { ro: "Desen Fractal", en: "Fractal Drawing" } },
-      { key: "painting", label: { ro: "Pictură", en: "Painting" } },
-      { key: "process", label: { ro: "Proces", en: "Process" } },
-    ],
-    [],
-  );
-
-  const [active, setActive] = useState<(typeof categories)[number]["key"]>("all");
-  const [lightbox, setLightbox] = useState<GalleryItem | null>(null);
-
-  const activeLabel = categories.find((c) => c.key === active)?.label;
-  const items =
-    active === "all" || !activeLabel
-      ? galleryItems
-      : galleryItems.filter((i) => t(i.category) === t(activeLabel));
+  const [open, setOpen] = useState<Artwork | null>(null);
 
   useEffect(() => {
-    const onKey = (e: KeyboardEvent) => e.key === "Escape" && setLightbox(null);
+    const onKey = (e: KeyboardEvent) => e.key === "Escape" && setOpen(null);
     window.addEventListener("keydown", onKey);
     return () => window.removeEventListener("keydown", onKey);
   }, []);
 
   return (
-    <div className="mx-auto max-w-[110rem] px-6 pb-32 md:px-12">
-      <section className="py-14 md:py-24">
-        <Reveal>
-          <h1 className="font-serif text-[2.6rem] leading-[1.05] font-light md:text-[4.2rem]">
-            Galerie
+    <div className="mx-auto max-w-[110rem] px-6 pb-28 md:px-12">
+      <section className="grid gap-8 py-14 md:grid-cols-12 md:py-20">
+        <Reveal className="md:col-span-5">
+          <h1 className="font-serif text-[2.6rem] leading-[1.05] font-light md:text-[4rem]">
+            Pânze
           </h1>
-          <p className="mt-6 max-w-lg text-muted-foreground">
-            Lucrările reale urmează să fie adăugate. Până atunci, spațiile de mai jos marchează
-            unde va sta fiecare imagine.
+        </Reveal>
+        <Reveal delay={100} className="md:col-span-6 md:col-start-7 md:pt-6">
+          <p className="max-w-xl text-muted-foreground">{t(seriesInfo.intro)}</p>
+        </Reveal>
+      </section>
+
+      <section>
+        <Reveal className="flex flex-wrap items-baseline justify-between gap-4 border-t border-border pt-6">
+          <h2 className="font-serif text-2xl font-light md:text-3xl">{t(seriesInfo.title)}</h2>
+          <p className="label-xs">
+            {t(seriesInfo.technique)} · {t(seriesInfo.size)}
           </p>
         </Reveal>
 
-        <Reveal delay={120}>
-          <div className="label-xs mt-12 flex flex-wrap gap-6">
-            {categories.map((c) => (
+        <div className="mt-10 grid grid-cols-1 gap-x-6 gap-y-10 sm:grid-cols-2 lg:grid-cols-3">
+          {artworks.map((a, i) => (
+            <Reveal key={a.id} delay={(i % 3) * 70}>
               <button
-                key={c.key}
                 type="button"
-                onClick={() => setActive(c.key)}
-                className={`quiet-link ${active === c.key ? "text-foreground" : "hover:text-foreground"}`}
+                onClick={() => setOpen(a)}
+                className="group block w-full text-left"
               >
-                {t(c.label)}
+                <div className="img-zoom overflow-hidden">
+                  <img
+                    src={a.src}
+                    alt={`Lucrare Fluid Art, acrilic, 50 cm, Trieste 2024`}
+                    loading="lazy"
+                    className="w-full object-cover"
+                  />
+                </div>
+                <p className="mt-3 font-serif text-lg font-light">
+                  {a.title ? t(a.title) : t(untitledLabel)}
+                </p>
+                <p className="label-xs mt-1">
+                  {t(seriesInfo.technique)} · {t(seriesInfo.size)}
+                </p>
               </button>
-            ))}
-          </div>
-        </Reveal>
+            </Reveal>
+          ))}
+        </div>
       </section>
 
-      <section className="columns-1 gap-8 sm:columns-2 lg:columns-3">
-        {items.map((item, i) => (
-          <Reveal key={item.id} delay={(i % 3) * 80} className="mb-8 break-inside-avoid">
-            <button
-              type="button"
-              onClick={() => setLightbox(item)}
-              className="img-zoom block w-full text-left"
-            >
-              <Placeholder label={item.placeholder} ratio={item.ratio} />
-              <span className="label-xs mt-3 block">{t(item.category)}</span>
-            </button>
-          </Reveal>
-        ))}
-      </section>
-
-      {lightbox && (
+      {open && (
         <div
-          className="fixed inset-0 z-[60] flex items-center justify-center bg-background/97 p-6"
-          onClick={() => setLightbox(null)}
+          className="fixed inset-0 z-[60] flex items-center justify-center bg-background/97 p-5 md:p-10"
+          onClick={() => setOpen(null)}
           role="dialog"
           aria-modal="true"
         >
           <button
             type="button"
-            onClick={() => setLightbox(null)}
+            onClick={() => setOpen(null)}
             aria-label="Închide"
-            className="label-xs absolute top-6 right-6"
+            className="label-xs absolute top-6 right-6 z-10"
           >
             Închide ✕
           </button>
-          <div className="w-full max-w-3xl" onClick={(e) => e.stopPropagation()}>
-            <Placeholder label={lightbox.placeholder} ratio={lightbox.ratio} />
-            <p className="label-xs mt-4">{t(lightbox.category)}</p>
-          </div>
+          <figure
+            className="flex max-h-full w-full max-w-4xl flex-col items-center"
+            onClick={(e) => e.stopPropagation()}
+          >
+            <img
+              src={open.src}
+              alt={open.title ? t(open.title) : "Lucrare Fluid Art"}
+              className="max-h-[72vh] w-auto max-w-full object-contain"
+            />
+            <figcaption className="mt-6 text-center">
+              <p className="font-serif text-xl font-light">
+                {open.title ? t(open.title) : t(untitledLabel)}
+              </p>
+              <p className="label-xs mt-3">{t(seriesInfo.techniqueLong)}</p>
+              <p className="label-xs">{t(seriesInfo.size)}</p>
+              <p className="label-xs">{t(seriesInfo.place)}</p>
+            </figcaption>
+          </figure>
         </div>
       )}
     </div>
