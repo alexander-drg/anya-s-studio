@@ -60,39 +60,62 @@ export const values: { title: Copy; line: Copy }[] = [
   },
 ];
 
-/** Atmosfera atelierului — fragmente din experiența de a crea împreună. */
-export const atelierFragments: { title: Copy; line: Copy; placeholder: string; ratio: string }[] = [
+/** Atmosfera atelierului — fragmente din experiența de a crea. */
+export const atelierFragments: { title: Copy; line: Copy; src: string; ratio: string }[] = [
   {
-    title: { ro: "Mâini și hârtie", en: "Hands and paper", it: "Mani e carta" },
+    title: { ro: "Pensule", en: "Brushes", it: "Pennelli" },
     line: {
-      ro: "Foaia albă, creioanele aliniate, primul gest.",
-      en: "The blank sheet, the lined-up pencils, the first gesture.",
-      it: "Il foglio bianco, le matite allineate, il primo gesto.",
+      ro: "Aliniate pe paletă, înainte de primul gest.",
+      en: "Lined up on the palette, before the first gesture.",
+      it: "Allineati sulla tavolozza, prima del primo gesto.",
     },
-    placeholder: "[Mâini, hârtie, creioane]",
-    ratio: "3 / 2",
-  },
-  {
-    title: { ro: "Desenăm împreună", en: "Drawing together", it: "Disegnare insieme" },
-    line: {
-      ro: "Fiecare pe foaia lui, toți în aceeași liniște.",
-      en: "Each on their own sheet, everyone in the same quiet.",
-      it: "Ognuno sul proprio foglio, tutti nello stesso silenzio.",
-    },
-    placeholder: "[Grup desenând în atelier]",
-    ratio: "4 / 5",
+    src: atelierPensule,
+    ratio: "3 / 4",
   },
   {
     title: { ro: "Culoare, aproape", en: "Colour, up close", it: "Colore, da vicino" },
     line: {
-      ro: "Treizeci și șase de culori și timp să alegi una.",
-      en: "Thirty-six colours and time to choose one.",
-      it: "Trentasei colori e il tempo di sceglierne uno.",
+      ro: "Tuburile deschise, urmele lăsate pe masă.",
+      en: "Open tubes, the traces left on the table.",
+      it: "Tubetti aperti, le tracce lasciate sul tavolo.",
     },
-    placeholder: "[Detaliu culoare]",
-    ratio: "1 / 1",
+    src: atelierTuburi,
+    ratio: "4 / 3",
+  },
+  {
+    title: { ro: "Materie", en: "Matter", it: "Materia" },
+    line: {
+      ro: "Straturi, relief, lumina care intră în pastă.",
+      en: "Layers, relief, light entering the paint.",
+      it: "Strati, rilievo, la luce che entra nella materia.",
+    },
+    src: atelierTextura,
+    ratio: "3 / 2",
   },
 ];
+
+/** Statement-ul artistic principal — cuvintele clientei, sursă de adevăr în română. */
+export const artistStatement: Copy = {
+  ro: "Există momente în care culoarea spune ceea ce cuvintele nu pot spune.\nExistă momente în care liniștea devine cea mai profundă formă de dialog.\nÎntâlnirea dintre cele două este viziunea mea.",
+  en: "There are moments when colour says what words cannot say.\nThere are moments when silence becomes the deepest form of dialogue.\nThe meeting of the two is my vision.",
+  it: "Ci sono momenti in cui il colore dice ciò che le parole non possono dire.\nCi sono momenti in cui il silenzio diventa la forma più profonda di dialogo.\nL'incontro tra i due è la mia visione.",
+};
+
+/** Linia conceptuală recurentă. ARTA / PREZENȚA primesc accent tipografic. */
+export const conceptLine: { before: Copy; a: Copy; middle: Copy; b: Copy; after: Copy } = {
+  before: { ro: "Unde ", en: "Where ", it: "Dove l'" },
+  a: { ro: "ARTA", en: "ART", it: "ARTE" },
+  middle: { ro: " întâlnește ", en: " meets ", it: " incontra la " },
+  b: { ro: "PREZENȚA", en: "PRESENCE", it: "PRESENZA" },
+  after: { ro: ".", en: ".", it: "." },
+};
+
+/** Explicația scurtă a demersului. */
+export const approachLine: Copy = {
+  ro: "Cultivarea prezenței prin artă, percepție și experiență creativă.",
+  en: "Cultivating presence through art, perception and creative experience.",
+  it: "Coltivare la presenza attraverso arte, percezione ed esperienza creativa.",
+};
 
 
 /** Three expressions of the same idea: presence. */
