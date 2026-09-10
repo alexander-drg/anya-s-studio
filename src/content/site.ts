@@ -1,4 +1,17 @@
+import atelierPanzaPensule from "@/assets/atelier_panza_pensule.jpeg";
+import atelierPensule from "@/assets/atelier_pensule.jpeg";
+import atelierTextura from "@/assets/atelier_textura.jpeg";
+import atelierTuburi from "@/assets/atelier_tuburi.jpeg";
+import fluid01 from "@/assets/fluid_01.jpeg";
+import fluid02 from "@/assets/fluid_02.jpeg";
+import fluid03 from "@/assets/fluid_03.jpeg";
+import fluid04 from "@/assets/fluid_04.jpeg";
+import fluid05 from "@/assets/fluid_05.jpeg";
+import fluid06 from "@/assets/fluid_06.jpeg";
 import type { Copy } from "@/lib/i18n";
+
+/** Fotografia de atelier folosită ca hero pe pagina de start. */
+export const heroImage = atelierPanzaPensule;
 
 export const ARTIST_NAME = "Brîndușa Nicolescu";
 
@@ -60,39 +73,62 @@ export const values: { title: Copy; line: Copy }[] = [
   },
 ];
 
-/** Atmosfera atelierului — fragmente din experiența de a crea împreună. */
-export const atelierFragments: { title: Copy; line: Copy; placeholder: string; ratio: string }[] = [
+/** Atmosfera atelierului — fragmente din experiența de a crea. */
+export const atelierFragments: { title: Copy; line: Copy; src: string; ratio: string }[] = [
   {
-    title: { ro: "Mâini și hârtie", en: "Hands and paper", it: "Mani e carta" },
+    title: { ro: "Pensule", en: "Brushes", it: "Pennelli" },
     line: {
-      ro: "Foaia albă, creioanele aliniate, primul gest.",
-      en: "The blank sheet, the lined-up pencils, the first gesture.",
-      it: "Il foglio bianco, le matite allineate, il primo gesto.",
+      ro: "Aliniate pe paletă, înainte de primul gest.",
+      en: "Lined up on the palette, before the first gesture.",
+      it: "Allineati sulla tavolozza, prima del primo gesto.",
     },
-    placeholder: "[Mâini, hârtie, creioane]",
-    ratio: "3 / 2",
-  },
-  {
-    title: { ro: "Desenăm împreună", en: "Drawing together", it: "Disegnare insieme" },
-    line: {
-      ro: "Fiecare pe foaia lui, toți în aceeași liniște.",
-      en: "Each on their own sheet, everyone in the same quiet.",
-      it: "Ognuno sul proprio foglio, tutti nello stesso silenzio.",
-    },
-    placeholder: "[Grup desenând în atelier]",
-    ratio: "4 / 5",
+    src: atelierPensule,
+    ratio: "3 / 4",
   },
   {
     title: { ro: "Culoare, aproape", en: "Colour, up close", it: "Colore, da vicino" },
     line: {
-      ro: "Treizeci și șase de culori și timp să alegi una.",
-      en: "Thirty-six colours and time to choose one.",
-      it: "Trentasei colori e il tempo di sceglierne uno.",
+      ro: "Tuburile deschise, urmele lăsate pe masă.",
+      en: "Open tubes, the traces left on the table.",
+      it: "Tubetti aperti, le tracce lasciate sul tavolo.",
     },
-    placeholder: "[Detaliu culoare]",
-    ratio: "1 / 1",
+    src: atelierTuburi,
+    ratio: "4 / 3",
+  },
+  {
+    title: { ro: "Materie", en: "Matter", it: "Materia" },
+    line: {
+      ro: "Straturi, relief, lumina care intră în pastă.",
+      en: "Layers, relief, light entering the paint.",
+      it: "Strati, rilievo, la luce che entra nella materia.",
+    },
+    src: atelierTextura,
+    ratio: "3 / 2",
   },
 ];
+
+/** Statement-ul artistic principal — cuvintele clientei, sursă de adevăr în română. */
+export const artistStatement: Copy = {
+  ro: "Există momente în care culoarea spune ceea ce cuvintele nu pot spune.\nExistă momente în care liniștea devine cea mai profundă formă de dialog.\nÎntâlnirea dintre cele două este viziunea mea.",
+  en: "There are moments when colour says what words cannot say.\nThere are moments when silence becomes the deepest form of dialogue.\nThe meeting of the two is my vision.",
+  it: "Ci sono momenti in cui il colore dice ciò che le parole non possono dire.\nCi sono momenti in cui il silenzio diventa la forma più profonda di dialogo.\nL'incontro tra i due è la mia visione.",
+};
+
+/** Linia conceptuală recurentă. ARTA / PREZENȚA primesc accent tipografic. */
+export const conceptLine: { before: Copy; a: Copy; middle: Copy; b: Copy; after: Copy } = {
+  before: { ro: "Unde ", en: "Where ", it: "Dove l'" },
+  a: { ro: "ARTA", en: "ART", it: "ARTE" },
+  middle: { ro: " întâlnește ", en: " meets ", it: " incontra la " },
+  b: { ro: "PREZENȚA", en: "PRESENCE", it: "PRESENZA" },
+  after: { ro: ".", en: ".", it: "." },
+};
+
+/** Explicația scurtă a demersului. */
+export const approachLine: Copy = {
+  ro: "Cultivarea prezenței prin artă, percepție și experiență creativă.",
+  en: "Cultivating presence through art, perception and creative experience.",
+  it: "Coltivare la presenza attraverso arte, percezione ed esperienza creativa.",
+};
 
 
 /** Three expressions of the same idea: presence. */
@@ -163,68 +199,46 @@ export const testimonials: Testimonial[] = [
   },
 ];
 
-/** Galerie — locuri pregătite pentru imaginile reale. */
-export type GalleryItem = {
+/**
+ * Seria Fluid Art — Trieste, 2024.
+ * Titlurile individuale urmează să fie furnizate de clientă; `title` rămâne
+ * `null` până atunci și se afișează „[Titlul lucrării]". NU se inventează titluri.
+ */
+export type Artwork = {
   id: string;
-  placeholder: string;
-  category: Copy;
-  ratio: string;
-  caption?: Copy;
+  src: string;
+  /** Titlul real, cu traduceri opționale. `null` = încă nefurnizat. */
+  title: Copy | null;
 };
 
-export const galleryItems: GalleryItem[] = [
-  {
-    id: "g1",
-    placeholder: "[Desen fractal]",
-    category: { ro: "Desen Fractal", en: "Fractal Drawing" },
-    ratio: "3 / 4",
-  },
-  {
-    id: "g2",
-    placeholder: "[Detaliu desen fractal]",
-    category: { ro: "Desen Fractal", en: "Fractal Drawing" },
-    ratio: "1 / 1",
-  },
-  {
-    id: "g3",
-    placeholder: "[Pictură]",
-    category: { ro: "Pictură", en: "Painting" },
-    ratio: "4 / 3",
-  },
-  {
-    id: "g4",
-    placeholder: "[Proces creativ]",
-    category: { ro: "Proces", en: "Process" },
-    ratio: "3 / 4",
-  },
-  {
-    id: "g5",
-    placeholder: "[Mâini și materiale]",
-    category: { ro: "Proces", en: "Process" },
-    ratio: "4 / 3",
-  },
-  {
-    id: "g6",
-    placeholder: "[Desen fractal, culoare]",
-    category: { ro: "Desen Fractal", en: "Fractal Drawing" },
-    ratio: "1 / 1",
-  },
-  {
-    id: "g7",
-    placeholder: "[Pictură, detaliu]",
-    category: { ro: "Pictură", en: "Painting" },
-    ratio: "4 / 5",
-  },
-  {
-    id: "g8",
-    placeholder: "[Atelier]",
-    category: { ro: "Proces", en: "Process" },
-    ratio: "16 / 10",
-  },
-  {
-    id: "g9",
-    placeholder: "[Desen fractal, linie]",
-    category: { ro: "Desen Fractal", en: "Fractal Drawing" },
-    ratio: "3 / 4",
-  },
+export const seriesInfo = {
+  title: { ro: "Trieste, 2024", en: "Trieste, 2024", it: "Trieste, 2024" } as Copy,
+  technique: { ro: "Acrilic · Fluid Art", en: "Acrylic · Fluid Art", it: "Acrilico · Fluid Art" } as Copy,
+  techniqueLong: {
+    ro: "Acrilic, tehnica Fluid Art",
+    en: "Acrylic, Fluid Art technique",
+    it: "Acrilico, tecnica Fluid Art",
+  } as Copy,
+  size: { ro: "50 cm", en: "50 cm", it: "50 cm" } as Copy,
+  place: { ro: "Trieste, Italia · 2024", en: "Trieste, Italy · 2024", it: "Trieste, Italia · 2024" } as Copy,
+  intro: {
+    ro: "Lucrări în acrilic, tehnica Fluid Art, de aproximativ 50 cm, parte dintr-o expoziție din 2024, la Trieste. Fiecare poartă un titlu legat de o emoție și/sau un sentiment.",
+    en: "Acrylic works in the Fluid Art technique, around 50 cm, part of a 2024 exhibition in Trieste. Each carries a title connected to an emotion and/or a feeling.",
+    it: "Opere in acrilico, tecnica Fluid Art, di circa 50 cm, parte di una mostra del 2024 a Trieste. Ognuna porta un titolo legato a un'emozione e/o a un sentimento.",
+  } as Copy,
+};
+
+export const untitledLabel: Copy = {
+  ro: "[Titlul lucrării]",
+  en: "[Titlul lucrării]",
+  it: "[Titlul lucrării]",
+};
+
+export const artworks: Artwork[] = [
+  { id: "fa-01", src: fluid01, title: null },
+  { id: "fa-02", src: fluid02, title: null },
+  { id: "fa-03", src: fluid03, title: null },
+  { id: "fa-04", src: fluid04, title: null },
+  { id: "fa-05", src: fluid05, title: null },
+  { id: "fa-06", src: fluid06, title: null },
 ];
