@@ -1,4 +1,17 @@
+import atelierPanzaPensule from "@/assets/atelier_panza_pensule.jpeg";
+import atelierPensule from "@/assets/atelier_pensule.jpeg";
+import atelierTextura from "@/assets/atelier_textura.jpeg";
+import atelierTuburi from "@/assets/atelier_tuburi.jpeg";
+import fluid01 from "@/assets/fluid_01.jpeg";
+import fluid02 from "@/assets/fluid_02.jpeg";
+import fluid03 from "@/assets/fluid_03.jpeg";
+import fluid04 from "@/assets/fluid_04.jpeg";
+import fluid05 from "@/assets/fluid_05.jpeg";
+import fluid06 from "@/assets/fluid_06.jpeg";
 import type { Copy } from "@/lib/i18n";
+
+/** Fotografia de atelier folosită ca hero pe pagina de start. */
+export const heroImage = atelierPanzaPensule;
 
 export const ARTIST_NAME = "Brîndușa Nicolescu";
 
@@ -186,68 +199,46 @@ export const testimonials: Testimonial[] = [
   },
 ];
 
-/** Galerie — locuri pregătite pentru imaginile reale. */
-export type GalleryItem = {
+/**
+ * Seria Fluid Art — Trieste, 2024.
+ * Titlurile individuale urmează să fie furnizate de clientă; `title` rămâne
+ * `null` până atunci și se afișează „[Titlul lucrării]". NU se inventează titluri.
+ */
+export type Artwork = {
   id: string;
-  placeholder: string;
-  category: Copy;
-  ratio: string;
-  caption?: Copy;
+  src: string;
+  /** Titlul real, cu traduceri opționale. `null` = încă nefurnizat. */
+  title: Copy | null;
 };
 
-export const galleryItems: GalleryItem[] = [
-  {
-    id: "g1",
-    placeholder: "[Desen fractal]",
-    category: { ro: "Desen Fractal", en: "Fractal Drawing" },
-    ratio: "3 / 4",
-  },
-  {
-    id: "g2",
-    placeholder: "[Detaliu desen fractal]",
-    category: { ro: "Desen Fractal", en: "Fractal Drawing" },
-    ratio: "1 / 1",
-  },
-  {
-    id: "g3",
-    placeholder: "[Pictură]",
-    category: { ro: "Pictură", en: "Painting" },
-    ratio: "4 / 3",
-  },
-  {
-    id: "g4",
-    placeholder: "[Proces creativ]",
-    category: { ro: "Proces", en: "Process" },
-    ratio: "3 / 4",
-  },
-  {
-    id: "g5",
-    placeholder: "[Mâini și materiale]",
-    category: { ro: "Proces", en: "Process" },
-    ratio: "4 / 3",
-  },
-  {
-    id: "g6",
-    placeholder: "[Desen fractal, culoare]",
-    category: { ro: "Desen Fractal", en: "Fractal Drawing" },
-    ratio: "1 / 1",
-  },
-  {
-    id: "g7",
-    placeholder: "[Pictură, detaliu]",
-    category: { ro: "Pictură", en: "Painting" },
-    ratio: "4 / 5",
-  },
-  {
-    id: "g8",
-    placeholder: "[Atelier]",
-    category: { ro: "Proces", en: "Process" },
-    ratio: "16 / 10",
-  },
-  {
-    id: "g9",
-    placeholder: "[Desen fractal, linie]",
-    category: { ro: "Desen Fractal", en: "Fractal Drawing" },
-    ratio: "3 / 4",
-  },
+export const seriesInfo = {
+  title: { ro: "Trieste, 2024", en: "Trieste, 2024", it: "Trieste, 2024" } as Copy,
+  technique: { ro: "Acrilic · Fluid Art", en: "Acrylic · Fluid Art", it: "Acrilico · Fluid Art" } as Copy,
+  techniqueLong: {
+    ro: "Acrilic, tehnica Fluid Art",
+    en: "Acrylic, Fluid Art technique",
+    it: "Acrilico, tecnica Fluid Art",
+  } as Copy,
+  size: { ro: "50 cm", en: "50 cm", it: "50 cm" } as Copy,
+  place: { ro: "Trieste, Italia · 2024", en: "Trieste, Italy · 2024", it: "Trieste, Italia · 2024" } as Copy,
+  intro: {
+    ro: "Lucrări în acrilic, tehnica Fluid Art, de aproximativ 50 cm, parte dintr-o expoziție din 2024, la Trieste. Fiecare poartă un titlu legat de o emoție și/sau un sentiment.",
+    en: "Acrylic works in the Fluid Art technique, around 50 cm, part of a 2024 exhibition in Trieste. Each carries a title connected to an emotion and/or a feeling.",
+    it: "Opere in acrilico, tecnica Fluid Art, di circa 50 cm, parte di una mostra del 2024 a Trieste. Ognuna porta un titolo legato a un'emozione e/o a un sentimento.",
+  } as Copy,
+};
+
+export const untitledLabel: Copy = {
+  ro: "[Titlul lucrării]",
+  en: "[Titlul lucrării]",
+  it: "[Titlul lucrării]",
+};
+
+export const artworks: Artwork[] = [
+  { id: "fa-01", src: fluid01, title: null },
+  { id: "fa-02", src: fluid02, title: null },
+  { id: "fa-03", src: fluid03, title: null },
+  { id: "fa-04", src: fluid04, title: null },
+  { id: "fa-05", src: fluid05, title: null },
+  { id: "fa-06", src: fluid06, title: null },
 ];
