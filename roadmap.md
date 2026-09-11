@@ -1,0 +1,3 @@
+- [ ] Eliminate atelier detail photos from the site
+- [ ] Replace homepage background with a real workshop photograph
+- [ ] Keep only circular Fluid Art paintings in artwork presentations
