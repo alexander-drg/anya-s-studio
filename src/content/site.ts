@@ -1,7 +1,4 @@
-import atelierPanzaPensule from "@/assets/atelier_panza_pensule.jpeg";
-import atelierPensule from "@/assets/atelier_pensule.jpeg";
-import atelierTextura from "@/assets/atelier_textura.jpeg";
-import atelierTuburi from "@/assets/atelier_tuburi.jpeg";
+import workshopHero from "@/assets/workshop-hero.jpg";
 import fluid01 from "@/assets/fluid_01.jpeg";
 import fluid02 from "@/assets/fluid_02.jpeg";
 import fluid03 from "@/assets/fluid_03.jpeg";
@@ -11,7 +8,7 @@ import fluid06 from "@/assets/fluid_06.jpeg";
 import type { Copy } from "@/lib/i18n";
 
 /** Fotografia de atelier folosită ca hero pe pagina de start. */
-export const heroImage = atelierPanzaPensule;
+export const heroImage = workshopHero;
 
 export const ARTIST_NAME = "Brîndușa Nicolescu";
 
@@ -70,40 +67,6 @@ export const values: { title: Copy; line: Copy }[] = [
       en: "A living balance between body, mind, emotions, and creative expression.",
       it: "Un equilibrio vivo tra corpo, mente, emozioni ed espressione creativa.",
     },
-  },
-];
-
-/** Atmosfera atelierului — fragmente din experiența de a crea. */
-export const atelierFragments: { title: Copy; line: Copy; src: string; ratio: string }[] = [
-  {
-    title: { ro: "Pensule", en: "Brushes", it: "Pennelli" },
-    line: {
-      ro: "Aliniate pe paletă, înainte de primul gest.",
-      en: "Lined up on the palette, before the first gesture.",
-      it: "Allineati sulla tavolozza, prima del primo gesto.",
-    },
-    src: atelierPensule,
-    ratio: "3 / 4",
-  },
-  {
-    title: { ro: "Culoare, aproape", en: "Colour, up close", it: "Colore, da vicino" },
-    line: {
-      ro: "Tuburile deschise, urmele lăsate pe masă.",
-      en: "Open tubes, the traces left on the table.",
-      it: "Tubetti aperti, le tracce lasciate sul tavolo.",
-    },
-    src: atelierTuburi,
-    ratio: "4 / 3",
-  },
-  {
-    title: { ro: "Materie", en: "Matter", it: "Materia" },
-    line: {
-      ro: "Straturi, relief, lumina care intră în pastă.",
-      en: "Layers, relief, light entering the paint.",
-      it: "Strati, rilievo, la luce che entra nella materia.",
-    },
-    src: atelierTextura,
-    ratio: "3 / 2",
   },
 ];
 

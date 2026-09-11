@@ -9,7 +9,6 @@ import {
   approachLine,
   artistStatement,
   artworks,
-  atelierFragments,
   conceptLine,
   heroImage,
   presenceMoments,
@@ -76,7 +75,7 @@ function Home() {
       <section className="relative -mt-[4.5rem] h-[100svh] w-full overflow-hidden md:-mt-[6rem]">
         <img
           src={heroImage}
-          alt="Detaliu de atelier: pânză în lucru și pensule"
+          alt="Atelier de pictură luminat natural"
           className="absolute inset-0 h-full w-full object-cover"
           style={{
             transform: `translate3d(0, ${Math.min(scrollY * 0.12, 90)}px, 0) scale(1.08)`,
@@ -113,35 +112,7 @@ function Home() {
         </Reveal>
       </section>
 
-      {/* 3. Atelier */}
-      <section id="atelier" className="mx-auto max-w-[110rem] px-6 md:px-12">
-        <Reveal className="flex flex-wrap items-baseline justify-between gap-4 border-t border-border pt-6">
-          <h2 className="font-serif text-2xl font-light md:text-3xl">Atelier</h2>
-          <Link to="/explorari" className="label-xs quiet-link">
-            Explorări →
-          </Link>
-        </Reveal>
-
-        <div className="mt-10 grid gap-x-6 gap-y-10 md:grid-cols-3">
-          {atelierFragments.map((f, i) => (
-            <Reveal key={t(f.title)} delay={i * 80}>
-              <div className="img-zoom overflow-hidden">
-                <img
-                  src={f.src}
-                  alt={t(f.title)}
-                  loading="lazy"
-                  style={{ aspectRatio: f.ratio }}
-                  className="w-full object-cover"
-                />
-              </div>
-              <h3 className="mt-4 font-serif text-xl font-light">{t(f.title)}</h3>
-              <p className="mt-2 text-sm text-muted-foreground">{t(f.line)}</p>
-            </Reveal>
-          ))}
-        </div>
-      </section>
-
-      {/* 4. Brîndușa */}
+      {/* 3. Brîndușa */}
       <section id="introducere" className="mx-auto max-w-[110rem] px-6 py-24 md:px-12 md:py-32">
         <div className="grid gap-10 md:grid-cols-12">
           <Reveal className="md:col-span-4">
