@@ -1,3 +1,3 @@
 - [x] Add the next 10 circular Fluid Art photographs
-- [ ] Replace the homepage workshop background with a neutral, unoccupied studio
+- [x] Replace the homepage workshop background with a neutral, unoccupied studio
 - [ ] Verify the gallery and homepage preview

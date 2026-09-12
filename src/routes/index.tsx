@@ -75,7 +75,9 @@ function Home() {
       <section className="relative -mt-[4.5rem] h-[100svh] w-full overflow-hidden md:-mt-[6rem]">
         <img
           src={heroImage}
-          alt="Atelier de pictură luminat natural"
+          alt="Atelier de pictură cu pânze circulare pregătite pentru lucru"
+          width={1920}
+          height={1080}
           className="absolute inset-0 h-full w-full object-cover"
           style={{
             transform: `translate3d(0, ${Math.min(scrollY * 0.12, 90)}px, 0) scale(1.08)`,
