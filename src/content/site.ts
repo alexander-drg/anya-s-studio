@@ -1,10 +1,20 @@
-import workshopHero from "@/assets/workshop-hero.jpg";
+import workshopHero from "@/assets/workshop-hero-neutral.jpg";
 import fluid01 from "@/assets/fluid_01.jpeg";
 import fluid02 from "@/assets/fluid_02.jpeg";
 import fluid03 from "@/assets/fluid_03.jpeg";
 import fluid04 from "@/assets/fluid_04.jpeg";
 import fluid05 from "@/assets/fluid_05.jpeg";
 import fluid06 from "@/assets/fluid_06.jpeg";
+import fluid07 from "@/assets/fluid_07.jpeg";
+import fluid08 from "@/assets/fluid_08.jpeg";
+import fluid09 from "@/assets/fluid_09.jpeg";
+import fluid10 from "@/assets/fluid_10.jpeg";
+import fluid11 from "@/assets/fluid_11.jpeg";
+import fluid12 from "@/assets/fluid_12.jpeg";
+import fluid13 from "@/assets/fluid_13.jpeg";
+import fluid14 from "@/assets/fluid_14.jpeg";
+import fluid15 from "@/assets/fluid_15.jpeg";
+import fluid16 from "@/assets/fluid_16.jpeg";
 import type { Copy } from "@/lib/i18n";
 
 /** Fotografia de atelier folosită ca hero pe pagina de start. */
@@ -204,4 +214,14 @@ export const artworks: Artwork[] = [
   { id: "fa-04", src: fluid04, title: null },
   { id: "fa-05", src: fluid05, title: null },
   { id: "fa-06", src: fluid06, title: null },
+  { id: "fa-07", src: fluid07, title: null },
+  { id: "fa-08", src: fluid08, title: null },
+  { id: "fa-09", src: fluid09, title: null },
+  { id: "fa-10", src: fluid10, title: null },
+  { id: "fa-11", src: fluid11, title: null },
+  { id: "fa-12", src: fluid12, title: null },
+  { id: "fa-13", src: fluid13, title: null },
+  { id: "fa-14", src: fluid14, title: null },
+  { id: "fa-15", src: fluid15, title: null },
+  { id: "fa-16", src: fluid16, title: null },
 ];
