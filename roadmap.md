@@ -1,3 +1,7 @@
-- [x] Add the next 10 circular Fluid Art photographs
-- [x] Replace the homepage workshop background with a neutral, unoccupied studio
-- [ ] Verify the gallery and homepage preview
+- [x] Audit current page rhythm and reference structure
+- [x] Identify and stage the new unique Fluid Art photographs
+- [ ] Extend the shared artwork collection
+- [ ] Recompose the homepage into a compact editorial flow
+- [ ] Tighten spacing and hierarchy across all content pages
+- [ ] Preserve and compact the public moderated Blog Q&A
+- [ ] Verify desktop and mobile pages, gallery lightbox, links, and runtime health

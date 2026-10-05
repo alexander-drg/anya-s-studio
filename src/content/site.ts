@@ -15,6 +15,15 @@ import fluid13 from "@/assets/fluid_13.jpeg";
 import fluid14 from "@/assets/fluid_14.jpeg";
 import fluid15 from "@/assets/fluid_15.jpeg";
 import fluid16 from "@/assets/fluid_16.jpeg";
+import fluid17 from "@/assets/fluid_17.jpeg";
+import fluid18 from "@/assets/fluid_18.jpeg";
+import fluid19 from "@/assets/fluid_19.jpeg";
+import fluid20 from "@/assets/fluid_20.jpeg";
+import fluid21 from "@/assets/fluid_21.jpeg";
+import fluid22 from "@/assets/fluid_22.jpeg";
+import fluid23 from "@/assets/fluid_23.jpeg";
+import fluid24 from "@/assets/fluid_24.jpeg";
+import fluid25 from "@/assets/fluid_25.jpeg";
 import type { Copy } from "@/lib/i18n";
 
 /** Fotografia de atelier folosită ca hero pe pagina de start. */
@@ -224,4 +233,13 @@ export const artworks: Artwork[] = [
   { id: "fa-14", src: fluid14, title: null },
   { id: "fa-15", src: fluid15, title: null },
   { id: "fa-16", src: fluid16, title: null },
+  { id: "fa-17", src: fluid17, title: null },
+  { id: "fa-18", src: fluid18, title: null },
+  { id: "fa-19", src: fluid19, title: null },
+  { id: "fa-20", src: fluid20, title: null },
+  { id: "fa-21", src: fluid21, title: null },
+  { id: "fa-22", src: fluid22, title: null },
+  { id: "fa-23", src: fluid23, title: null },
+  { id: "fa-24", src: fluid24, title: null },
+  { id: "fa-25", src: fluid25, title: null },
 ];
