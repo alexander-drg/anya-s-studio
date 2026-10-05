@@ -7,9 +7,9 @@ import { useT } from "@/lib/i18n";
 export function SiteFooter() {
   const t = useT();
   return (
-    <footer className="mx-auto max-w-[110rem] px-6 pb-14 md:px-12">
-      <ContinuousLine className="mb-12 h-6 w-full text-border" />
-      <div className="grid gap-10 md:grid-cols-3">
+    <footer className="mx-auto max-w-[110rem] px-6 pb-10 md:px-12">
+      <ContinuousLine className="mb-8 h-5 w-full text-border" />
+      <div className="grid gap-8 md:grid-cols-3">
         <div>
           <p className="font-serif text-xl">{contact.name}</p>
           <p className="label-xs mt-3">{contact.locations.join(" · ")}</p>
@@ -36,7 +36,7 @@ export function SiteFooter() {
           ))}
         </nav>
       </div>
-      <p className="label-xs mt-12">© {new Date().getFullYear()} {contact.name}</p>
+      <p className="label-xs mt-8">© {new Date().getFullYear()} {contact.name}</p>
     </footer>
   );
 }

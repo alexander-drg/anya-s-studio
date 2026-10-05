@@ -30,6 +30,7 @@
   --color-stone-warm: var(--stone-warm);
   --color-sage: var(--sage);
   --color-terracotta: var(--terracotta);
+  --color-hero-foreground: var(--hero-foreground);
   --color-beige: var(--beige);
   --font-serif: "Cormorant Garamond", Georgia, serif;
   --font-sans: "Karla", system-ui, sans-serif;
@@ -63,6 +64,7 @@
   --stone-warm: oklch(0.79 0.014 80);
   --sage: oklch(0.52 0.032 165);
   --terracotta: oklch(0.56 0.09 45);
+  --hero-foreground: oklch(0.97 0.01 85);
 }
 
 .dark {
@@ -87,6 +89,7 @@
   --stone-warm: oklch(0.45 0.01 70);
   --sage: oklch(0.62 0.04 165);
   --terracotta: oklch(0.62 0.09 45);
+  --hero-foreground: oklch(0.97 0.01 85);
 }
 
 @layer base {
@@ -103,7 +106,7 @@
     color: var(--color-foreground);
     font-family: var(--font-sans);
     font-size: 0.95rem;
-    line-height: 1.75;
+    line-height: 1.65;
     -webkit-font-smoothing: antialiased;
   }
 
@@ -118,6 +121,30 @@
   ::selection {
     background: var(--color-sage);
     color: var(--color-background);
+  }
+}
+
+@utility page-shell {
+  width: 100%;
+  max-width: 110rem;
+  margin-inline: auto;
+  padding-inline: 1.5rem;
+  @media (width >= 48rem) {
+    padding-inline: 3rem;
+  }
+}
+
+@utility section-space {
+  padding-block: 3.5rem;
+  @media (width >= 48rem) {
+    padding-block: 5rem;
+  }
+}
+
+@utility section-space-compact {
+  padding-block: 2.5rem;
+  @media (width >= 48rem) {
+    padding-block: 3.5rem;
   }
 }
 

@@ -60,7 +60,7 @@ export function SiteHeader() {
             : "bg-background/95 text-foreground backdrop-blur-sm"
         }`}
       >
-        <div className="mx-auto flex max-w-[110rem] items-center justify-between px-6 py-5 md:px-12 md:py-7">
+        <div className="mx-auto flex max-w-[110rem] items-center justify-between px-6 py-4 md:px-12 md:py-5">
           <Link
             to="/"
             onClick={() => setOpen(false)}
@@ -71,7 +71,7 @@ export function SiteHeader() {
           </Link>
 
           <div className="hidden items-center lg:flex">
-            <nav className="flex items-center gap-9">
+            <nav className="flex items-center gap-7">
               {nav.slice(1).map((item) => (
                 <Link
                   key={item.to}

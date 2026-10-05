@@ -73,13 +73,13 @@ export function QuestionSection({ postSlug }: { postSlug: string }) {
   }
 
   return (
-    <section className="border-t border-border pt-16 md:pt-24">
-      <Reveal className="grid gap-12 md:grid-cols-12">
+    <section className="border-t border-border pt-12 md:pt-16">
+      <Reveal className="grid gap-8 md:grid-cols-12">
         <div className="md:col-span-4">
           <h2 className="font-serif text-3xl leading-tight font-light md:text-4xl">
             Ai o întrebare?
           </h2>
-          <p className="mt-6 max-w-sm text-muted-foreground">
+          <p className="mt-4 max-w-sm text-muted-foreground">
             Scrie-mi. Citesc fiecare întrebare și, când răspund, o public aici — fără adresa ta de
             email, care rămâne doar la mine.
           </p>
@@ -92,7 +92,7 @@ export function QuestionSection({ postSlug }: { postSlug: string }) {
               și altora, îl public aici.
             </p>
           ) : (
-            <form className="space-y-8" onSubmit={onSubmit}>
+            <form className="space-y-6" onSubmit={onSubmit}>
               <div>
                 <label className="label-xs" htmlFor="qa-nume">
                   Nume
@@ -160,7 +160,7 @@ export function QuestionSection({ postSlug }: { postSlug: string }) {
       </Reveal>
 
       {entries.length > 0 && (
-        <div className="mt-24 space-y-16 md:mt-32 md:space-y-24">
+        <div className="mt-16 space-y-12 md:mt-20">
           {entries.map((entry) => (
             <Reveal key={entry.id} className="grid gap-6 md:grid-cols-12">
               <p className="label-xs md:col-span-3">{entry.name}</p>
