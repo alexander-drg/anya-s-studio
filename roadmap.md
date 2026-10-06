@@ -4,4 +4,4 @@
 - [x] Recompose the homepage into a compact editorial flow
 - [x] Tighten spacing and hierarchy across all content pages
 - [x] Preserve and compact the public moderated Blog Q&A
-- [ ] Verify desktop and mobile pages, gallery lightbox, links, and runtime health
+- [x] Verify desktop and mobile pages, gallery lightbox, links, and runtime health
