@@ -23,6 +23,8 @@ export const Route = createFileRoute("/terapie-craniosacrala")({
         property: "og:description",
         content: "Corp, ascultare, încetinire, prezență.",
       },
+      { property: "og:type", content: "website" },
+      { name: "twitter:card", content: "summary_large_image" },
     ],
   }),
   component: Craniosacrala,
@@ -38,24 +40,24 @@ function ToBeCompleted({ note }: { note: string }) {
 
 function Craniosacrala() {
   return (
-    <div className="mx-auto max-w-[110rem] px-6 pb-32 md:px-12">
-      <section className="grid gap-12 py-14 md:grid-cols-12 md:py-24">
+    <div className="page-shell pb-20">
+      <section className="grid gap-8 py-10 md:grid-cols-12 md:py-14">
         <Reveal className="md:col-span-5">
-          <h1 className="font-serif text-[2.6rem] leading-[1.05] font-light md:text-[4.2rem]">
+          <h1 className="font-serif text-[2.6rem] leading-[1.05] font-light md:text-5xl">
             Terapie Craniosacrală
           </h1>
-          <p className="mt-8 max-w-md font-serif text-xl leading-relaxed font-light md:text-2xl">
+          <p className="mt-5 max-w-md font-serif text-xl leading-relaxed font-light md:text-2xl">
             Corp, ascultare, liniște, prezență. Un timp în care nu e nimic de rezolvat — doar de
             observat ce se întâmplă când încetinim.
           </p>
-          <ContinuousLine className="mt-10 h-6 w-full text-[var(--color-sage)]" />
+          <ContinuousLine className="mt-7 h-5 w-full text-[var(--color-sage)]" />
         </Reveal>
         <Reveal delay={120} className="md:col-span-6 md:col-start-7">
           <img src={art14} alt="Desen fractal colorat, forme organice suprapuse" className="w-full object-cover" loading="eager" />
         </Reveal>
       </section>
 
-      <section className="grid gap-10 py-20 md:grid-cols-12 md:py-28">
+      <section className="grid gap-8 py-12 md:grid-cols-12 md:py-16">
         <Reveal className="md:col-span-3">
           <h2 className="label-xs">Ce este</h2>
         </Reveal>
@@ -67,19 +69,19 @@ function Craniosacrala() {
         </Reveal>
       </section>
 
-      <section className="grid gap-10 py-16 md:grid-cols-12 md:py-28">
+      <section className="grid gap-8 py-12 md:grid-cols-12 md:py-16">
         <Reveal className="md:col-span-3">
           <h2 className="label-xs">Cum decurge o ședință</h2>
         </Reveal>
         <Reveal delay={100} className="md:col-span-7 md:col-start-5">
-          <ul className="space-y-8">
+          <ul className="space-y-5">
             {[
               "Ce se întâmplă în timpul unei ședințe — [de completat]",
               "Durata și formatul — [de completat]",
               "Cum se simte experiența — [de completat]",
               "Detalii practice (loc, programare, frecvență) — [de completat]",
             ].map((row) => (
-              <li key={row} className="border-t border-border pt-6 font-serif text-xl font-light">
+              <li key={row} className="border-t border-border pt-4 font-serif text-lg font-light">
                 {row}
               </li>
             ))}
@@ -87,7 +89,7 @@ function Craniosacrala() {
         </Reveal>
       </section>
 
-      <section className="grid gap-10 py-16 md:grid-cols-12 md:py-28">
+      <section className="grid gap-8 py-12 md:grid-cols-12 md:py-16">
         <Reveal className="md:col-span-6">
           <img src={art09} alt="Desen fractal în tonuri de roz și verde" className="w-full object-cover" loading="lazy" />
         </Reveal>
@@ -101,10 +103,10 @@ function Craniosacrala() {
         </Reveal>
       </section>
 
-      <section className="py-20 md:py-32">
+      <section className="py-12 md:py-16">
         <Reveal>
           <div className="grid gap-6 border-t border-border pt-8 md:grid-cols-12">
-            <h2 className="font-serif text-4xl font-light md:col-span-5 md:text-6xl">Echilibru</h2>
+            <h2 className="font-serif text-3xl font-light md:col-span-5 md:text-4xl">Echilibru</h2>
             <p className="max-w-md text-muted-foreground md:col-span-6 md:col-start-7">
               Nu perfecțiune, ci un echilibru viu între corp, minte, emoții și expresie creativă.
             </p>
@@ -112,7 +114,7 @@ function Craniosacrala() {
         </Reveal>
       </section>
 
-      <section className="grid gap-10 py-16 md:grid-cols-12 md:py-24">
+      <section className="grid gap-8 py-12 md:grid-cols-12 md:py-16">
         <Reveal className="md:col-span-3">
           <h2 className="label-xs">Despre abordarea mea</h2>
         </Reveal>
@@ -124,7 +126,7 @@ function Craniosacrala() {
         </Reveal>
       </section>
 
-      <section className="grid gap-6 py-10 sm:grid-cols-2 md:py-20">
+      <section className="grid gap-4 py-10 sm:grid-cols-2 md:py-14">
         {[
           { src: art11, alt: "Desen fractal în galben, portocaliu și albastru" },
           { src: art12, alt: "Desen fractal cu forme geometrice colorate" },

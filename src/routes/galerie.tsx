@@ -37,14 +37,14 @@ function Panze() {
   }, []);
 
   return (
-    <div className="mx-auto max-w-[110rem] px-6 pb-28 md:px-12">
-      <section className="grid gap-8 py-14 md:grid-cols-12 md:py-20">
+    <div className="page-shell pb-20">
+      <section className="grid gap-6 py-10 md:grid-cols-12 md:py-14">
         <Reveal className="md:col-span-5">
-          <h1 className="font-serif text-[2.6rem] leading-[1.05] font-light md:text-[4rem]">
+          <h1 className="font-serif text-[2.6rem] leading-[1.05] font-light md:text-5xl">
             Pânze
           </h1>
         </Reveal>
-        <Reveal delay={100} className="md:col-span-6 md:col-start-7 md:pt-6">
+        <Reveal delay={100} className="md:col-span-6 md:col-start-7 md:pt-3">
           <p className="max-w-xl text-muted-foreground">{t(seriesInfo.intro)}</p>
         </Reveal>
       </section>
@@ -57,7 +57,7 @@ function Panze() {
           </p>
         </Reveal>
 
-        <div className="mt-10 grid grid-cols-1 gap-x-6 gap-y-10 sm:grid-cols-2 lg:grid-cols-3">
+        <div className="mt-7 grid grid-cols-1 gap-x-5 gap-y-7 sm:grid-cols-2 lg:grid-cols-3">
           {artworks.map((a, i) => (
             <Reveal key={a.id} delay={(i % 3) * 70}>
               <button
@@ -65,12 +65,12 @@ function Panze() {
                 onClick={() => setOpen(a)}
                 className="group block w-full text-left"
               >
-                <div className="img-zoom overflow-hidden">
+                <div className="img-zoom aspect-square overflow-hidden">
                   <img
                     src={a.src}
                     alt={`Lucrare Fluid Art, acrilic, 50 cm, Trieste 2024`}
                     loading="lazy"
-                    className="w-full object-cover"
+                    className="h-full w-full object-contain"
                   />
                 </div>
                 <p className="mt-3 font-serif text-lg font-light">

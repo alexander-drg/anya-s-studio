@@ -19,6 +19,8 @@ export const Route = createFileRoute("/contact")({
         property: "og:description",
         content: "Dacă simți că vrei să afli mai mult, putem începe de aici.",
       },
+      { property: "og:type", content: "website" },
+      { name: "twitter:card", content: "summary_large_image" },
     ],
   }),
   component: Contact,
@@ -35,17 +37,17 @@ function Contact() {
   )}&body=${encodeURIComponent(`${form.message}\n\n${form.name}\n${form.email}`)}`;
 
   return (
-    <div className="mx-auto max-w-[110rem] px-6 pb-32 md:px-12">
-      <section className="grid gap-16 py-14 md:grid-cols-12 md:py-24">
+    <div className="page-shell pb-20">
+      <section className="grid gap-10 py-10 md:grid-cols-12 md:py-16">
         <Reveal className="md:col-span-5">
-          <h1 className="font-serif text-[2.6rem] leading-[1.05] font-light md:text-[4.2rem]">
+          <h1 className="font-serif text-[2.6rem] leading-[1.05] font-light md:text-5xl">
             Contact
           </h1>
-          <p className="mt-8 max-w-md font-serif text-xl leading-relaxed font-light">
+          <p className="mt-5 max-w-md font-serif text-xl leading-relaxed font-light">
             Dacă simți că vrei să afli mai mult, putem începe de aici.
           </p>
 
-          <div className="mt-14 space-y-6">
+          <div className="mt-8 space-y-5">
             <div>
               <p className="label-xs">Brîndușa Nicolescu</p>
               {contact.locations.map((l) => (
@@ -70,12 +72,12 @@ function Contact() {
             </div>
           </div>
 
-          <ContinuousLine className="mt-14 h-6 w-full text-[var(--color-terracotta)]" />
+          <ContinuousLine className="mt-8 h-5 w-full text-[var(--color-terracotta)]" />
         </Reveal>
 
         <Reveal delay={120} className="md:col-span-6 md:col-start-7">
           <form
-            className="space-y-10"
+            className="space-y-6"
             onSubmit={(e) => {
               e.preventDefault();
               setSent(true);

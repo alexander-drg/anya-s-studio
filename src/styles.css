@@ -65,6 +65,8 @@
   --sage: oklch(0.52 0.032 165);
   --terracotta: oklch(0.56 0.09 45);
   --hero-foreground: oklch(0.97 0.01 85);
+  --hero-overlay: linear-gradient(to bottom, oklch(0.08 0.01 60 / 0.28), oklch(0.08 0.01 60 / 0.12) 48%, oklch(0.08 0.01 60 / 0.62));
+  --hero-shadow: 0 1px 18px oklch(0.08 0.01 60 / 0.55);
 }
 
 .dark {
@@ -90,6 +92,8 @@
   --sage: oklch(0.62 0.04 165);
   --terracotta: oklch(0.62 0.09 45);
   --hero-foreground: oklch(0.97 0.01 85);
+  --hero-overlay: linear-gradient(to bottom, oklch(0.08 0.01 60 / 0.28), oklch(0.08 0.01 60 / 0.12) 48%, oklch(0.08 0.01 60 / 0.62));
+  --hero-shadow: 0 1px 18px oklch(0.08 0.01 60 / 0.55);
 }
 
 @layer base {

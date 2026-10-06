@@ -18,6 +18,8 @@ export const Route = createFileRoute("/explorari")({
         property: "og:description",
         content: "Ateliere, experiențe și explorări creative alături de Brîndușa Nicolescu.",
       },
+      { property: "og:type", content: "website" },
+      { name: "twitter:card", content: "summary_large_image" },
     ],
   }),
   component: Explorari,
@@ -25,13 +27,13 @@ export const Route = createFileRoute("/explorari")({
 
 function Explorari() {
   return (
-    <div className="mx-auto max-w-[110rem] px-6 pb-32 md:px-12">
-      <section className="grid gap-12 py-14 md:grid-cols-12 md:py-24">
+    <div className="page-shell pb-20">
+      <section className="grid gap-8 py-10 md:grid-cols-12 md:py-14">
         <Reveal className="md:col-span-6">
-          <h1 className="font-serif text-[2.6rem] leading-[1.05] font-light md:text-[4.2rem]">
+          <h1 className="font-serif text-[2.6rem] leading-[1.05] font-light md:text-5xl">
             Explorări
           </h1>
-          <p className="mt-8 max-w-lg font-serif text-xl leading-relaxed font-light md:text-2xl">
+          <p className="mt-5 max-w-lg font-serif text-xl leading-relaxed font-light md:text-2xl">
             Ateliere, experiențe și felurile în care un proces creativ poate începe. Lucruri care
             nu încap într-o categorie, dar care fac parte din același drum.
           </p>
@@ -41,13 +43,13 @@ function Explorari() {
         </Reveal>
       </section>
 
-      <section className="py-10 md:py-16">
+      <section className="py-8 md:py-10">
         <Reveal>
           <ContinuousLine className="h-8 w-full text-[var(--color-sage)]" />
         </Reveal>
       </section>
 
-      <section className="grid gap-10 py-16 md:grid-cols-12">
+      <section className="grid gap-8 py-12 md:grid-cols-12">
         <Reveal className="md:col-span-3">
           <h2 className="label-xs">Ateliere viitoare</h2>
         </Reveal>
