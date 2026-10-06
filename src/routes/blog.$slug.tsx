@@ -44,8 +44,8 @@ function BlogPost() {
   const post = Route.useLoaderData();
 
   return (
-    <div className="mx-auto max-w-[110rem] px-6 pb-32 md:px-12">
-      <article className="grid gap-12 py-14 md:grid-cols-12 md:py-24">
+    <div className="page-shell pb-20">
+      <article className="grid gap-8 py-10 md:grid-cols-12 md:py-14">
         <Reveal className="md:col-span-3">
           <p className="label-xs">{post.date}</p>
           <Link to="/blog" className="label-xs quiet-link mt-8 inline-block">
@@ -53,10 +53,10 @@ function BlogPost() {
           </Link>
         </Reveal>
         <Reveal delay={100} className="md:col-span-7 md:col-start-5">
-          <h1 className="font-serif text-[2.4rem] leading-[1.1] font-light md:text-[3.6rem]">
+          <h1 className="font-serif text-[2.4rem] leading-[1.1] font-light md:text-5xl">
             {post.title}
           </h1>
-          <div className="mt-10 space-y-7 text-lg leading-relaxed">
+          <div className="mt-7 space-y-5 text-lg leading-relaxed">
             {post.body.map((paragraph) => (
               <p key={paragraph.slice(0, 40)}>{paragraph}</p>
             ))}
@@ -65,7 +65,7 @@ function BlogPost() {
       </article>
 
       <Reveal>
-        <ContinuousLine className="mb-20 h-8 w-full text-[var(--color-terracotta)]" />
+        <ContinuousLine className="mb-12 h-6 w-full text-[var(--color-terracotta)]" />
       </Reveal>
 
       <QuestionSection postSlug={post.slug} />

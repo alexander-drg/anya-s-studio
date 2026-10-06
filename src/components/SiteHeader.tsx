@@ -56,7 +56,7 @@ export function SiteHeader() {
       <header
         className={`fixed top-0 right-0 left-0 z-[80] transition-colors duration-500 ${
           transparent
-            ? "bg-transparent text-[var(--color-cream,#faf7f2)]"
+            ? "bg-transparent text-hero-foreground"
             : "bg-background/95 text-foreground backdrop-blur-sm"
         }`}
       >

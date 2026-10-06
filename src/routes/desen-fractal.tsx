@@ -1,7 +1,6 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
 
 import { ContinuousLine } from "@/components/ContinuousLine";
-import { Placeholder } from "@/components/Placeholder";
 import { Reveal } from "@/components/Reveal";
 import pencils from "@/assets/prezentare_1.jpeg";
 import lineWork from "@/assets/desen_fractal_16-1.webp";
@@ -24,6 +23,8 @@ export const Route = createFileRoute("/desen-fractal")({
         property: "og:description",
         content: "O linie continuă, culoare și curiozitatea de a descoperi ce apare.",
       },
+      { property: "og:type", content: "website" },
+      { name: "twitter:card", content: "summary_large_image" },
     ],
   }),
   component: DesenFractal,

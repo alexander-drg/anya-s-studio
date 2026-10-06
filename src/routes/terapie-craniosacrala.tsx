@@ -23,6 +23,8 @@ export const Route = createFileRoute("/terapie-craniosacrala")({
         property: "og:description",
         content: "Corp, ascultare, încetinire, prezență.",
       },
+      { property: "og:type", content: "website" },
+      { name: "twitter:card", content: "summary_large_image" },
     ],
   }),
   component: Craniosacrala,

@@ -21,6 +21,8 @@ export const Route = createFileRoute("/despre")({
         property: "og:description",
         content: "Cum se întâlnesc arta, corpul, emoțiile și prezența într-o singură practică.",
       },
+      { property: "og:type", content: "website" },
+      { name: "twitter:card", content: "summary_large_image" },
     ],
   }),
   component: Despre,
