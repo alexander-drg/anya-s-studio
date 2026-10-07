@@ -112,6 +112,76 @@ export const artistStatement: Copy = {
   it: "Ci sono momenti in cui il colore dice ciò che le parole non possono dire.\nCi sono momenti in cui il silenzio diventa la forma più profonda di dialogo.\nL'incontro tra i due è la mia visione.",
 };
 
+/**
+ * Povestea mea — textul complet al clientei, structurat editorial.
+ * RO este sursa de adevărat; en/it sunt traduceri atente, nu adaptări.
+ */
+export const myStory: {
+  opening: Copy;
+  rhythm: Copy[];
+  discovery: Copy[];
+  visual: Copy[];
+  pullQuote: Copy;
+  closing: Copy;
+} = {
+  opening: {
+    ro: "Pictez pentru că mă conectez la un ritm organic, fizic și psihic.",
+    en: "I paint because I connect with an organic rhythm, physical and psychic.",
+    it: "Dipingo perché mi connetto a un ritmo organico, fisico e psichico.",
+  },
+  rhythm: [
+    {
+      ro: "Îl simt ca pe un ritm profund, în care se întâlnesc respirația, pulsația și acel ritm subtil pe care îl percep în practica mea craniosacrală.",
+      en: "I feel it as a deep rhythm, in which breathing, pulsation and that subtle rhythm I perceive in my craniosacral practice meet.",
+      it: "Lo sento come un ritmo profondo, in cui si incontrano il respiro, la pulsazione e quel ritmo sottile che percepisco nella mia pratica craniosacrale.",
+    },
+    {
+      ro: "Un ritm care mă aduce înapoi în corp și în prezent, cu bucurie.",
+      en: "A rhythm that brings me back into my body and into the present, with joy.",
+      it: "Un ritmo che mi riporta nel corpo e nel presente, con gioia.",
+    },
+  ],
+  discovery: [
+    {
+      ro: "Pictez pentru că, în acest spațiu, mă pot întâlni cu părți din mine pe care încă nu le cunosc.",
+      en: "I paint because, in this space, I can meet parts of myself I do not yet know.",
+      it: "Dipingo perché, in questo spazio, posso incontrare parti di me che non conosco ancora.",
+    },
+    {
+      ro: "Unele îmi sunt familiare și plăcute, altele mă surprind sau mă provoacă.",
+      en: "Some are familiar and pleasant; others surprise me or challenge me.",
+      it: "Alcune mi sono familiari e piacevoli, altre mi sorprendono o mi mettono alla prova.",
+    },
+    {
+      ro: "Pictura îmi oferă posibilitatea de a le descoperi fără să trebuiască să le explic imediat.",
+      en: "Painting gives me the possibility to discover them without having to explain them right away.",
+      it: "La pittura mi dà la possibilità di scoprirle senza doverle spiegare subito.",
+    },
+  ],
+  visual: [
+    {
+      ro: "Pictez pentru că, prin culori, linii și puncte, mă apropii de ceva foarte sincer din mine.",
+      en: "I paint because, through colours, lines and points, I come close to something very sincere in me.",
+      it: "Dipingo perché, attraverso colori, linee e punti, mi avvicino a qualcosa di molto sincero in me.",
+    },
+    {
+      ro: "Nu prin forță și nici prin analiză, ci într-un mod tandru și sigur.",
+      en: "Not through force, nor through analysis, but in a tender and certain way.",
+      it: "Non con la forza e nemmeno con l'analisi, ma in modo tenero e sicuro.",
+    },
+  ],
+  pullQuote: {
+    ro: "Uneori, imaginea ajunge înaintea cuvintelor.",
+    en: "Sometimes, the image arrives before the words.",
+    it: "A volte, l'immagine arriva prima delle parole.",
+  },
+  closing: {
+    ro: "Poate că, în fond, pictez pentru a mă întâlni cu mine însămi într-un limbaj pe care nu trebuie să-l traduc.",
+    en: "Perhaps, in the end, I paint to meet myself in a language I do not need to translate.",
+    it: "Forse, in fondo, dipingo per incontrare me stessa in un linguaggio che non devo tradurre.",
+  },
+};
+
 /** Linia conceptuală recurentă. ARTA / PREZENȚA primesc accent tipografic. */
 export const conceptLine: { before: Copy; a: Copy; middle: Copy; b: Copy; after: Copy } = {
   before: { ro: "Unde ", en: "Where ", it: "Dove l'" },
