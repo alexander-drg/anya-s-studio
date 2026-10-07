@@ -1,4 +1,4 @@
-import workshopHero from "@/assets/workshop-hero-neutral.jpg";
+import desen11 from "@/assets/desen_fractal_11.webp";
 import fluid01 from "@/assets/fluid_01.jpeg";
 import fluid02 from "@/assets/fluid_02.jpeg";
 import fluid03 from "@/assets/fluid_03.jpeg";
@@ -31,25 +31,35 @@ import fluid29 from "@/assets/fluid_29.jpeg";
 import fluid30 from "@/assets/fluid_30.jpeg";
 import type { Copy } from "@/lib/i18n";
 
-/** Fotografia de atelier folosită ca hero pe pagina de start. */
-export const heroImage = workshopHero;
-
-export const ARTIST_NAME = "Brîndușa Nicolescu";
-
 /**
- * Navigation uses personal, editorial wording rather than service labels.
- * Routes stay the same; only the visible words changed.
+ * Nav = meniul principal. Pânze rămâne în afara meniului (accesibilă de pe
+ * prima pagină și din subsol); Blog este retras de pe site, deocamdată.
  */
 export const nav: { to: string; label: Copy }[] = [
   { to: "/", label: { ro: "Acasă", en: "Home", it: "Home" } },
   { to: "/desen-fractal", label: { ro: "Desen", en: "Drawing", it: "Disegno" } },
-  { to: "/galerie", label: { ro: "Pânze", en: "Canvases", it: "Tele" } },
   { to: "/terapie-craniosacrala", label: { ro: "Întâlniri", en: "Encounters", it: "Incontri" } },
   { to: "/explorari", label: { ro: "Explorări", en: "Explorations", it: "Esplorazioni" } },
   { to: "/despre", label: { ro: "Povestea mea", en: "My story", it: "La mia storia" } },
-  { to: "/blog", label: { ro: "Blog", en: "Blog", it: "Blog" } },
   { to: "/contact", label: { ro: "Contact", en: "Contact", it: "Contatti" } },
 ];
+
+/** Subsolul păstrează și Pânze (scoasă doar din meniul principal). */
+export const footerNav: { to: string; label: Copy }[] = [
+  ...nav.slice(1, 3),
+  { to: "/galerie", label: { ro: "Pânze", en: "Canvases", it: "Tele" } },
+  ...nav.slice(3),
+];
+
+/**
+ * Descriptorul profesional — text provizoriu, clientul încă nu a ales formularea.
+ * Rămâne un simplu șir de conținut localizat, ușor de schimbat.
+ */
+export const professionalDescriptor: Copy = {
+  ro: "Artist vizual, terapeut craniosacral și facilitator de experiențe creative",
+  en: "Visual artist, craniosacral therapist, facilitator of creative experiences",
+  it: "Artista visiva, terapeuta craniosacrale, facilitatrice di esperienze creative",
+};
 
 export const contact = {
   name: ARTIST_NAME,
