@@ -24,6 +24,11 @@ import fluid22 from "@/assets/fluid_22.jpeg";
 import fluid23 from "@/assets/fluid_23.jpeg";
 import fluid24 from "@/assets/fluid_24.jpeg";
 import fluid25 from "@/assets/fluid_25.jpeg";
+import fluid26 from "@/assets/fluid_26.jpeg";
+import fluid27 from "@/assets/fluid_27.jpeg";
+import fluid28 from "@/assets/fluid_28.jpeg";
+import fluid29 from "@/assets/fluid_29.jpeg";
+import fluid30 from "@/assets/fluid_30.jpeg";
 import type { Copy } from "@/lib/i18n";
 
 /** Fotografia de atelier folosită ca hero pe pagina de start. */
@@ -242,4 +247,9 @@ export const artworks: Artwork[] = [
   { id: "fa-23", src: fluid23, title: null },
   { id: "fa-24", src: fluid24, title: null },
   { id: "fa-25", src: fluid25, title: null },
+  { id: "fa-26", src: fluid26, title: null },
+  { id: "fa-27", src: fluid27, title: null },
+  { id: "fa-28", src: fluid28, title: null },
+  { id: "fa-29", src: fluid29, title: null },
+  { id: "fa-30", src: fluid30, title: null },
 ];

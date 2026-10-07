@@ -42,6 +42,9 @@ export function SiteHeader() {
             className={`label-xs py-1 uppercase transition-opacity ${
               lang === l ? "opacity-100" : "opacity-45 hover:opacity-80"
             } ${mobile ? "text-base tracking-[0.18em]" : ""}`}
+            style={
+              transparent ? { color: "var(--color-hero-foreground)" } : undefined
+            }
             aria-current={lang === l ? "true" : undefined}
           >
             {l}
@@ -64,7 +67,7 @@ export function SiteHeader() {
           <Link
             to="/"
             onClick={() => setOpen(false)}
-            className="font-serif text-sm font-light tracking-[0.18em] whitespace-nowrap sm:text-base"
+            className="font-serif text-base font-light tracking-[0.18em] whitespace-nowrap sm:text-lg"
             aria-label={ARTIST_NAME}
           >
             {ARTIST_NAME}
@@ -76,7 +79,14 @@ export function SiteHeader() {
                 <Link
                   key={item.to}
                   to={item.to}
-                  className="label-xs quiet-link opacity-70 transition-opacity hover:opacity-100"
+                  className={`quiet-link text-[0.72rem] tracking-[0.22em] uppercase transition-opacity ${
+                    transparent ? "opacity-90 hover:opacity-100" : "opacity-85 hover:opacity-100"
+                  }`}
+                  style={{
+                    color: transparent
+                      ? "var(--color-hero-foreground)"
+                      : "var(--color-foreground)",
+                  }}
                   activeProps={{ className: "opacity-100" }}
                 >
                   {t(item.label)}
