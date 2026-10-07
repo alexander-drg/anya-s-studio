@@ -76,8 +76,15 @@ export function SiteHeader() {
                 <Link
                   key={item.to}
                   to={item.to}
-                  className="quiet-link text-[0.72rem] tracking-[0.22em] uppercase text-foreground/85 transition-colors hover:text-foreground"
-                  activeProps={{ className: "text-foreground" }}
+                  className={`quiet-link text-[0.72rem] tracking-[0.22em] uppercase transition-opacity ${
+                    transparent ? "opacity-90 hover:opacity-100" : "opacity-85 hover:opacity-100"
+                  }`}
+                  style={{
+                    color: transparent
+                      ? "var(--color-hero-foreground)"
+                      : "var(--color-foreground)",
+                  }}
+                  activeProps={{ className: "opacity-100" }}
                 >
                   {t(item.label)}
                 </Link>
