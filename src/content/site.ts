@@ -1,4 +1,3 @@
-import workshopHero from "@/assets/workshop-hero-neutral.jpg";
 import fluid01 from "@/assets/fluid_01.jpeg";
 import fluid02 from "@/assets/fluid_02.jpeg";
 import fluid03 from "@/assets/fluid_03.jpeg";
@@ -31,25 +30,37 @@ import fluid29 from "@/assets/fluid_29.jpeg";
 import fluid30 from "@/assets/fluid_30.jpeg";
 import type { Copy } from "@/lib/i18n";
 
-/** Fotografia de atelier folosită ca hero pe pagina de start. */
-export const heroImage = workshopHero;
-
-export const ARTIST_NAME = "Brîndușa Nicolescu";
-
 /**
- * Navigation uses personal, editorial wording rather than service labels.
- * Routes stay the same; only the visible words changed.
+ * Nav = meniul principal. Pânze rămâne în afara meniului (accesibilă de pe
+ * prima pagină și din subsol); Blog este retras de pe site, deocamdată.
  */
 export const nav: { to: string; label: Copy }[] = [
   { to: "/", label: { ro: "Acasă", en: "Home", it: "Home" } },
   { to: "/desen-fractal", label: { ro: "Desen", en: "Drawing", it: "Disegno" } },
-  { to: "/galerie", label: { ro: "Pânze", en: "Canvases", it: "Tele" } },
   { to: "/terapie-craniosacrala", label: { ro: "Întâlniri", en: "Encounters", it: "Incontri" } },
   { to: "/explorari", label: { ro: "Explorări", en: "Explorations", it: "Esplorazioni" } },
   { to: "/despre", label: { ro: "Povestea mea", en: "My story", it: "La mia storia" } },
-  { to: "/blog", label: { ro: "Blog", en: "Blog", it: "Blog" } },
   { to: "/contact", label: { ro: "Contact", en: "Contact", it: "Contatti" } },
 ];
+
+/** Subsolul păstrează și Pânze (scoasă doar din meniul principal). */
+export const footerNav: { to: string; label: Copy }[] = [
+  ...nav.slice(1, 3),
+  { to: "/galerie", label: { ro: "Pânze", en: "Canvases", it: "Tele" } },
+  ...nav.slice(3),
+];
+
+/**
+ * Descriptorul profesional — text provizoriu, clientul încă nu a ales formularea.
+ * Rămâne un simplu șir de conținut localizat, ușor de schimbat.
+ */
+export const professionalDescriptor: Copy = {
+  ro: "Artist vizual, terapeut craniosacral și facilitator de experiențe creative",
+  en: "Visual artist, craniosacral therapist, facilitator of creative experiences",
+  it: "Artista visiva, terapeuta craniosacrale, facilitatrice di esperienze creative",
+};
+
+export const ARTIST_NAME = "Brîndușa Nicolescu";
 
 export const contact = {
   name: ARTIST_NAME,
@@ -99,6 +110,76 @@ export const artistStatement: Copy = {
   ro: "Există momente în care culoarea spune ceea ce cuvintele nu pot spune.\nExistă momente în care liniștea devine cea mai profundă formă de dialog.\nÎntâlnirea dintre cele două este viziunea mea.",
   en: "There are moments when colour says what words cannot say.\nThere are moments when silence becomes the deepest form of dialogue.\nThe meeting of the two is my vision.",
   it: "Ci sono momenti in cui il colore dice ciò che le parole non possono dire.\nCi sono momenti in cui il silenzio diventa la forma più profonda di dialogo.\nL'incontro tra i due è la mia visione.",
+};
+
+/**
+ * Povestea mea — textul complet al clientei, structurat editorial.
+ * RO este sursa de adevărat; en/it sunt traduceri atente, nu adaptări.
+ */
+export const myStory: {
+  opening: Copy;
+  rhythm: Copy[];
+  discovery: Copy[];
+  visual: Copy[];
+  pullQuote: Copy;
+  closing: Copy;
+} = {
+  opening: {
+    ro: "Pictez pentru că mă conectez la un ritm organic, fizic și psihic.",
+    en: "I paint because I connect with an organic rhythm, physical and psychic.",
+    it: "Dipingo perché mi connetto a un ritmo organico, fisico e psichico.",
+  },
+  rhythm: [
+    {
+      ro: "Îl simt ca pe un ritm profund, în care se întâlnesc respirația, pulsația și acel ritm subtil pe care îl percep în practica mea craniosacrală.",
+      en: "I feel it as a deep rhythm, in which breathing, pulsation and that subtle rhythm I perceive in my craniosacral practice meet.",
+      it: "Lo sento come un ritmo profondo, in cui si incontrano il respiro, la pulsazione e quel ritmo sottile che percepisco nella mia pratica craniosacrale.",
+    },
+    {
+      ro: "Un ritm care mă aduce înapoi în corp și în prezent, cu bucurie.",
+      en: "A rhythm that brings me back into my body and into the present, with joy.",
+      it: "Un ritmo che mi riporta nel corpo e nel presente, con gioia.",
+    },
+  ],
+  discovery: [
+    {
+      ro: "Pictez pentru că, în acest spațiu, mă pot întâlni cu părți din mine pe care încă nu le cunosc.",
+      en: "I paint because, in this space, I can meet parts of myself I do not yet know.",
+      it: "Dipingo perché, in questo spazio, posso incontrare parti di me che non conosco ancora.",
+    },
+    {
+      ro: "Unele îmi sunt familiare și plăcute, altele mă surprind sau mă provoacă.",
+      en: "Some are familiar and pleasant; others surprise me or challenge me.",
+      it: "Alcune mi sono familiari e piacevoli, altre mi sorprendono o mi mettono alla prova.",
+    },
+    {
+      ro: "Pictura îmi oferă posibilitatea de a le descoperi fără să trebuiască să le explic imediat.",
+      en: "Painting gives me the possibility to discover them without having to explain them right away.",
+      it: "La pittura mi dà la possibilità di scoprirle senza doverle spiegare subito.",
+    },
+  ],
+  visual: [
+    {
+      ro: "Pictez pentru că, prin culori, linii și puncte, mă apropii de ceva foarte sincer din mine.",
+      en: "I paint because, through colours, lines and points, I come close to something very sincere in me.",
+      it: "Dipingo perché, attraverso colori, linee e punti, mi avvicino a qualcosa di molto sincero in me.",
+    },
+    {
+      ro: "Nu prin forță și nici prin analiză, ci într-un mod tandru și sigur.",
+      en: "Not through force, nor through analysis, but in a tender and certain way.",
+      it: "Non con la forza e nemmeno con l'analisi, ma in modo tenero e sicuro.",
+    },
+  ],
+  pullQuote: {
+    ro: "Uneori, imaginea ajunge înaintea cuvintelor.",
+    en: "Sometimes, the image arrives before the words.",
+    it: "A volte, l'immagine arriva prima delle parole.",
+  },
+  closing: {
+    ro: "Poate că, în fond, pictez pentru a mă întâlni cu mine însămi într-un limbaj pe care nu trebuie să-l traduc.",
+    en: "Perhaps, in the end, I paint to meet myself in a language I do not need to translate.",
+    it: "Forse, in fondo, dipingo per incontrare me stessa in un linguaggio che non devo tradurre.",
+  },
 };
 
 /** Linia conceptuală recurentă. ARTA / PREZENȚA primesc accent tipografic. */

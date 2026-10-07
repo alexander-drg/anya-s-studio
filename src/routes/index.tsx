@@ -2,6 +2,7 @@ import { createFileRoute, Link } from "@tanstack/react-router";
 import { useEffect, useState } from "react";
 
 import brandusa from "@/assets/brandusa.webp";
+import desen11 from "@/assets/desen_fractal_11.webp";
 import drawing from "@/assets/desen_fractal_16-1.webp";
 import { ContinuousLine } from "@/components/ContinuousLine";
 import { Reveal } from "@/components/Reveal";
@@ -10,7 +11,8 @@ import {
   artistStatement,
   artworks,
   conceptLine,
-  heroImage,
+  myStory,
+  professionalDescriptor,
   seriesInfo,
   testimonials,
   untitledLabel,
@@ -38,16 +40,6 @@ export const Route = createFileRoute("/")({
   }),
   component: Home,
 });
-
-function useScrollY() {
-  const [y, setY] = useState(0);
-  useEffect(() => {
-    const onScroll = () => setY(window.scrollY);
-    window.addEventListener("scroll", onScroll, { passive: true });
-    return () => window.removeEventListener("scroll", onScroll);
-  }, []);
-  return y;
-}
 
 function ConceptLine() {
   const t = useT();
