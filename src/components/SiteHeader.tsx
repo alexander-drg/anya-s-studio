@@ -64,7 +64,7 @@ export function SiteHeader() {
           <Link
             to="/"
             onClick={() => setOpen(false)}
-            className="font-serif text-sm font-light tracking-[0.18em] whitespace-nowrap sm:text-base"
+            className="font-serif text-base font-light tracking-[0.18em] whitespace-nowrap sm:text-lg"
             aria-label={ARTIST_NAME}
           >
             {ARTIST_NAME}
@@ -76,8 +76,8 @@ export function SiteHeader() {
                 <Link
                   key={item.to}
                   to={item.to}
-                  className="label-xs quiet-link opacity-70 transition-opacity hover:opacity-100"
-                  activeProps={{ className: "opacity-100" }}
+                  className="quiet-link text-[0.72rem] tracking-[0.22em] uppercase text-foreground/85 transition-colors hover:text-foreground"
+                  activeProps={{ className: "text-foreground" }}
                 >
                   {t(item.label)}
                 </Link>

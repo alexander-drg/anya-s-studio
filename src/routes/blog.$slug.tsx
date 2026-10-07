@@ -22,7 +22,7 @@ export const Route = createFileRoute("/blog/$slug")({
     ],
   }),
   errorComponent: () => (
-    <div className="mx-auto max-w-[110rem] px-6 py-32 md:px-12">
+    <div className="mx-auto max-w-[110rem] px-6 py-20 md:px-12">
       <p className="font-serif text-3xl font-light">Textul nu a putut fi încărcat.</p>
       <Link to="/blog" className="label-xs quiet-link mt-8 inline-block">
         ← Înapoi la blog
@@ -30,7 +30,7 @@ export const Route = createFileRoute("/blog/$slug")({
     </div>
   ),
   notFoundComponent: () => (
-    <div className="mx-auto max-w-[110rem] px-6 py-32 md:px-12">
+    <div className="mx-auto max-w-[110rem] px-6 py-20 md:px-12">
       <p className="font-serif text-3xl font-light">Textul acesta nu există (încă).</p>
       <Link to="/blog" className="label-xs quiet-link mt-8 inline-block">
         ← Înapoi la blog
