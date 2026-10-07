@@ -1,4 +1,3 @@
-import desen11 from "@/assets/desen_fractal_11.webp";
 import fluid01 from "@/assets/fluid_01.jpeg";
 import fluid02 from "@/assets/fluid_02.jpeg";
 import fluid03 from "@/assets/fluid_03.jpeg";
@@ -60,6 +59,8 @@ export const professionalDescriptor: Copy = {
   en: "Visual artist, craniosacral therapist, facilitator of creative experiences",
   it: "Artista visiva, terapeuta craniosacrale, facilitatrice di esperienze creative",
 };
+
+export const ARTIST_NAME = "Brîndușa Nicolescu";
 
 export const contact = {
   name: ARTIST_NAME,
