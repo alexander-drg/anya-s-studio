@@ -42,6 +42,9 @@ export function SiteHeader() {
             className={`label-xs py-1 uppercase transition-opacity ${
               lang === l ? "opacity-100" : "opacity-45 hover:opacity-80"
             } ${mobile ? "text-base tracking-[0.18em]" : ""}`}
+            style={
+              transparent ? { color: "var(--color-hero-foreground)" } : undefined
+            }
             aria-current={lang === l ? "true" : undefined}
           >
             {l}
