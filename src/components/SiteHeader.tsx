@@ -59,7 +59,7 @@ export function SiteHeader() {
       <header
         className={`fixed top-0 right-0 left-0 z-[80] transition-colors duration-500 ${
           transparent
-            ? "bg-transparent text-hero-foreground"
+            ? "bg-transparent text-foreground"
             : "bg-background/95 text-foreground backdrop-blur-sm"
         }`}
       >
