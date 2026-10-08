@@ -55,32 +55,22 @@ function ConceptLine() {
 }
 
 function Home() {
-  const scrollY = useScrollY();
   const t = useT();
   const statementLines = t(artistStatement).split("\n");
-  const preview = [artworks[16], artworks[18], artworks[21], artworks[24]].filter(
+  const preview = [artworks[16], artworks[18], artworks[21]].filter(
     (artwork): artwork is NonNullable<typeof artwork> => Boolean(artwork),
   );
 
   return (
     <>
-      <section className="relative -mt-[3.75rem] h-[100svh] min-h-[34rem] w-full overflow-hidden md:-mt-[4.5rem]">
-        <img
-          src={heroImage}
-          alt="Atelier de pictură pregătit pentru lucrul pe pânze circulare"
-          width={1920}
-          height={1080}
-          className="absolute inset-0 h-full w-full object-cover"
-          style={{ transform: `translate3d(0, ${Math.min(scrollY * 0.1, 72)}px, 0) scale(1.07)` }}
-        />
-        <div className="pointer-events-none absolute inset-0 bg-[var(--hero-overlay)]" />
-        <div className="relative z-10 mx-auto flex h-full max-w-[110rem] flex-col justify-end px-6 pb-14 md:px-12 md:pb-16">
-          <blockquote className="max-w-2xl font-serif text-lg leading-relaxed font-light text-hero-foreground [text-shadow:var(--hero-shadow)] md:text-2xl">
+      <section className="paper relative -mt-[3.75rem] flex h-[100svh] min-h-[34rem] w-full flex-col justify-end overflow-hidden md:-mt-[4.5rem]">
+        <div className="relative z-10 mx-auto flex w-full max-w-[110rem] flex-col justify-end px-6 pb-14 md:px-12 md:pb-16">
+          <blockquote className="max-w-2xl font-serif text-lg leading-relaxed font-light md:text-2xl">
             {statementLines.map((line) => (
               <span key={line} className="block">{line}</span>
             ))}
           </blockquote>
-          <a href="#introducere" aria-label="Continuă" className="mt-8 block h-10 w-6 text-hero-foreground/70">
+          <a href="#introducere" aria-label="Continuă" className="mt-8 block h-10 w-6 opacity-60">
             <span className="mx-auto block h-10 w-px bg-current" />
           </a>
         </div>
@@ -93,9 +83,9 @@ function Home() {
           </Reveal>
           <Reveal delay={100} className="md:col-span-6 md:col-start-5 md:pt-4">
             <h1 className="font-serif text-3xl font-light md:text-4xl">Brîndușa</h1>
+            <p className="mt-3 max-w-lg text-sm text-muted-foreground">{t(professionalDescriptor)}</p>
             <p className="mt-4 max-w-xl font-serif text-lg leading-relaxed font-light md:text-xl">
-              Explorez diferite forme de conectare cu sine — prin creativitate, emoții, corp și
-              prezență. Desenul, culoarea și atingerea sunt, pentru mine, aceeași întrebare pusă altfel.
+              {t(myStory.opening)}
             </p>
             <p className="mt-4 max-w-lg text-muted-foreground">{t(approachLine)}</p>
             <Link to="/despre" className="label-xs quiet-link mt-6 inline-block">Povestea mea →</Link>
@@ -192,18 +182,13 @@ function Home() {
 
       <section className="page-shell section-space">
         <div className="grid gap-6 md:grid-cols-12">
-          <Reveal className="md:col-span-5">
-            <div className="img-zoom aspect-[4/3]"><img src={heroImage} alt="Atelier de pictură cu pânze circulare" loading="lazy" className="h-full w-full object-cover" /></div>
+          <Reveal className="md:col-span-6">
+            <div className="img-zoom aspect-[4/3]"><img src={desen11} alt="Desen în lucru" loading="lazy" className="h-full w-full object-cover" /></div>
           </Reveal>
-          <Reveal delay={80} className="md:col-span-3 md:col-start-7 md:pt-4">
+          <Reveal delay={80} className="border-t border-border pt-4 md:col-span-4 md:col-start-8 md:pt-4">
             <h2 className="font-serif text-3xl font-light">Explorări</h2>
             <p className="mt-3 text-muted-foreground">Ateliere, experimente, procese și proiecte în desfășurare.</p>
             <Link to="/explorari" className="label-xs quiet-link mt-5 inline-block">Explorări →</Link>
-          </Reveal>
-          <Reveal delay={140} className="border-t border-border pt-4 md:col-span-3 md:col-start-10 md:pt-4">
-            <h2 className="font-serif text-3xl font-light">Blog</h2>
-            <p className="mt-3 text-muted-foreground">Însemnări despre desen, culoare, corp și prezență.</p>
-            <Link to="/blog" className="label-xs quiet-link mt-5 inline-block">Citește →</Link>
           </Reveal>
         </div>
       </section>
