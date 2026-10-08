@@ -43,7 +43,7 @@ export function SiteHeader() {
               lang === l ? "opacity-100" : "opacity-45 hover:opacity-80"
             } ${mobile ? "text-base tracking-[0.18em]" : ""}`}
             style={
-              transparent ? { color: "var(--color-hero-foreground)" } : undefined
+              transparent ? { color: "var(--color-foreground)" } : undefined
             }
             aria-current={lang === l ? "true" : undefined}
           >
@@ -83,9 +83,7 @@ export function SiteHeader() {
                     transparent ? "opacity-90 hover:opacity-100" : "opacity-85 hover:opacity-100"
                   }`}
                   style={{
-                    color: transparent
-                      ? "var(--color-hero-foreground)"
-                      : "var(--color-foreground)",
+                    color: "var(--color-foreground)",
                   }}
                   activeProps={{ className: "opacity-100" }}
                 >
