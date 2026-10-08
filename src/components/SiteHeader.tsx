@@ -43,7 +43,9 @@ export function SiteHeader() {
               lang === l ? "opacity-100" : "opacity-45 hover:opacity-80"
             } ${mobile ? "text-base tracking-[0.18em]" : ""}`}
             style={
-              transparent ? { color: "var(--color-foreground)" } : undefined
+              transparent
+                ? { color: "var(--color-hero-foreground)" }
+                : undefined
             }
             aria-current={lang === l ? "true" : undefined}
           >
@@ -59,7 +61,7 @@ export function SiteHeader() {
       <header
         className={`fixed top-0 right-0 left-0 z-[80] transition-colors duration-500 ${
           transparent
-            ? "bg-transparent text-foreground"
+            ? "bg-transparent text-hero-foreground"
             : "bg-background/95 text-foreground backdrop-blur-sm"
         }`}
       >
@@ -83,7 +85,9 @@ export function SiteHeader() {
                     transparent ? "opacity-90 hover:opacity-100" : "opacity-85 hover:opacity-100"
                   }`}
                   style={{
-                    color: "var(--color-foreground)",
+                    color: transparent
+                      ? "var(--color-hero-foreground)"
+                      : "var(--color-foreground)",
                   }}
                   activeProps={{ className: "opacity-100" }}
                 >

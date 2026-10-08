@@ -4,6 +4,7 @@ import { createFileRoute, Link } from "@tanstack/react-router";
 import brandusa from "@/assets/brandusa.webp";
 import desen11 from "@/assets/desen_fractal_11.webp";
 import drawing from "@/assets/desen_fractal_16-1.webp";
+import heroImage from "@/assets/workshop-hero.jpeg";
 import { ContinuousLine } from "@/components/ContinuousLine";
 import { Reveal } from "@/components/Reveal";
 import {
@@ -63,14 +64,20 @@ function Home() {
 
   return (
     <>
-      <section className="paper relative -mt-[3.75rem] flex h-[100svh] min-h-[34rem] w-full flex-col justify-end overflow-hidden md:-mt-[4.5rem]">
-        <div className="relative z-10 mx-auto flex w-full max-w-[110rem] flex-col justify-end px-6 pb-14 md:px-12 md:pb-16">
-          <blockquote className="max-w-2xl font-serif text-lg leading-relaxed font-light md:text-2xl">
+      <section className="relative -mt-[3.75rem] flex h-[100svh] min-h-[34rem] w-full flex-col justify-end overflow-hidden md:-mt-[4.5rem]">
+        <img
+          src={heroImage}
+          alt="Atelierul artistei"
+          className="absolute inset-0 h-full w-full object-cover"
+        />
+        <div aria-hidden="true" className="absolute inset-0" style={{ background: "var(--hero-overlay)" }} />
+        <div className="relative z-10 mx-auto flex w-full max-w-[110rem] flex-col justify-end px-6 pb-14 text-hero-foreground md:px-12 md:pb-16">
+          <blockquote className="max-w-2xl font-serif text-lg leading-relaxed font-light md:text-2xl" style={{ textShadow: "var(--hero-shadow)" }}>
             {statementLines.map((line) => (
               <span key={line} className="block">{line}</span>
             ))}
           </blockquote>
-          <a href="#introducere" aria-label="Continuă" className="mt-8 block h-10 w-6 opacity-60">
+          <a href="#introducere" aria-label="Continuă" className="mt-8 block h-10 w-6 opacity-70">
             <span className="mx-auto block h-10 w-px bg-current" />
           </a>
         </div>
