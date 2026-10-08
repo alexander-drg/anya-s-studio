@@ -1,5 +1,5 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
-import { useEffect, useState } from "react";
+
 
 import brandusa from "@/assets/brandusa.webp";
 import desen11 from "@/assets/desen_fractal_11.webp";
