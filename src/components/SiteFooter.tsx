@@ -1,7 +1,7 @@
 import { Link } from "@tanstack/react-router";
 
 import { ContinuousLine } from "@/components/ContinuousLine";
-import { contact, nav } from "@/content/site";
+import { contact, footerNav } from "@/content/site";
 import { useT } from "@/lib/i18n";
 
 export function SiteFooter() {
@@ -29,7 +29,7 @@ export function SiteFooter() {
           ))}
         </div>
         <nav className="label-xs flex flex-col gap-2 md:items-end">
-          {nav.slice(1).map((item) => (
+          {footerNav.map((item) => (
             <Link key={item.to} to={item.to} className="quiet-link hover:text-foreground">
               {t(item.label)}
             </Link>

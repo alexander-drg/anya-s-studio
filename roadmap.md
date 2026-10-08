@@ -5,3 +5,4 @@
 - [x] Tighten spacing and hierarchy across all content pages
 - [x] Preserve and compact the public moderated Blog Q&A
 - [x] Verify desktop and mobile pages, gallery lightbox, links, and runtime health
+- [x] Remove generated hero art; apply follow-up corrections (Povestea mea text, descriptor, menu, philosophy trim)
