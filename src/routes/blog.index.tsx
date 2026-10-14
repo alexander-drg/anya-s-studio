@@ -9,13 +9,13 @@ import { posts } from "@/content/blog";
 export const Route = createFileRoute("/blog/")({
   head: () => ({
     meta: [
-      { title: "Blog — Brîndușa Nicolescu" },
+      { title: "Blog · Brîndușa Nicolescu" },
       {
         name: "description",
         content:
           "Însemnări despre desen, culoare, corp și prezență. Un jurnal deschis, la ritm lent, scris de Brîndușa Nicolescu.",
       },
-      { property: "og:title", content: "Blog — Brîndușa Nicolescu" },
+      { property: "og:title", content: "Blog · Brîndușa Nicolescu" },
       {
         property: "og:description",
         content: "Însemnări despre desen, culoare, corp și prezență.",

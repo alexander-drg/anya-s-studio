@@ -14,7 +14,7 @@ export const LANGS: Lang[] = ["ro", "en", "it"];
 /**
  * Bilingual/trilingual copy.
  * `ro` is the source of truth. `en` and `it` are optional so that missing
- * translations fall back to Romanian instead of showing invented content —
+ * translations fall back to Romanian instead of showing invented content  · 
  * add the real translation later and it appears automatically.
  */
 export type Copy = { ro: string; en?: string; it?: string };

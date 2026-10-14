@@ -26,7 +26,7 @@ const submissionSchema = z.object({
     .max(2000, "Întrebarea este prea lungă."),
   /** Câmp-capcană: completat doar de roboți. */
   website: z.string().max(0).optional().or(z.literal("")),
-  /** Milisecunde de la deschiderea formularului — trimiterile instantanee sunt spam. */
+  /** Milisecunde de la deschiderea formularului · trimiterile instantanee sunt spam. */
   elapsedMs: z.number().int().nonnegative(),
 });
 

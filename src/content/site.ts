@@ -50,7 +50,7 @@ export const footerNav: { to: string; label: Copy }[] = [
 ];
 
 /**
- * Descriptorul profesional — text provizoriu, clientul încă nu a ales formularea.
+ * Descriptorul profesional · text provizoriu, clientul încă nu a ales formularea.
  * Rămâne un simplu șir de conținut localizat, ușor de schimbat.
  */
 export const professionalDescriptor: Copy = {
@@ -61,7 +61,7 @@ export const professionalDescriptor: Copy = {
 
 export const ARTIST_NAME = "Brîndușa Nicolescu";
 
-/** Cele trei registre distincte ale practicii — nu sunt aceeași practică. */
+/** Cele trei registre distincte ale practicii · nu sunt aceeași practică. */
 export const registers: { to: string; word: Copy; title: Copy; line: Copy }[] = [
   {
     to: "/galerie",
@@ -152,7 +152,7 @@ export const values: { title: Copy; line: Copy }[] = [
   },
 ];
 
-/** Statement-ul artistic principal — cuvintele clientei, sursă de adevăr în română. */
+/** Statement-ul artistic principal · cuvintele clientei, sursă de adevăr în română. */
 export const artistStatement: Copy = {
   ro: "Există momente în care culoarea spune ceea ce cuvintele nu pot spune.\nExistă momente în care liniștea devine cea mai profundă formă de dialog.\nÎntâlnirea dintre cele două este viziunea mea.",
   en: "There are moments when colour says what words cannot say.\nThere are moments when silence becomes the deepest form of dialogue.\nThe meeting of the two is my vision.",
@@ -160,7 +160,7 @@ export const artistStatement: Copy = {
 };
 
 /**
- * Povestea mea — textul complet al clientei, structurat editorial.
+ * Povestea mea · textul complet al clientei, structurat editorial.
  * RO este sursa de adevărat; en/it sunt traduceri atente, nu adaptări.
  */
 export const myStory: {
@@ -286,7 +286,7 @@ export const presenceMoments: {
 
 /**
  * Mărturii.
- * Textul real al mărturiilor urmează să fie completat de client — mai jos sunt
+ * Textul real al mărturiilor urmează să fie completat de client · mai jos sunt
  * doar atribuirile anonime furnizate. NU se inventează conținut.
  */
 export type Testimonial = { attribution: Copy; quote: Copy | null };
@@ -315,7 +315,7 @@ export const testimonials: Testimonial[] = [
 ];
 
 /**
- * Seria Fluid Art — Trieste, 2024.
+ * Seria Fluid Art · Trieste, 2024.
  * Titlurile individuale urmează să fie furnizate de clientă; `title` rămâne
  * `null` până atunci și se afișează „[Titlul lucrării]". NU se inventează titluri.
  */

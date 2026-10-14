@@ -12,13 +12,13 @@ import { useT } from "@/lib/i18n";
 export const Route = createFileRoute("/desen-fractal")({
   head: () => ({
     meta: [
-      { title: "Metoda Desenului Fractal — Brîndușa Nicolescu" },
+      { title: "Metoda Desenului Fractal · Brîndușa Nicolescu" },
       {
         name: "description",
         content:
           "Metoda Desenului Fractal: o linie continuă, 36 de creioane colorate și un proces de explorare personală prin desen, culoare și curiozitate.",
       },
-      { property: "og:title", content: "Metoda Desenului Fractal — Brîndușa Nicolescu" },
+      { property: "og:title", content: "Metoda Desenului Fractal · Brîndușa Nicolescu" },
       {
         property: "og:description",
         content: "O linie continuă, culoare și curiozitatea de a descoperi ce apare.",
@@ -114,7 +114,7 @@ function DesenFractal() {
                 <h3 className="font-serif text-3xl font-light md:text-4xl">Descoperirea</h3>
                 <p className="mt-5 font-serif text-xl leading-relaxed font-light md:text-2xl">
                   Undeva între linie și culoare apare ceva ce nu ai plănuit. Nu e nimic de
-                  interpretat imediat — e doar de privit, cu „mirarea copilului care încă poate
+                  interpretat imediat, e doar de privit, cu „mirarea copilului care încă poate
                   descoperi”.
                 </p>
               </div>
@@ -166,7 +166,7 @@ function DesenFractal() {
               <div className="border-t border-border pt-5">
                 <blockquote>
                   <p className="font-serif text-xl leading-snug font-light italic md:text-2xl">
-                    {tItem.quote ? t(tItem.quote) : "[Mărturie de completat — text real furnizat de client]"}
+                    {tItem.quote ? t(tItem.quote) : "[Mărturie de completat · text real furnizat de client]"}
                   </p>
                   <footer className="label-xs mt-4">{t(tItem.attribution)}</footer>
                 </blockquote>

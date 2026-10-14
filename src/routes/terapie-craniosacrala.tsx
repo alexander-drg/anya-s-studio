@@ -12,13 +12,13 @@ import art05 from "@/assets/desen_fractal_05.webp";
 export const Route = createFileRoute("/terapie-craniosacrala")({
   head: () => ({
     meta: [
-      { title: "Terapie Craniosacrală — Brîndușa Nicolescu" },
+      { title: "Terapie Craniosacrală · Brîndușa Nicolescu" },
       {
         name: "description",
         content:
           "Un spațiu liniștit pentru ascultare, încetinire și prezență în corp. Pagină în curs de completare cu informațiile despre practica Brîndușei Nicolescu.",
       },
-      { property: "og:title", content: "Terapie Craniosacrală — Brîndușa Nicolescu" },
+      { property: "og:title", content: "Terapie Craniosacrală · Brîndușa Nicolescu" },
       {
         property: "og:description",
         content: "Corp, ascultare, încetinire, prezență.",
@@ -47,7 +47,7 @@ function Craniosacrala() {
             Terapie Craniosacrală
           </h1>
           <p className="mt-5 max-w-md font-serif text-xl leading-relaxed font-light md:text-2xl">
-            Corp, ascultare, liniște, prezență. Un timp în care nu e nimic de rezolvat — doar de
+            Corp, ascultare, liniște, prezență. Un timp în care nu e nimic de rezolvat, doar de
             observat ce se întâmplă când încetinim.
           </p>
           <ContinuousLine className="mt-7 h-5 w-full text-[var(--color-sage)]" />
@@ -65,7 +65,7 @@ function Craniosacrala() {
           <p className="font-serif text-2xl leading-relaxed font-light md:text-3xl">
             [Descrierea terapiei craniosacrale urmează să fie completată de Brîndușa.]
           </p>
-          <ToBeCompleted note="Conținut de completat — nu au fost formulate afirmații despre metodă, indicații sau efecte." />
+          <ToBeCompleted note="Conținut de completat, nu au fost formulate afirmații despre metodă, indicații sau efecte." />
         </Reveal>
       </section>
 
@@ -76,10 +76,10 @@ function Craniosacrala() {
         <Reveal delay={100} className="md:col-span-7 md:col-start-5">
           <ul className="space-y-5">
             {[
-              "Ce se întâmplă în timpul unei ședințe — [de completat]",
-              "Durata și formatul — [de completat]",
-              "Cum se simte experiența — [de completat]",
-              "Detalii practice (loc, programare, frecvență) — [de completat]",
+              "Ce se întâmplă în timpul unei ședințe: [de completat]",
+              "Durata și formatul: [de completat]",
+              "Cum se simte experiența: [de completat]",
+              "Detalii practice (loc, programare, frecvență): [de completat]",
             ].map((row) => (
               <li key={row} className="border-t border-border pt-4 font-serif text-lg font-light">
                 {row}
@@ -121,7 +121,7 @@ function Craniosacrala() {
           <p className="font-serif text-2xl leading-relaxed font-light md:text-3xl">
             [Spațiu rezervat pentru descrierea reală a abordării și a formării Brîndușei.]
           </p>
-          <ToBeCompleted note="Conținut de completat — formare, experiență și mod de lucru." />
+          <ToBeCompleted note="Conținut de completat: formare, experiență și mod de lucru." />
         </Reveal>
       </section>
 

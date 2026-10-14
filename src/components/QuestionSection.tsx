@@ -80,7 +80,7 @@ export function QuestionSection({ postSlug }: { postSlug: string }) {
             Ai o întrebare?
           </h2>
           <p className="mt-4 max-w-sm text-muted-foreground">
-            Scrie-mi. Citesc fiecare întrebare și, când răspund, o public aici — fără adresa ta de
+            Scrie-mi. Citesc fiecare întrebare și, când răspund, o public aici, fără adresa ta de
             email, care rămâne doar la mine.
           </p>
         </div>
@@ -88,7 +88,7 @@ export function QuestionSection({ postSlug }: { postSlug: string }) {
         <div className="md:col-span-7 md:col-start-6">
           {state === "sent" ? (
             <p className="font-serif text-2xl leading-relaxed font-light">
-              Mulțumesc. Am primit întrebarea ta — îți răspund și, dacă răspunsul poate fi de folos
+              Mulțumesc. Am primit întrebarea ta, îți răspund și, dacă răspunsul poate fi de folos
               și altora, îl public aici.
             </p>
           ) : (
