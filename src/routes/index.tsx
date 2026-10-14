@@ -12,8 +12,11 @@ import {
   artistStatement,
   artworks,
   conceptLine,
+  connectionLine,
+  descriptorParts,
   myStory,
   professionalDescriptor,
+  registers,
   seriesInfo,
   testimonials,
   untitledLabel,
@@ -90,7 +93,9 @@ function Home() {
           </Reveal>
           <Reveal delay={100} className="md:col-span-6 md:col-start-5 md:pt-4">
             <h1 className="font-serif text-3xl font-light md:text-4xl">Brîndușa</h1>
-            <p className="mt-3 max-w-lg text-sm text-muted-foreground">{t(professionalDescriptor)}</p>
+            <ul className="mt-3 space-y-1 text-sm text-muted-foreground" aria-label={t(professionalDescriptor)}>
+              {descriptorParts.map((p) => <li key={p.ro}>{t(p)}</li>)}
+            </ul>
             <p className="mt-4 max-w-xl font-serif text-lg leading-relaxed font-light md:text-xl">
               {t(myStory.opening)}
             </p>
@@ -104,31 +109,28 @@ function Home() {
       </section>
 
       <section className="page-shell section-space-compact border-t border-border">
-        <Reveal><p className="label-xs mb-7">Practici</p></Reveal>
+        <Reveal><p className="label-xs mb-7">Trei registre</p></Reveal>
         <div className="grid gap-x-6 gap-y-10 md:grid-cols-3">
-          <Reveal>
-            <Link to="/desen-fractal" className="group block">
-              <div className="img-zoom aspect-[4/3]"><img src={drawing} alt="Detaliu de Desen Fractal" loading="lazy" className="h-full w-full object-cover" /></div>
-              <h2 className="mt-4 font-serif text-2xl font-light">Desen</h2>
-              <p className="mt-2 max-w-sm text-sm text-muted-foreground">Linie, culoare, emoție, proces și descoperire.</p>
-              <span className="label-xs quiet-link mt-4 inline-block">Descoperă →</span>
-            </Link>
-          </Reveal>
-          <Reveal delay={70}>
-            <Link to="/galerie" className="group block">
-              {preview[0] && <div className="img-zoom aspect-[4/3]"><img src={preview[0].src} alt="Lucrare Fluid Art" loading="lazy" className="h-full w-full object-cover" /></div>}
-              <h2 className="mt-4 font-serif text-2xl font-light">Pânze</h2>
-              <p className="mt-2 max-w-sm text-sm text-muted-foreground">Lucrări finite, detalii și seria Fluid Art.</p>
-              <span className="label-xs quiet-link mt-4 inline-block">Galerie →</span>
-            </Link>
-          </Reveal>
-          <Reveal delay={140} className="flex flex-col border-t border-border pt-5 md:mt-0">
-            <p className="label-xs">Corp · ascultare · prezență</p>
-            <h2 className="mt-4 font-serif text-2xl font-light">Întâlniri</h2>
-            <p className="mt-3 max-w-sm text-muted-foreground">Ședințe, ateliere și experiențe ghidate, individuale sau în grup, acolo unde informațiile sunt disponibile.</p>
-            <Link to="/terapie-craniosacrala" className="label-xs quiet-link mt-auto pt-8">Întâlniri →</Link>
-          </Reveal>
+          {registers.map((r, i) => {
+            const img = i === 0 ? preview[0]?.src : i === 2 ? drawing : null;
+            return (
+              <Reveal key={r.to} delay={i * 70} className={img ? "" : "flex flex-col border-t border-border pt-5"}>
+                <Link to={r.to} className="group flex h-full flex-col">
+                  {img ? (
+                    <div className="img-zoom aspect-[4/3]"><img src={img} alt={t(r.title)} loading="lazy" className="h-full w-full object-cover" /></div>
+                  ) : null}
+                  <p className="label-xs mt-4">{t(r.word)}</p>
+                  <h2 className="mt-2 font-serif text-2xl font-light">{t(r.title)}</h2>
+                  <p className="mt-2 max-w-sm text-sm text-muted-foreground">{t(r.line)}</p>
+                  <span className="label-xs quiet-link mt-4 inline-block">→</span>
+                </Link>
+              </Reveal>
+            );
+          })}
         </div>
+        <Reveal delay={200} className="mt-10 border-t border-border pt-6">
+          <p className="max-w-2xl font-serif text-xl leading-snug font-light italic md:text-2xl">{t(connectionLine)}</p>
+        </Reveal>
       </section>
 
       <section className="page-shell section-space">
