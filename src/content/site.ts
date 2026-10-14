@@ -31,9 +31,9 @@ import fluid30 from "@/assets/fluid_30.jpeg";
 import type { Copy } from "@/lib/i18n";
 
 /**
- * Nav = meniul principal. Pânze rămâne în afara meniului (accesibilă de pe
- * prima pagină și din subsol); Blog este retras de pe site, deocamdată.
+ * Nav = meniul principal (incl. Pânze). Blog este retras de pe site, deocamdată.
  */
+
 export const nav: { to: string; label: Copy }[] = [
   { to: "/", label: { ro: "Acasă", en: "Home", it: "Home" } },
   { to: "/desen-fractal", label: { ro: "Desen", en: "Drawing", it: "Disegno" } },
