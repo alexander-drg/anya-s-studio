@@ -31,23 +31,22 @@ import fluid30 from "@/assets/fluid_30.jpeg";
 import type { Copy } from "@/lib/i18n";
 
 /**
- * Nav = meniul principal. Pânze rămâne în afara meniului (accesibilă de pe
- * prima pagină și din subsol); Blog este retras de pe site, deocamdată.
+ * Nav = meniul principal (incl. Pânze). Blog este retras de pe site, deocamdată.
  */
+
 export const nav: { to: string; label: Copy }[] = [
   { to: "/", label: { ro: "Acasă", en: "Home", it: "Home" } },
   { to: "/desen-fractal", label: { ro: "Desen", en: "Drawing", it: "Disegno" } },
+  { to: "/galerie", label: { ro: "Pânze", en: "Canvases", it: "Tele" } },
   { to: "/terapie-craniosacrala", label: { ro: "Întâlniri", en: "Encounters", it: "Incontri" } },
   { to: "/explorari", label: { ro: "Explorări", en: "Explorations", it: "Esplorazioni" } },
   { to: "/despre", label: { ro: "Povestea mea", en: "My story", it: "La mia storia" } },
   { to: "/contact", label: { ro: "Contact", en: "Contact", it: "Contatti" } },
 ];
 
-/** Subsolul păstrează și Pânze (scoasă doar din meniul principal). */
+/** Subsolul: fără Acasă, restul meniului. */
 export const footerNav: { to: string; label: Copy }[] = [
-  ...nav.slice(1, 3),
-  { to: "/galerie", label: { ro: "Pânze", en: "Canvases", it: "Tele" } },
-  ...nav.slice(3),
+  ...nav.slice(1),
 ];
 
 /**
