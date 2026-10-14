@@ -44,11 +44,9 @@ export const nav: { to: string; label: Copy }[] = [
   { to: "/contact", label: { ro: "Contact", en: "Contact", it: "Contatti" } },
 ];
 
-/** Subsolul păstrează și Pânze (scoasă doar din meniul principal). */
+/** Subsolul: fără Acasă, restul meniului. */
 export const footerNav: { to: string; label: Copy }[] = [
-  ...nav.slice(1, 3),
-  { to: "/galerie", label: { ro: "Pânze", en: "Canvases", it: "Tele" } },
-  ...nav.slice(3),
+  ...nav.slice(1),
 ];
 
 /**
