@@ -9,13 +9,13 @@ import { useT } from "@/lib/i18n";
 export const Route = createFileRoute("/despre")({
   head: () => ({
     meta: [
-      { title: "Povestea mea — Brîndușa Nicolescu" },
+      { title: "Povestea mea · Brîndușa Nicolescu" },
       {
         name: "description",
         content:
           "Povestea Brîndușei Nicolescu: de ce pictează, ce înseamnă ritmul din pictură și din practica craniosacrală, și cum se întâlnesc culorile, liniile și punctele.",
       },
-      { property: "og:title", content: "Povestea mea — Brîndușa Nicolescu" },
+      { property: "og:title", content: "Povestea mea · Brîndușa Nicolescu" },
       {
         property: "og:description",
         content: "Pictez pentru că mă conectez la un ritm organic, fizic și psihic.",
@@ -143,13 +143,13 @@ function Despre() {
         </Reveal>
         <Reveal delay={100} className="md:col-span-7 md:col-start-5">
           <p className="text-muted-foreground">
-            [Spațiu rezervat pentru formare, cursuri și parcurs profesional — informațiile reale
+            [Spațiu rezervat pentru formare, cursuri și parcurs profesional; informațiile reale
             urmează să fie furnizate.]
           </p>
           <ul className="mt-8 space-y-4">
             {[1, 2, 3].map((n) => (
               <li key={n} className="label-xs border-t border-border pt-4">
-                [An] — [Formare / curs]
+                [An] · [Formare / curs]
               </li>
             ))}
           </ul>

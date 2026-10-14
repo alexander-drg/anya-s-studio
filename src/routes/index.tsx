@@ -27,13 +27,13 @@ import { useT } from "@/lib/i18n";
 export const Route = createFileRoute("/")({
   head: () => ({
     meta: [
-      { title: "Brîndușa Nicolescu — Unde ARTA întâlnește PREZENȚA" },
+      { title: "Brîndușa Nicolescu · Unde ARTA întâlnește PREZENȚA" },
       {
         name: "description",
         content:
           "Cultivarea prezenței prin artă, percepție și experiență creativă. Pictură Fluid Art, Desen Fractal și întâlniri în liniște.",
       },
-      { property: "og:title", content: "Brîndușa Nicolescu — Unde ARTA întâlnește PREZENȚA" },
+      { property: "og:title", content: "Brîndușa Nicolescu · Unde ARTA întâlnește PREZENȚA" },
       {
         property: "og:description",
         content: "Cultivarea prezenței prin artă, percepție și experiență creativă.",
@@ -178,7 +178,7 @@ function Home() {
           <Reveal delay={80} className="md:col-span-5 md:col-start-5">
             <blockquote>
               <p className="font-serif text-xl leading-snug font-light italic md:text-2xl">
-                {testimonials[0]?.quote ? t(testimonials[0].quote) : "[Mărturie de completat — text real furnizat de client]"}
+                {testimonials[0]?.quote ? t(testimonials[0].quote) : "[Mărturie de completat · text real furnizat de client]"}
               </p>
               {testimonials[0] && <footer className="label-xs mt-4">{t(testimonials[0].attribution)}</footer>}
             </blockquote>

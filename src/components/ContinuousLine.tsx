@@ -1,7 +1,7 @@
 import { useEffect, useRef, useState } from "react";
 
 /**
- * O linie continuă, desenată lent la intrarea în ecran —
+ * O linie continuă, desenată lent la intrarea în ecran  · 
  * referință discretă la desenul fractal.
  */
 export function ContinuousLine({

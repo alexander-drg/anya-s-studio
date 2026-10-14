@@ -7,13 +7,13 @@ import { Reveal } from "@/components/Reveal";
 export const Route = createFileRoute("/explorari")({
   head: () => ({
     meta: [
-      { title: "Explorări — Brîndușa Nicolescu" },
+      { title: "Explorări · Brîndușa Nicolescu" },
       {
         name: "description",
         content:
           "Ateliere, experiențe și explorări creative: procese, materiale și subiecte care nu încap într-o singură categorie.",
       },
-      { property: "og:title", content: "Explorări — Brîndușa Nicolescu" },
+      { property: "og:title", content: "Explorări · Brîndușa Nicolescu" },
       {
         property: "og:description",
         content: "Ateliere, experiențe și explorări creative alături de Brîndușa Nicolescu.",
@@ -39,7 +39,7 @@ function Explorari() {
           </p>
         </Reveal>
         <Reveal delay={120} className="md:col-span-5 md:col-start-8">
-          <Placeholder label="[Atelier — atmosferă]" ratio="4 / 5" />
+          <Placeholder label="[Atelier · atmosferă]" ratio="4 / 5" />
         </Reveal>
       </section>
 
@@ -55,7 +55,7 @@ function Explorari() {
         </Reveal>
         <Reveal delay={100} className="md:col-span-7 md:col-start-5">
           <p className="text-muted-foreground">
-            [Spațiu rezervat pentru atelierele și experiențele care urmează — datele reale urmează
+            [Spațiu rezervat pentru atelierele și experiențele care urmează; datele reale urmează
             să fie completate.]
           </p>
         </Reveal>

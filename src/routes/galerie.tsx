@@ -8,13 +8,13 @@ import { useT } from "@/lib/i18n";
 export const Route = createFileRoute("/galerie")({
   head: () => ({
     meta: [
-      { title: "Pânze — Brîndușa Nicolescu" },
+      { title: "Pânze · Brîndușa Nicolescu" },
       {
         name: "description",
         content:
           "Seria Fluid Art: lucrări în acrilic de aproximativ 50 cm, parte dintr-o expoziție din 2024, la Trieste, Italia.",
       },
-      { property: "og:title", content: "Pânze — Brîndușa Nicolescu" },
+      { property: "og:title", content: "Pânze · Brîndușa Nicolescu" },
       {
         property: "og:description",
         content: "Acrilic, tehnica Fluid Art. Trieste, 2024.",

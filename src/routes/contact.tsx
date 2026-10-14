@@ -8,13 +8,13 @@ import { contact } from "@/content/site";
 export const Route = createFileRoute("/contact")({
   head: () => ({
     meta: [
-      { title: "Contact — Brîndușa Nicolescu" },
+      { title: "Contact · Brîndușa Nicolescu" },
       {
         name: "description",
         content:
           "Scrie-i Brîndușei Nicolescu: Desen Fractal, terapie craniosacrală sau orice altă întrebare. Trieste, Italia și București, România.",
       },
-      { property: "og:title", content: "Contact — Brîndușa Nicolescu" },
+      { property: "og:title", content: "Contact · Brîndușa Nicolescu" },
       {
         property: "og:description",
         content: "Dacă simți că vrei să afli mai mult, putem începe de aici.",
@@ -33,7 +33,7 @@ function Contact() {
   const [form, setForm] = useState({ name: "", email: "", subject: subjects[0]!, message: "" });
 
   const mailto = `mailto:${contact.email}?subject=${encodeURIComponent(
-    `${form.subject} — ${form.name || "mesaj de pe site"}`,
+    `${form.subject} · ${form.name || "mesaj de pe site"}`,
   )}&body=${encodeURIComponent(`${form.message}\n\n${form.name}\n${form.email}`)}`;
 
   return (

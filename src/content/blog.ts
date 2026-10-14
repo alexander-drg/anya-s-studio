@@ -1,6 +1,6 @@
 /**
  * Articolele de blog.
- * Textele reale urmează; structura este pregătită — adaugă un obiect nou aici
+ * Textele reale urmează; structura este pregătită · adaugă un obiect nou aici
  * și pagina `/blog/<slug>` apare automat, împreună cu secțiunea de întrebări.
  */
 export type BlogPost = {
