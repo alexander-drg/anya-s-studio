@@ -37,6 +37,7 @@ import type { Copy } from "@/lib/i18n";
 export const nav: { to: string; label: Copy }[] = [
   { to: "/", label: { ro: "Acasă", en: "Home", it: "Home" } },
   { to: "/desen-fractal", label: { ro: "Desen", en: "Drawing", it: "Disegno" } },
+  { to: "/galerie", label: { ro: "Pânze", en: "Canvases", it: "Tele" } },
   { to: "/terapie-craniosacrala", label: { ro: "Întâlniri", en: "Encounters", it: "Incontri" } },
   { to: "/explorari", label: { ro: "Explorări", en: "Explorations", it: "Esplorazioni" } },
   { to: "/despre", label: { ro: "Povestea mea", en: "My story", it: "La mia storia" } },
