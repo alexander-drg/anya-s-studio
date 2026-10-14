@@ -62,6 +62,54 @@ export const professionalDescriptor: Copy = {
 
 export const ARTIST_NAME = "Brîndușa Nicolescu";
 
+/** Cele trei registre distincte ale practicii — nu sunt aceeași practică. */
+export const registers: { to: string; word: Copy; title: Copy; line: Copy }[] = [
+  {
+    to: "/galerie",
+    word: { ro: "Culoare", en: "Colour", it: "Colore" },
+    title: { ro: "Artă", en: "Art", it: "Arte" },
+    line: {
+      ro: "Lucrări vizuale, pictură, culoare și practică artistică.",
+      en: "Visual work, painting, colour and artistic practice.",
+      it: "Opere visive, pittura, colore e pratica artistica.",
+    },
+  },
+  {
+    to: "/terapie-craniosacrala",
+    word: { ro: "Corp", en: "Body", it: "Corpo" },
+    title: { ro: "Terapie craniosacrală", en: "Craniosacral therapy", it: "Terapia craniosacrale" },
+    line: {
+      ro: "Lucrul prin corp, prezență și practica craniosacrală.",
+      en: "Work through the body, presence and craniosacral practice.",
+      it: "Il lavoro attraverso il corpo, la presenza e la pratica craniosacrale.",
+    },
+  },
+  {
+    to: "/desen-fractal",
+    word: { ro: "Creativitate", en: "Creativity", it: "Creatività" },
+    title: { ro: "Experiențe creative", en: "Creative experiences", it: "Esperienze creative" },
+    line: {
+      ro: "Desen Fractal, ateliere și experiențe creative facilitate.",
+      en: "Fractal Drawing, workshops and facilitated creative experiences.",
+      it: "Disegno Frattale, laboratori ed esperienze creative facilitate.",
+    },
+  },
+];
+
+/** Cuvintele clientei: ce leagă cele trei registre. */
+export const connectionLine: Copy = {
+  ro: "„Legătura sunt eu și felul în care privesc omul: prin corp, culoare, percepție, creativitate și atenție.”",
+  en: "“The connection is me, and the way I look at the human being: through body, colour, perception, creativity and attention.”",
+  it: "“Il legame sono io e il modo in cui guardo l'essere umano: attraverso il corpo, il colore, la percezione, la creatività e l'attenzione.”",
+};
+
+/** Descriptorul împărțit în cele trei registre, pentru afișare pe rânduri separate. */
+export const descriptorParts: Copy[] = [
+  { ro: "Artist vizual", en: "Visual artist", it: "Artista visiva" },
+  { ro: "Terapeut craniosacral", en: "Craniosacral therapist", it: "Terapeuta craniosacrale" },
+  { ro: "Facilitator de experiențe creative", en: "Facilitator of creative experiences", it: "Facilitatrice di esperienze creative" },
+];
+
 export const contact = {
   name: ARTIST_NAME,
   locations: ["Trieste, Italia", "București, România"],
