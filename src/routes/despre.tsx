@@ -3,7 +3,7 @@ import { createFileRoute, Link } from "@tanstack/react-router";
 import brandusa from "@/assets/brandusa.webp";
 import { Placeholder } from "@/components/Placeholder";
 import { Reveal } from "@/components/Reveal";
-import { myStory, professionalDescriptor, values } from "@/content/site";
+import { connectionLine, descriptorParts, myStory, professionalDescriptor, values } from "@/content/site";
 import { useT } from "@/lib/i18n";
 
 export const Route = createFileRoute("/despre")({
@@ -37,8 +37,11 @@ function Despre() {
           <h1 className="font-serif text-[2.6rem] leading-[1.05] font-light md:text-5xl">
             Brîndușa Nicolescu
           </h1>
-          <p className="mt-5 max-w-lg text-sm text-muted-foreground">
-            {t(professionalDescriptor)}
+          <ul className="mt-5 space-y-1 text-sm text-muted-foreground" aria-label={t(professionalDescriptor)}>
+            {descriptorParts.map((p) => <li key={p.ro}>{t(p)}</li>)}
+          </ul>
+          <p className="mt-8 max-w-md font-serif text-lg leading-snug font-light italic md:text-xl">
+            {t(connectionLine)}
           </p>
         </Reveal>
         <Reveal delay={120} className="md:col-span-5 md:col-start-8">

@@ -97,8 +97,7 @@ function Craniosacrala() {
           <h2 className="font-serif text-3xl font-light md:text-4xl">Prezență și corp</h2>
           <p className="mt-6 max-w-md text-muted-foreground">
             Atenția coboară din cap în corp. Respirația se lungește. Ascultarea devine mai fină
-            decât cuvintele. Aceeași prezență pe care o cauți în fața unei picturi sau cu creionul
-            în mână, doar că de data aceasta trece prin corp.
+            decât cuvintele.
           </p>
         </Reveal>
       </section>
