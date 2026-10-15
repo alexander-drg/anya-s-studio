@@ -28,6 +28,9 @@ import fluid27 from "@/assets/fluid_27.jpeg";
 import fluid28 from "@/assets/fluid_28.jpeg";
 import fluid29 from "@/assets/fluid_29.jpeg";
 import fluid30 from "@/assets/fluid_30.jpeg";
+import panzaClient01 from "@/assets/panza_client_01.jpeg";
+import panzaClient02 from "@/assets/panza_client_02.jpeg";
+import panzaClient03 from "@/assets/panza_client_03.jpeg";
 import type { Copy } from "@/lib/i18n";
 
 /**
@@ -380,4 +383,38 @@ export const artworks: Artwork[] = [
   { id: "fa-28", src: fluid28, title: null },
   { id: "fa-29", src: fluid29, title: null },
   { id: "fa-30", src: fluid30, title: null },
+];
+
+/**
+ * Acuarele · lucrări aflate astăzi în colecții private (ale unor clienți ai artistei).
+ * Titlurile și detaliile (dimensiuni, ani) NU sunt furnizate; NU se inventează.
+ */
+export type SeriesInfo = {
+  title: Copy;
+  technique: Copy;
+  techniqueLong: Copy;
+  size?: Copy;
+  place?: Copy;
+  intro: Copy;
+};
+
+export const watercolorSeriesInfo: SeriesInfo = {
+  title: { ro: "Acuarelă", en: "Watercolour", it: "Acquerello" } as Copy,
+  technique: { ro: "Acuarelă", en: "Watercolour", it: "Acquerello" } as Copy,
+  techniqueLong: {
+    ro: "Acuarelă pe hârtie",
+    en: "Watercolour on paper",
+    it: "Acquerello su carta",
+  } as Copy,
+  intro: {
+    ro: "Lucrări în acuarelă, aflate astăzi în colecții private. Titlurile și detaliile se adaugă pe măsură ce ajung.",
+    en: "Watercolour works, now in private collections. Titles and details are added as they arrive.",
+    it: "Opere ad acquerello, oggi in collezioni private. Titoli e dettagli verranno aggiunti man mano.",
+  } as Copy,
+};
+
+export const watercolors: Artwork[] = [
+  { id: "ac-01", src: panzaClient01, title: null },
+  { id: "ac-02", src: panzaClient02, title: null },
+  { id: "ac-03", src: panzaClient03, title: null },
 ];
