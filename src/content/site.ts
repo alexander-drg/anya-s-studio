@@ -31,6 +31,9 @@ import fluid30 from "@/assets/fluid_30.jpeg";
 import panzaClient01 from "@/assets/panza_client_01.jpeg";
 import panzaClient02 from "@/assets/panza_client_02.jpeg";
 import panzaClient03 from "@/assets/panza_client_03.jpeg";
+import panzaClient04 from "@/assets/panza_client_04.jpeg";
+import panzaClient05 from "@/assets/panza_client_05.jpeg";
+import panzaClient06 from "@/assets/panza_client_06.jpeg";
 import type { Copy } from "@/lib/i18n";
 
 /**
@@ -417,4 +420,7 @@ export const watercolors: Artwork[] = [
   { id: "ac-01", src: panzaClient01, title: null },
   { id: "ac-02", src: panzaClient02, title: null },
   { id: "ac-03", src: panzaClient03, title: null },
+  { id: "ac-04", src: panzaClient04, title: null },
+  { id: "ac-05", src: panzaClient05, title: null },
+  { id: "ac-06", src: panzaClient06, title: null },
 ];
