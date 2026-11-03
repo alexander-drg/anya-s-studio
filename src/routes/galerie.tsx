@@ -9,6 +9,7 @@ import {
   watercolorSeriesInfo,
   untitledLabel,
   isPublished,
+  sortArtworks,
   type Artwork,
   type SeriesInfo,
 } from "@/content/site";
@@ -90,7 +91,7 @@ function WorkSeries({
   );
 }
 
-const publishedFluid = artworks.filter(isPublished);
+const publishedFluid = sortArtworks(artworks.filter(isPublished));
 const publishedWatercolors = watercolors.filter(isPublished);
 
 function Panze() {

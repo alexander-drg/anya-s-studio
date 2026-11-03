@@ -361,7 +361,7 @@ export const untitledLabel: Copy = {
 
 export const artworks: Artwork[] = [
   { id: "fa-01", src: fluid01, title: null, published: false, featured: false },
-  { id: "fa-02", src: fluid02, title: null, published: false, featured: false },
+  { id: "fa-02", src: fluid02, title: null, published: true, featured: true },
   { id: "fa-03", src: fluid03, title: null, published: false, featured: false },
   { id: "fa-04", src: fluid04, title: null, published: false, featured: false },
   { id: "fa-05", src: fluid05, title: null, published: false, featured: false },
@@ -376,7 +376,7 @@ export const artworks: Artwork[] = [
   { id: "fa-14", src: fluid14, title: null, published: false, featured: false },
   { id: "fa-15", src: fluid15, title: null, published: false, featured: false },
   { id: "fa-16", src: fluid16, title: null, published: false, featured: false },
-  { id: "fa-17", src: fluid17, title: null, published: true, featured: true },
+  { id: "fa-17", src: fluid17, title: null, published: false, featured: false },
   { id: "fa-18", src: fluid18, title: null, published: false, featured: false },
   { id: "fa-19", src: fluid19, title: null, published: true, featured: true },
   { id: "fa-20", src: fluid20, title: null, published: false, featured: false },
@@ -509,6 +509,15 @@ export const externalWork: [{ label: Copy; href: string }, { label: Copy; href: 
     href: "https://www.desenfractal.ro",
   },
 ];
+
+/** Ordinea de afișare a lucrărilor publicate (ordinea trimisă de clientă). Restul urmează ordinea din listă. */
+export const artworkOrder = ["fa-19", "fa-02", "fa-22"];
+const orderIndex = (a: Artwork) => {
+  const i = artworkOrder.indexOf(a.id);
+  return i === -1 ? artworkOrder.length : i;
+};
+export const sortArtworks = (list: Artwork[]) =>
+  [...list].sort((a, b) => orderIndex(a) - orderIndex(b));
 
 /** Doar lucrările publicate apar pe site. */
 export const isPublished = (a: Artwork) => a.published;

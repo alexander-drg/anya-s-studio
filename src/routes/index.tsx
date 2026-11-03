@@ -12,6 +12,7 @@ import {
   artistStatement,
   artworks,
   isFeatured,
+  sortArtworks,
   conceptLine,
   connectionLine,
   descriptorParts,
@@ -62,7 +63,7 @@ function ConceptLine() {
 function Home() {
   const t = useT();
   const statementLines = t(artistStatement).split("\n");
-  const preview = artworks.filter(isFeatured);
+  const preview = sortArtworks(artworks.filter(isFeatured));
 
   return (
     <>
