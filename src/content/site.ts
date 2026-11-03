@@ -486,14 +486,22 @@ export const whyIPaint: { heading: Copy; paragraphs: Copy[] } = {
   ],
 };
 
-/** Trimiteri externe de la finalul paginii Povestea mea. Etichetele rămân în română (cuvintele clientei). */
+/** Trimiteri externe de la finalul paginii Povestea mea. */
 export const externalWork: { label: Copy; href: string }[] = [
   {
-    label: { ro: "Descoperă activitatea mea în terapia Craniosacrală" },
+    label: {
+      ro: "Descoperă activitatea mea în terapia Craniosacrală",
+      en: "Discover my work in Craniosacral therapy",
+      it: "Scopri la mia attività nella terapia Craniosacrale",
+    },
     href: "https://www.iahp.com/brindusa-nicolescu",
   },
   {
-    label: { ro: "Explorează atelierele de Desen Fractal" },
+    label: {
+      ro: "Explorează atelierele de Desen Fractal",
+      en: "Explore the Fractal Drawing workshops",
+      it: "Esplora i laboratori di Disegno Frattale",
+    },
     href: "https://www.desenfractal.ro",
   },
 ];
