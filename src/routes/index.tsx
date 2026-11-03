@@ -11,6 +11,7 @@ import {
   approachLine,
   artistStatement,
   artworks,
+  isFeatured,
   conceptLine,
   connectionLine,
   descriptorParts,
@@ -61,9 +62,7 @@ function ConceptLine() {
 function Home() {
   const t = useT();
   const statementLines = t(artistStatement).split("\n");
-  const preview = [artworks[16], artworks[18], artworks[21]].filter(
-    (artwork): artwork is NonNullable<typeof artwork> => Boolean(artwork),
-  );
+  const preview = artworks.filter(isFeatured);
 
   return (
     <>
