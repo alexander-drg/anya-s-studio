@@ -50,7 +50,7 @@ function TextSection({ heading, paragraphs }: { heading: Copy; paragraphs: Copy[
 
 function Despre() {
   const t = useT();
-  const [cranio, fractal] = externalWork;
+  const fractal = externalWork[1];
 
   return (
     <div className="page-shell pb-16">
@@ -69,28 +69,31 @@ function Despre() {
       <TextSection heading={artistPath.heading} paragraphs={artistPath.paragraphs} />
       <TextSection heading={whyIPaint.heading} paragraphs={whyIPaint.paragraphs} />
 
-      <section className="grid gap-8 border-t border-border pt-10 md:grid-cols-12 md:pt-12">
-        <Reveal className="md:col-span-5">
-          <a
-            href={cranio.href}
-            target="_blank"
-            rel="noopener noreferrer"
-            className="quiet-link font-serif text-lg font-light md:text-xl"
-          >
-            {t(cranio.label)} →
-          </a>
+      <section className="grid items-end gap-8 border-t border-border pt-10 md:grid-cols-12 md:pt-12">
+        <Reveal className="md:col-span-6">
+          <ul className="space-y-4">
+            {externalWork.map((w) => (
+              <li key={w.href}>
+                <a
+                  href={w.href}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="quiet-link font-serif text-lg font-light md:text-xl"
+                >
+                  {t(w.label)} →
+                </a>
+              </li>
+            ))}
+          </ul>
         </Reveal>
-        <Reveal delay={100} className="md:col-span-5 md:col-start-8">
-          <a href={fractal.href} target="_blank" rel="noopener noreferrer" className="group block">
+        <Reveal delay={100} className="md:col-span-4 md:col-start-9">
+          <a href={fractal.href} target="_blank" rel="noopener noreferrer" aria-label={t(fractal.label)}>
             <img
               src={fractalWorkshop}
               alt="Atelier de Desen Fractal, participanți desenând"
               className="aspect-[4/3] w-full object-cover"
               loading="lazy"
             />
-            <span className="quiet-link mt-4 inline-block font-serif text-lg font-light md:text-xl">
-              {t(fractal.label)} →
-            </span>
           </a>
         </Reveal>
       </section>
