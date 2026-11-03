@@ -330,6 +330,10 @@ export type Artwork = {
   src: string;
   /** Titlul real, cu traduceri opționale. `null` = încă nefurnizat. */
   title: Copy | null;
+  /** Vizibilă public pe site. `false` = păstrată în proiect, ascunsă. */
+  published: boolean;
+  /** Afișată pe pagina principală. Contează doar dacă `published` e `true`. */
+  featured: boolean;
 };
 
 export const seriesInfo = {
@@ -356,36 +360,36 @@ export const untitledLabel: Copy = {
 };
 
 export const artworks: Artwork[] = [
-  { id: "fa-01", src: fluid01, title: null },
-  { id: "fa-02", src: fluid02, title: null },
-  { id: "fa-03", src: fluid03, title: null },
-  { id: "fa-04", src: fluid04, title: null },
-  { id: "fa-05", src: fluid05, title: null },
-  { id: "fa-06", src: fluid06, title: null },
-  { id: "fa-07", src: fluid07, title: null },
-  { id: "fa-08", src: fluid08, title: null },
-  { id: "fa-09", src: fluid09, title: null },
-  { id: "fa-10", src: fluid10, title: null },
-  { id: "fa-11", src: fluid11, title: null },
-  { id: "fa-12", src: fluid12, title: null },
-  { id: "fa-13", src: fluid13, title: null },
-  { id: "fa-14", src: fluid14, title: null },
-  { id: "fa-15", src: fluid15, title: null },
-  { id: "fa-16", src: fluid16, title: null },
-  { id: "fa-17", src: fluid17, title: null },
-  { id: "fa-18", src: fluid18, title: null },
-  { id: "fa-19", src: fluid19, title: null },
-  { id: "fa-20", src: fluid20, title: null },
-  { id: "fa-21", src: fluid21, title: null },
-  { id: "fa-22", src: fluid22, title: null },
-  { id: "fa-23", src: fluid23, title: null },
-  { id: "fa-24", src: fluid24, title: null },
-  { id: "fa-25", src: fluid25, title: null },
-  { id: "fa-26", src: fluid26, title: null },
-  { id: "fa-27", src: fluid27, title: null },
-  { id: "fa-28", src: fluid28, title: null },
-  { id: "fa-29", src: fluid29, title: null },
-  { id: "fa-30", src: fluid30, title: null },
+  { id: "fa-01", src: fluid01, title: null, published: false, featured: false },
+  { id: "fa-02", src: fluid02, title: null, published: false, featured: false },
+  { id: "fa-03", src: fluid03, title: null, published: false, featured: false },
+  { id: "fa-04", src: fluid04, title: null, published: false, featured: false },
+  { id: "fa-05", src: fluid05, title: null, published: false, featured: false },
+  { id: "fa-06", src: fluid06, title: null, published: false, featured: false },
+  { id: "fa-07", src: fluid07, title: null, published: false, featured: false },
+  { id: "fa-08", src: fluid08, title: null, published: false, featured: false },
+  { id: "fa-09", src: fluid09, title: null, published: false, featured: false },
+  { id: "fa-10", src: fluid10, title: null, published: false, featured: false },
+  { id: "fa-11", src: fluid11, title: null, published: false, featured: false },
+  { id: "fa-12", src: fluid12, title: null, published: false, featured: false },
+  { id: "fa-13", src: fluid13, title: null, published: false, featured: false },
+  { id: "fa-14", src: fluid14, title: null, published: false, featured: false },
+  { id: "fa-15", src: fluid15, title: null, published: false, featured: false },
+  { id: "fa-16", src: fluid16, title: null, published: false, featured: false },
+  { id: "fa-17", src: fluid17, title: null, published: true, featured: true },
+  { id: "fa-18", src: fluid18, title: null, published: false, featured: false },
+  { id: "fa-19", src: fluid19, title: null, published: true, featured: true },
+  { id: "fa-20", src: fluid20, title: null, published: false, featured: false },
+  { id: "fa-21", src: fluid21, title: null, published: false, featured: false },
+  { id: "fa-22", src: fluid22, title: null, published: true, featured: true },
+  { id: "fa-23", src: fluid23, title: null, published: false, featured: false },
+  { id: "fa-24", src: fluid24, title: null, published: false, featured: false },
+  { id: "fa-25", src: fluid25, title: null, published: false, featured: false },
+  { id: "fa-26", src: fluid26, title: null, published: false, featured: false },
+  { id: "fa-27", src: fluid27, title: null, published: false, featured: false },
+  { id: "fa-28", src: fluid28, title: null, published: false, featured: false },
+  { id: "fa-29", src: fluid29, title: null, published: false, featured: false },
+  { id: "fa-30", src: fluid30, title: null, published: false, featured: false },
 ];
 
 /**
@@ -417,12 +421,12 @@ export const watercolorSeriesInfo: SeriesInfo = {
 };
 
 export const watercolors: Artwork[] = [
-  { id: "ac-01", src: panzaClient01, title: null },
-  { id: "ac-02", src: panzaClient02, title: null },
-  { id: "ac-03", src: panzaClient03, title: null },
-  { id: "ac-04", src: panzaClient04, title: null },
-  { id: "ac-05", src: panzaClient05, title: null },
-  { id: "ac-06", src: panzaClient06, title: null },
+  { id: "ac-01", src: panzaClient01, title: null, published: false, featured: false },
+  { id: "ac-02", src: panzaClient02, title: null, published: false, featured: false },
+  { id: "ac-03", src: panzaClient03, title: null, published: false, featured: false },
+  { id: "ac-04", src: panzaClient04, title: null, published: false, featured: false },
+  { id: "ac-05", src: panzaClient05, title: null, published: false, featured: false },
+  { id: "ac-06", src: panzaClient06, title: null, published: false, featured: false },
 ];
 
 /**
@@ -505,3 +509,8 @@ export const externalWork: [{ label: Copy; href: string }, { label: Copy; href: 
     href: "https://www.desenfractal.ro",
   },
 ];
+
+/** Doar lucrările publicate apar pe site. */
+export const isPublished = (a: Artwork) => a.published;
+/** Lucrările de pe pagina principală: publicate și marcate featured. */
+export const isFeatured = (a: Artwork) => a.published && a.featured;

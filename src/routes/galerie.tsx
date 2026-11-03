@@ -8,6 +8,7 @@ import {
   seriesInfo,
   watercolorSeriesInfo,
   untitledLabel,
+  isPublished,
   type Artwork,
   type SeriesInfo,
 } from "@/content/site";
@@ -89,6 +90,9 @@ function WorkSeries({
   );
 }
 
+const publishedFluid = artworks.filter(isPublished);
+const publishedWatercolors = watercolors.filter(isPublished);
+
 function Panze() {
   const t = useT();
   const [open, setOpen] = useState<OpenWork | null>(null);
@@ -112,14 +116,18 @@ function Panze() {
         </Reveal>
       </section>
 
-      <WorkSeries series={seriesInfo} works={artworks} onOpen={setOpen} />
-      <WorkSeries
-        series={watercolorSeriesInfo}
-        works={watercolors}
-        onOpen={setOpen}
-        showIntro
-        className="mt-14"
-      />
+      {publishedFluid.length > 0 && (
+        <WorkSeries series={seriesInfo} works={publishedFluid} onOpen={setOpen} />
+      )}
+      {publishedWatercolors.length > 0 && (
+        <WorkSeries
+          series={watercolorSeriesInfo}
+          works={publishedWatercolors}
+          onOpen={setOpen}
+          showIntro
+          className="mt-14"
+        />
+      )}
 
       {open && (
         <div
