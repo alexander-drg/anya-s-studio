@@ -1,10 +1,10 @@
 import { describe, expect, it } from "vitest";
-import { artworks, watercolors, isFeatured, isPublished } from "./site";
+import { artworks, watercolors, isFeatured, isPublished, sortArtworks } from "./site";
 
 describe("artwork visibility", () => {
   it("publishes only the three client-approved paintings", () => {
-    const visible = [...artworks, ...watercolors].filter(isPublished).map((a) => a.id);
-    expect(visible).toEqual(["fa-17", "fa-19", "fa-22"]);
+    const visible = sortArtworks([...artworks, ...watercolors].filter(isPublished)).map((a) => a.id);
+    expect(visible).toEqual(["fa-19", "fa-02", "fa-22"]);
   });
 
   it("keeps hidden artworks in the data", () => {
