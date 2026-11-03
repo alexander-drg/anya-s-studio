@@ -10,3 +10,4 @@
 <!-- LOVABLE:END -->
 
 - Keep visual content and artwork metadata in shared content modules so homepage previews and galleries stay synchronized as new client material arrives.
+- Artwork visibility is data-driven: each artwork in `src/content/site.ts` has `published` (shown on the site) and `featured` (homepage, only if published); pages filter with `isPublished`/`isFeatured` and never delete hidden works, so they can be re-enabled by flipping a flag.
