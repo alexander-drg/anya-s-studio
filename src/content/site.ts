@@ -487,7 +487,7 @@ export const whyIPaint: { heading: Copy; paragraphs: Copy[] } = {
 };
 
 /** Trimiteri externe de la finalul paginii Povestea mea. */
-export const externalWork: { label: Copy; href: string }[] = [
+export const externalWork: [{ label: Copy; href: string }, { label: Copy; href: string }] = [
   {
     label: {
       ro: "Descoperă activitatea mea în terapia Craniosacrală",
