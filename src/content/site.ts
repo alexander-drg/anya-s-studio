@@ -424,3 +424,76 @@ export const watercolors: Artwork[] = [
   { id: "ac-05", src: panzaClient05, title: null },
   { id: "ac-06", src: panzaClient06, title: null },
 ];
+
+/**
+ * Povestea mea · structura finală (textul integral al clientei).
+ * RO este sursa de adevăr; en/it sunt traduceri fidele.
+ */
+export const artistPath: { heading: Copy; paragraphs: Copy[] } = {
+  heading: { ro: "Parcursul meu artistic", en: "My artistic path", it: "Il mio percorso artistico" },
+  paragraphs: [
+    {
+      ro: "Mi s-a povestit că am început să desenez de la vârsta de doi ani. Mai târziu, am urmat Liceul de Arte Plastice Nicolae Tonitza și Școala Populară de Artă, secția Canto clasic.",
+      en: "I was told that I started drawing at the age of two. Later, I attended the Nicolae Tonitza Fine Arts High School and the Folk School of Arts, in the Classical Singing section.",
+      it: "Mi è stato raccontato che ho iniziato a disegnare all'età di due anni. Più tardi ho frequentato il Liceo di Arti Plastiche Nicolae Tonitza e la Scuola Popolare d'Arte, sezione Canto classico.",
+    },
+    {
+      ro: "Muzica și activitatea corală, care m-au însoțit timp de mulți ani, au adăugat o altă dimensiune sensibilității mele: ritmul, armonia, respirația și bucuria de a crea împreună.",
+      en: "Music and choral singing, which accompanied me for many years, added another dimension to my sensitivity: rhythm, harmony, breath and the joy of creating together.",
+      it: "La musica e l'attività corale, che mi hanno accompagnata per molti anni, hanno aggiunto un'altra dimensione alla mia sensibilità: il ritmo, l'armonia, il respiro e la gioia di creare insieme.",
+    },
+    {
+      ro: "În 1997 am absolvit Academia de Artă din București, în care formarea artistică mi-a oferit o bază solidă pentru explorarea limbajului vizual și pentru înțelegerea procesului creativ.",
+      en: "In 1997 I graduated from the Academy of Art in Bucharest, where my artistic training gave me a solid foundation for exploring visual language and for understanding the creative process.",
+      it: "Nel 1997 mi sono laureata all'Accademia d'Arte di Bucarest, dove la formazione artistica mi ha dato una base solida per esplorare il linguaggio visivo e per comprendere il processo creativo.",
+    },
+    {
+      ro: "Ulterior, experiența în design grafic mi-a deschis drumul către mediul digital, unde am continuat să explorez relația dintre formă, culoare, compoziție și mesaj. A fost o altă modalitate de a privi și construi imaginea, completând experiența mea artistică.",
+      en: "Later, my experience in graphic design opened the way to the digital medium, where I continued to explore the relationship between form, colour, composition and message. It was another way of looking at and building the image, completing my artistic experience.",
+      it: "In seguito, l'esperienza nel design grafico mi ha aperto la strada verso il mondo digitale, dove ho continuato a esplorare il rapporto tra forma, colore, composizione e messaggio. È stato un altro modo di guardare e costruire l'immagine, a completamento della mia esperienza artistica.",
+    },
+    {
+      ro: "Participarea la expoziții a început încă din primii ani ai parcursului meu artistic. În 2002 am participat, în cadrul Asociației Femeilor Creatoare în Arta Plastică din România, la Expoziția Internațională de Artă București, ediția a II-a, „REMEMBER · Femei creatoare la Marea Mediterană și Marea Neagră”. În 2007 am participat la expoziția internațională de artă feminină contemporană „Poduri Europene”, organizată în cadrul aceleiași asociații.",
+      en: "Taking part in exhibitions began in the very first years of my artistic path. In 2002, within the Association of Women Creators in the Fine Arts of Romania, I took part in the Bucharest International Art Exhibition, 2nd edition, „REMEMBER · Women creators at the Mediterranean and the Black Sea”. In 2007 I took part in the international exhibition of contemporary women's art „Poduri Europene” (European Bridges), organised by the same association.",
+      it: "La partecipazione a mostre è iniziata fin dai primi anni del mio percorso artistico. Nel 2002 ho partecipato, nell'ambito dell'Associazione delle Donne Creatrici nelle Arti Plastiche di Romania, all'Esposizione Internazionale d'Arte di Bucarest, II edizione, „REMEMBER · Donne creatrici sul Mar Mediterraneo e sul Mar Nero”. Nel 2007 ho partecipato alla mostra internazionale d'arte femminile contemporanea „Poduri Europene” (Ponti Europei), organizzata dalla stessa associazione.",
+    },
+    {
+      ro: "În ultimii ani m-am întors cu mai multă implicare către pictură, participând la expoziții personale și de grup în România, Slovenia și Italia.",
+      en: "In recent years I have returned to painting with deeper commitment, taking part in solo and group exhibitions in Romania, Slovenia and Italy.",
+      it: "Negli ultimi anni sono tornata alla pittura con maggiore coinvolgimento, partecipando a mostre personali e collettive in Romania, Slovenia e Italia.",
+    },
+  ],
+};
+
+export const whyIPaint: { heading: Copy; paragraphs: Copy[] } = {
+  heading: { ro: "Pictez deoarece…", en: "I paint because…", it: "Dipingo perché…" },
+  paragraphs: [
+    {
+      ro: "Pictez deoarece mă conectez la un ritm organic, fizic și interior, pe care îl simt în respirație, în pulsație și în mișcarea subtilă a corpului. Este un ritm care mă readuce în prezent și îmi aduce bucurie.",
+      en: "I paint because I connect with an organic rhythm, physical and inner, which I feel in my breath, in the pulse and in the subtle movement of the body. It is a rhythm that brings me back to the present and gives me joy.",
+      it: "Dipingo perché mi connetto a un ritmo organico, fisico e interiore, che sento nel respiro, nella pulsazione e nel movimento sottile del corpo. È un ritmo che mi riporta al presente e mi dà gioia.",
+    },
+    {
+      ro: "În pictură mă pot întâlni cu părți din mine pe care încă nu le cunosc. Unele îmi sunt familiare și plăcute, altele mă surprind sau mă provoacă. Le pot descoperi fără să trebuiască să le explic imediat.",
+      en: "In painting I can meet parts of myself I do not yet know. Some are familiar and pleasant; others surprise me or challenge me. I can discover them without having to explain them right away.",
+      it: "Nella pittura posso incontrare parti di me che non conosco ancora. Alcune mi sono familiari e piacevoli, altre mi sorprendono o mi mettono alla prova. Posso scoprirle senza doverle spiegare subito.",
+    },
+    {
+      ro: "Prin culoare, linie și punct mă apropii de ceva foarte sincer din mine. Nu prin forță și nici prin analiză, ci cu tandrețe, răbdare și libertatea de a descoperi.",
+      en: "Through colour, line and point I come close to something very sincere in me. Not through force, nor through analysis, but with tenderness, patience and the freedom to discover.",
+      it: "Attraverso il colore, la linea e il punto mi avvicino a qualcosa di molto sincero in me. Non con la forza e nemmeno con l'analisi, ma con tenerezza, pazienza e la libertà di scoprire.",
+    },
+  ],
+};
+
+/** Trimiteri externe de la finalul paginii Povestea mea. Etichetele rămân în română (cuvintele clientei). */
+export const externalWork: { label: Copy; href: string }[] = [
+  {
+    label: { ro: "Descoperă activitatea mea în terapia Craniosacrală" },
+    href: "https://www.iahp.com/brindusa-nicolescu",
+  },
+  {
+    label: { ro: "Explorează atelierele de Desen Fractal" },
+    href: "https://www.desenfractal.ro",
+  },
+];
