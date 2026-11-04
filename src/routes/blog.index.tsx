@@ -9,6 +9,8 @@ import { posts } from "@/content/blog";
 export const Route = createFileRoute("/blog/")({
   head: () => ({
     meta: [
+      // Ascunsă de pe site-ul public (nelegată); păstrată pentru reutilizare.
+      { name: "robots", content: "noindex, nofollow" },
       { title: "Blog · Brîndușa Nicolescu" },
       {
         name: "description",

@@ -13,6 +13,8 @@ export const Route = createFileRoute("/blog/$slug")({
   },
   head: ({ loaderData }) => ({
     meta: [
+      // Ascunsă de pe site-ul public (nelegată); păstrată pentru reutilizare.
+      { name: "robots", content: "noindex, nofollow" },
       { title: `${loaderData?.title ?? "Text"} · Brîndușa Nicolescu` },
       { name: "description", content: loaderData?.excerpt ?? "Însemnare de pe blog." },
       { property: "og:type", content: "article" },

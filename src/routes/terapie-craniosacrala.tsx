@@ -12,6 +12,8 @@ import art05 from "@/assets/desen_fractal_05.webp";
 export const Route = createFileRoute("/terapie-craniosacrala")({
   head: () => ({
     meta: [
+      // Ascunsă de pe site-ul public (nelegată); păstrată pentru reutilizare.
+      { name: "robots", content: "noindex, nofollow" },
       { title: "Terapie Craniosacrală · Brîndușa Nicolescu" },
       {
         name: "description",

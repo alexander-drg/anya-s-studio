@@ -11,3 +11,4 @@
 
 - Keep visual content and artwork metadata in shared content modules so homepage previews and galleries stay synchronized as new client material arrives.
 - Artwork visibility is data-driven: each artwork in `src/content/site.ts` has `published` (shown on the site) and `featured` (homepage, only if published); pages filter with `isPublished`/`isFeatured` and never delete hidden works, so they can be re-enabled by flipping a flag.
+- Retired pages (desen-fractal, terapie-craniosacrala, explorari, blog) keep their route files for reuse but stay unlinked, carry a robots noindex meta, and are excluded from the GitHub Pages prerender list; the public structure is defined by `nav` in `src/content/site.ts`.

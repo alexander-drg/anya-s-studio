@@ -18,13 +18,13 @@ import { useT } from "@/lib/i18n";
 export const Route = createFileRoute("/galerie")({
   head: () => ({
     meta: [
-      { title: "Pânze · Brîndușa Nicolescu" },
+      { title: "Picturi · Brîndușa Nicolescu" },
       {
         name: "description",
         content:
-          "Pânze: seria Fluid Art în acrilic de aproximativ 50 cm (Trieste, 2024) și lucrări în acuarelă aflate în colecții private.",
+          "Picturi: seria Fluid Art în acrilic de aproximativ 50 cm (Trieste, 2024) și lucrări în acuarelă aflate în colecții private.",
       },
-      { property: "og:title", content: "Pânze · Brîndușa Nicolescu" },
+      { property: "og:title", content: "Picturi · Brîndușa Nicolescu" },
       {
         property: "og:description",
         content: "Acrilic, tehnica Fluid Art · Acuarelă.",
@@ -109,7 +109,7 @@ function Panze() {
       <section className="grid gap-6 py-10 md:grid-cols-12 md:py-14">
         <Reveal className="md:col-span-5">
           <h1 className="font-serif text-[2.6rem] leading-[1.05] font-light md:text-5xl">
-            Pânze
+            Picturi
           </h1>
         </Reveal>
         <Reveal delay={100} className="md:col-span-6 md:col-start-7 md:pt-3">

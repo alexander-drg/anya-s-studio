@@ -7,6 +7,8 @@ import { Reveal } from "@/components/Reveal";
 export const Route = createFileRoute("/explorari")({
   head: () => ({
     meta: [
+      // Ascunsă de pe site-ul public (nelegată); păstrată pentru reutilizare.
+      { name: "robots", content: "noindex, nofollow" },
       { title: "Explorări · Brîndușa Nicolescu" },
       {
         name: "description",
