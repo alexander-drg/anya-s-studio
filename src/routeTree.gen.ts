@@ -19,6 +19,15 @@ import { Route as ProiecteArtisticeRouteImport } from './routes/proiecte-artisti
 import { Route as TerapieCraniosacralaRouteImport } from './routes/terapie-craniosacrala'
 import { Route as BlogIndexRouteImport } from './routes/blog.index'
 import { Route as BlogSlugRouteImport } from './routes/blog.$slug'
+import { Route as ExpozitiiIndexRouteImport } from './routes/expozitii.index'
+import { Route as ExpozitiiDeGrupRouteImport } from './routes/expozitii.de-grup'
+import { Route as ExpozitiiInternationaleRouteImport } from './routes/expozitii.internationale'
+import { Route as ExpozitiiPersonaleRouteImport } from './routes/expozitii.personale'
+import { Route as PicturiIndexRouteImport } from './routes/picturi.index'
+import { Route as PicturiAcriliceRouteImport } from './routes/picturi.acrilice'
+import { Route as PicturiAcuarelaRouteImport } from './routes/picturi.acuarela'
+import { Route as PicturiColectiiDonatiiRouteImport } from './routes/picturi.colectii-donatii'
+import { Route as PicturiGraficaRouteImport } from './routes/picturi.grafica'
 
 const IndexRoute = IndexRouteImport.update({
   id: '/',
@@ -70,6 +79,51 @@ const BlogSlugRoute = BlogSlugRouteImport.update({
   path: '/blog/$slug',
   getParentRoute: () => rootRouteImport,
 } as any)
+const ExpozitiiIndexRoute = ExpozitiiIndexRouteImport.update({
+  id: '/expozitii/',
+  path: '/expozitii/',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const ExpozitiiDeGrupRoute = ExpozitiiDeGrupRouteImport.update({
+  id: '/expozitii/de-grup',
+  path: '/expozitii/de-grup',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const ExpozitiiInternationaleRoute = ExpozitiiInternationaleRouteImport.update({
+  id: '/expozitii/internationale',
+  path: '/expozitii/internationale',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const ExpozitiiPersonaleRoute = ExpozitiiPersonaleRouteImport.update({
+  id: '/expozitii/personale',
+  path: '/expozitii/personale',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const PicturiIndexRoute = PicturiIndexRouteImport.update({
+  id: '/picturi/',
+  path: '/picturi/',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const PicturiAcriliceRoute = PicturiAcriliceRouteImport.update({
+  id: '/picturi/acrilice',
+  path: '/picturi/acrilice',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const PicturiAcuarelaRoute = PicturiAcuarelaRouteImport.update({
+  id: '/picturi/acuarela',
+  path: '/picturi/acuarela',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const PicturiColectiiDonatiiRoute = PicturiColectiiDonatiiRouteImport.update({
+  id: '/picturi/colectii-donatii',
+  path: '/picturi/colectii-donatii',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const PicturiGraficaRoute = PicturiGraficaRouteImport.update({
+  id: '/picturi/grafica',
+  path: '/picturi/grafica',
+  getParentRoute: () => rootRouteImport,
+} as any)
 
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
@@ -81,7 +135,16 @@ export interface FileRoutesByFullPath {
   '/proiecte-artistice': typeof ProiecteArtisticeRoute
   '/terapie-craniosacrala': typeof TerapieCraniosacralaRoute
   '/blog/$slug': typeof BlogSlugRoute
+  '/expozitii/de-grup': typeof ExpozitiiDeGrupRoute
+  '/expozitii/internationale': typeof ExpozitiiInternationaleRoute
+  '/expozitii/personale': typeof ExpozitiiPersonaleRoute
+  '/picturi/acrilice': typeof PicturiAcriliceRoute
+  '/picturi/acuarela': typeof PicturiAcuarelaRoute
+  '/picturi/colectii-donatii': typeof PicturiColectiiDonatiiRoute
+  '/picturi/grafica': typeof PicturiGraficaRoute
   '/blog/': typeof BlogIndexRoute
+  '/expozitii/': typeof ExpozitiiIndexRoute
+  '/picturi/': typeof PicturiIndexRoute
 }
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
@@ -93,7 +156,16 @@ export interface FileRoutesByTo {
   '/proiecte-artistice': typeof ProiecteArtisticeRoute
   '/terapie-craniosacrala': typeof TerapieCraniosacralaRoute
   '/blog/$slug': typeof BlogSlugRoute
+  '/expozitii/de-grup': typeof ExpozitiiDeGrupRoute
+  '/expozitii/internationale': typeof ExpozitiiInternationaleRoute
+  '/expozitii/personale': typeof ExpozitiiPersonaleRoute
+  '/picturi/acrilice': typeof PicturiAcriliceRoute
+  '/picturi/acuarela': typeof PicturiAcuarelaRoute
+  '/picturi/colectii-donatii': typeof PicturiColectiiDonatiiRoute
+  '/picturi/grafica': typeof PicturiGraficaRoute
   '/blog': typeof BlogIndexRoute
+  '/expozitii': typeof ExpozitiiIndexRoute
+  '/picturi': typeof PicturiIndexRoute
 }
 export interface FileRoutesById {
   __root__: typeof rootRouteImport
@@ -106,7 +178,16 @@ export interface FileRoutesById {
   '/proiecte-artistice': typeof ProiecteArtisticeRoute
   '/terapie-craniosacrala': typeof TerapieCraniosacralaRoute
   '/blog/$slug': typeof BlogSlugRoute
+  '/expozitii/de-grup': typeof ExpozitiiDeGrupRoute
+  '/expozitii/internationale': typeof ExpozitiiInternationaleRoute
+  '/expozitii/personale': typeof ExpozitiiPersonaleRoute
+  '/picturi/acrilice': typeof PicturiAcriliceRoute
+  '/picturi/acuarela': typeof PicturiAcuarelaRoute
+  '/picturi/colectii-donatii': typeof PicturiColectiiDonatiiRoute
+  '/picturi/grafica': typeof PicturiGraficaRoute
   '/blog/': typeof BlogIndexRoute
+  '/expozitii/': typeof ExpozitiiIndexRoute
+  '/picturi/': typeof PicturiIndexRoute
 }
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
@@ -120,7 +201,16 @@ export interface FileRouteTypes {
     | '/proiecte-artistice'
     | '/terapie-craniosacrala'
     | '/blog/$slug'
+    | '/expozitii/de-grup'
+    | '/expozitii/internationale'
+    | '/expozitii/personale'
+    | '/picturi/acrilice'
+    | '/picturi/acuarela'
+    | '/picturi/colectii-donatii'
+    | '/picturi/grafica'
     | '/blog/'
+    | '/expozitii/'
+    | '/picturi/'
   fileRoutesByTo: FileRoutesByTo
   to:
     | '/'
@@ -132,7 +222,16 @@ export interface FileRouteTypes {
     | '/proiecte-artistice'
     | '/terapie-craniosacrala'
     | '/blog/$slug'
+    | '/expozitii/de-grup'
+    | '/expozitii/internationale'
+    | '/expozitii/personale'
+    | '/picturi/acrilice'
+    | '/picturi/acuarela'
+    | '/picturi/colectii-donatii'
+    | '/picturi/grafica'
     | '/blog'
+    | '/expozitii'
+    | '/picturi'
   id:
     | '__root__'
     | '/'
@@ -144,7 +243,16 @@ export interface FileRouteTypes {
     | '/proiecte-artistice'
     | '/terapie-craniosacrala'
     | '/blog/$slug'
+    | '/expozitii/de-grup'
+    | '/expozitii/internationale'
+    | '/expozitii/personale'
+    | '/picturi/acrilice'
+    | '/picturi/acuarela'
+    | '/picturi/colectii-donatii'
+    | '/picturi/grafica'
     | '/blog/'
+    | '/expozitii/'
+    | '/picturi/'
   fileRoutesById: FileRoutesById
 }
 export interface RootRouteChildren {
@@ -157,7 +265,16 @@ export interface RootRouteChildren {
   ProiecteArtisticeRoute: typeof ProiecteArtisticeRoute
   TerapieCraniosacralaRoute: typeof TerapieCraniosacralaRoute
   BlogSlugRoute: typeof BlogSlugRoute
+  ExpozitiiDeGrupRoute: typeof ExpozitiiDeGrupRoute
+  ExpozitiiInternationaleRoute: typeof ExpozitiiInternationaleRoute
+  ExpozitiiPersonaleRoute: typeof ExpozitiiPersonaleRoute
+  PicturiAcriliceRoute: typeof PicturiAcriliceRoute
+  PicturiAcuarelaRoute: typeof PicturiAcuarelaRoute
+  PicturiColectiiDonatiiRoute: typeof PicturiColectiiDonatiiRoute
+  PicturiGraficaRoute: typeof PicturiGraficaRoute
   BlogIndexRoute: typeof BlogIndexRoute
+  ExpozitiiIndexRoute: typeof ExpozitiiIndexRoute
+  PicturiIndexRoute: typeof PicturiIndexRoute
 }
 
 declare module '@tanstack/react-router' {
@@ -232,6 +349,69 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof BlogSlugRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/expozitii/': {
+      id: '/expozitii/'
+      path: '/expozitii'
+      fullPath: '/expozitii/'
+      preLoaderRoute: typeof ExpozitiiIndexRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/expozitii/de-grup': {
+      id: '/expozitii/de-grup'
+      path: '/expozitii/de-grup'
+      fullPath: '/expozitii/de-grup'
+      preLoaderRoute: typeof ExpozitiiDeGrupRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/expozitii/internationale': {
+      id: '/expozitii/internationale'
+      path: '/expozitii/internationale'
+      fullPath: '/expozitii/internationale'
+      preLoaderRoute: typeof ExpozitiiInternationaleRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/expozitii/personale': {
+      id: '/expozitii/personale'
+      path: '/expozitii/personale'
+      fullPath: '/expozitii/personale'
+      preLoaderRoute: typeof ExpozitiiPersonaleRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/picturi/': {
+      id: '/picturi/'
+      path: '/picturi'
+      fullPath: '/picturi/'
+      preLoaderRoute: typeof PicturiIndexRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/picturi/acrilice': {
+      id: '/picturi/acrilice'
+      path: '/picturi/acrilice'
+      fullPath: '/picturi/acrilice'
+      preLoaderRoute: typeof PicturiAcriliceRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/picturi/acuarela': {
+      id: '/picturi/acuarela'
+      path: '/picturi/acuarela'
+      fullPath: '/picturi/acuarela'
+      preLoaderRoute: typeof PicturiAcuarelaRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/picturi/colectii-donatii': {
+      id: '/picturi/colectii-donatii'
+      path: '/picturi/colectii-donatii'
+      fullPath: '/picturi/colectii-donatii'
+      preLoaderRoute: typeof PicturiColectiiDonatiiRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/picturi/grafica': {
+      id: '/picturi/grafica'
+      path: '/picturi/grafica'
+      fullPath: '/picturi/grafica'
+      preLoaderRoute: typeof PicturiGraficaRouteImport
+      parentRoute: typeof rootRouteImport
+    }
   }
 }
 
@@ -245,7 +425,16 @@ const rootRouteChildren: RootRouteChildren = {
   ProiecteArtisticeRoute: ProiecteArtisticeRoute,
   TerapieCraniosacralaRoute: TerapieCraniosacralaRoute,
   BlogSlugRoute: BlogSlugRoute,
+  ExpozitiiDeGrupRoute: ExpozitiiDeGrupRoute,
+  ExpozitiiInternationaleRoute: ExpozitiiInternationaleRoute,
+  ExpozitiiPersonaleRoute: ExpozitiiPersonaleRoute,
+  PicturiAcriliceRoute: PicturiAcriliceRoute,
+  PicturiAcuarelaRoute: PicturiAcuarelaRoute,
+  PicturiColectiiDonatiiRoute: PicturiColectiiDonatiiRoute,
+  PicturiGraficaRoute: PicturiGraficaRoute,
   BlogIndexRoute: BlogIndexRoute,
+  ExpozitiiIndexRoute: ExpozitiiIndexRoute,
+  PicturiIndexRoute: PicturiIndexRoute,
 }
 export const routeTree = rootRouteImport
   ._addFileChildren(rootRouteChildren)
