@@ -34,6 +34,15 @@ import panzaClient03 from "@/assets/panza_client_03.jpeg";
 import panzaClient04 from "@/assets/panza_client_04.jpeg";
 import panzaClient05 from "@/assets/panza_client_05.jpeg";
 import panzaClient06 from "@/assets/panza_client_06.jpeg";
+import acrilicSelectat01 from "@/assets/acrilic_selectat_01.jpeg";
+import acrilicSelectat02 from "@/assets/acrilic_selectat_02.jpeg";
+import acrilicSelectat03 from "@/assets/acrilic_selectat_03.jpeg";
+import acuarela01 from "@/assets/acuarela_01.jpeg";
+import acuarela02 from "@/assets/acuarela_02.jpeg";
+import acuarela03 from "@/assets/acuarela_03.jpeg";
+import grafica01 from "@/assets/grafica_01.jpeg";
+import grafica02 from "@/assets/grafica_02.jpeg";
+import grafica03 from "@/assets/grafica_03.jpeg";
 import type { Copy } from "@/lib/i18n";
 
 /**
@@ -41,10 +50,29 @@ import type { Copy } from "@/lib/i18n";
  * rămân în proiect, dar nu sunt legate de nicăieri (doar trimiterile externe din Povestea mea).
  */
 
-export const nav: { to: string; label: Copy }[] = [
+export type NavItem = { to: string; label: Copy; children?: { to: string; label: Copy }[] };
+
+export const nav: NavItem[] = [
   { to: "/", label: { ro: "Acasă", en: "Home", it: "Home" } },
-  { to: "/galerie", label: { ro: "Picturi", en: "Paintings", it: "Dipinti" } },
-  { to: "/proiecte-artistice", label: { ro: "Proiecte artistice", en: "Art projects", it: "Progetti artistici" } },
+  {
+    to: "/picturi",
+    label: { ro: "Picturi", en: "Paintings", it: "Dipinti" },
+    children: [
+      { to: "/picturi/acrilice", label: { ro: "Acrilice", en: "Acrylics", it: "Acrilici" } },
+      { to: "/picturi/acuarela", label: { ro: "Acuarelă", en: "Watercolour", it: "Acquerello" } },
+      { to: "/picturi/grafica", label: { ro: "Grafică", en: "Graphic works", it: "Grafica" } },
+      { to: "/picturi/colectii-donatii", label: { ro: "Colecții / Donații", en: "Collections / Donations", it: "Collezioni / Donazioni" } },
+    ],
+  },
+  {
+    to: "/expozitii",
+    label: { ro: "Expoziții selectate", en: "Selected exhibitions", it: "Mostre selezionate" },
+    children: [
+      { to: "/expozitii/personale", label: { ro: "Expoziții personale", en: "Solo exhibitions", it: "Mostre personali" } },
+      { to: "/expozitii/de-grup", label: { ro: "Expoziții de grup", en: "Group exhibitions", it: "Mostre collettive" } },
+      { to: "/expozitii/internationale", label: { ro: "Expoziții internaționale", en: "International exhibitions", it: "Mostre internazionali" } },
+    ],
+  },
   { to: "/despre", label: { ro: "Povestea mea", en: "My story", it: "La mia storia" } },
   { to: "/contact", label: { ro: "Contact", en: "Contact", it: "Contatti" } },
 ];
@@ -333,6 +361,8 @@ export type Artwork = {
   published: boolean;
   /** Afișată pe pagina principală. Contează doar dacă `published` e `true`. */
   featured: boolean;
+  /** Fotografia originală (de ex. cu ramă), păstrată pentru referință. */
+  originalSrc?: string;
 };
 
 export const seriesInfo = {
@@ -360,7 +390,7 @@ export const untitledLabel: Copy = {
 
 export const artworks: Artwork[] = [
   { id: "fa-01", src: fluid01, title: null, published: false, featured: false },
-  { id: "fa-02", src: fluid02, title: null, published: true, featured: true },
+  { id: "fa-02", src: acrilicSelectat01, originalSrc: fluid02, title: null, published: true, featured: true },
   { id: "fa-03", src: fluid03, title: null, published: false, featured: false },
   { id: "fa-04", src: fluid04, title: null, published: false, featured: false },
   { id: "fa-05", src: fluid05, title: null, published: false, featured: false },
@@ -377,10 +407,10 @@ export const artworks: Artwork[] = [
   { id: "fa-16", src: fluid16, title: null, published: false, featured: false },
   { id: "fa-17", src: fluid17, title: null, published: false, featured: false },
   { id: "fa-18", src: fluid18, title: null, published: false, featured: false },
-  { id: "fa-19", src: fluid19, title: null, published: true, featured: true },
+  { id: "fa-19", src: acrilicSelectat02, originalSrc: fluid19, title: null, published: true, featured: true },
   { id: "fa-20", src: fluid20, title: null, published: false, featured: false },
   { id: "fa-21", src: fluid21, title: null, published: false, featured: false },
-  { id: "fa-22", src: fluid22, title: null, published: true, featured: true },
+  { id: "fa-22", src: acrilicSelectat03, originalSrc: fluid22, title: null, published: true, featured: true },
   { id: "fa-23", src: fluid23, title: null, published: false, featured: false },
   { id: "fa-24", src: fluid24, title: null, published: false, featured: false },
   { id: "fa-25", src: fluid25, title: null, published: false, featured: false },
@@ -420,12 +450,56 @@ export const watercolorSeriesInfo: SeriesInfo = {
 };
 
 export const watercolors: Artwork[] = [
-  { id: "ac-01", src: panzaClient01, title: null, published: false, featured: false },
-  { id: "ac-02", src: panzaClient02, title: null, published: false, featured: false },
-  { id: "ac-03", src: panzaClient03, title: null, published: false, featured: false },
-  { id: "ac-04", src: panzaClient04, title: null, published: false, featured: false },
-  { id: "ac-05", src: panzaClient05, title: null, published: false, featured: false },
-  { id: "ac-06", src: panzaClient06, title: null, published: false, featured: false },
+  { id: "ac-01", src: acuarela01, originalSrc: panzaClient01, title: null, published: true, featured: false },
+  { id: "ac-02", src: acuarela02, originalSrc: panzaClient02, title: null, published: true, featured: false },
+  { id: "ac-03", src: acuarela03, originalSrc: panzaClient03, title: null, published: true, featured: false },
+];
+
+/** Grafică · lucrări cu liner / fineliner. Titluri și detalii nefurnizate; NU se inventează. */
+export const graphicSeriesInfo: SeriesInfo = {
+  title: { ro: "Grafică", en: "Graphic works", it: "Grafica" },
+  technique: { ro: "Grafică · liner", en: "Graphic · fineliner", it: "Grafica · fineliner" },
+  techniqueLong: { ro: "Grafică, liner pe hârtie", en: "Graphic work, fineliner on paper", it: "Grafica, fineliner su carta" },
+  intro: {
+    ro: "Lucrări de grafică realizate cu liner. Titlurile și detaliile se adaugă pe măsură ce ajung.",
+    en: "Graphic works made with fineliner. Titles and details are added as they arrive.",
+    it: "Opere grafiche realizzate con fineliner. Titoli e dettagli verranno aggiunti man mano.",
+  },
+};
+
+export const graphics: Artwork[] = [
+  { id: "gr-01", src: grafica01, originalSrc: panzaClient04, title: null, published: true, featured: false },
+  { id: "gr-02", src: grafica02, originalSrc: panzaClient05, title: null, published: true, featured: false },
+  { id: "gr-03", src: grafica03, originalSrc: panzaClient06, title: null, published: true, featured: false },
+];
+
+/** Colecții / Donații · conținut de la clientă (încă nefurnizat). */
+export type CollectionEntry = {
+  id: string;
+  src?: string;
+  title: Copy;
+  context?: Copy;
+  recipient?: Copy;
+  year?: string;
+  published: boolean;
+};
+export const collections: CollectionEntry[] = [];
+
+/** Expoziții selectate · conținut de la clientă (încă nefurnizat). */
+export type Exhibition = {
+  id: string;
+  title: Copy;
+  year?: string;
+  location?: Copy;
+  text?: Copy;
+  photo?: string;
+  published: boolean;
+};
+export type ExhibitionCategory = { slug: "personale" | "de-grup" | "internationale"; title: Copy; entries: Exhibition[] };
+export const exhibitionCategories: ExhibitionCategory[] = [
+  { slug: "personale", title: { ro: "Expoziții personale", en: "Solo exhibitions", it: "Mostre personali" }, entries: [] },
+  { slug: "de-grup", title: { ro: "Expoziții de grup", en: "Group exhibitions", it: "Mostre collettive" }, entries: [] },
+  { slug: "internationale", title: { ro: "Expoziții internaționale", en: "International exhibitions", it: "Mostre internazionali" }, entries: [] },
 ];
 
 /**
