@@ -1,15 +1,19 @@
 import { describe, expect, it } from "vitest";
-import { artworks, watercolors, isFeatured, isPublished, sortArtworks } from "./site";
+import { artworks, watercolors, graphics, isFeatured, isPublished, sortArtworks } from "./site";
 
 describe("artwork visibility", () => {
-  it("publishes only the three client-approved paintings", () => {
-    const visible = sortArtworks([...artworks, ...watercolors].filter(isPublished)).map((a) => a.id);
+  it("publishes only the three selected acrylics", () => {
+    const visible = sortArtworks(artworks.filter(isPublished)).map((a) => a.id);
     expect(visible).toEqual(["fa-19", "fa-02", "fa-22"]);
   });
 
-  it("keeps hidden artworks in the data", () => {
+  it("publishes three watercolours and three graphic works", () => {
+    expect(watercolors.filter(isPublished).length).toBe(3);
+    expect(graphics.filter(isPublished).length).toBe(3);
+  });
+
+  it("keeps hidden acrylics in the data", () => {
     expect(artworks.length).toBe(30);
-    expect(watercolors.length).toBe(6);
   });
 
   it("never features an unpublished work", () => {
