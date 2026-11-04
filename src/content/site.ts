@@ -37,15 +37,14 @@ import panzaClient06 from "@/assets/panza_client_06.jpeg";
 import type { Copy } from "@/lib/i18n";
 
 /**
- * Nav = meniul principal (incl. Pânze). Blog este retras de pe site, deocamdată.
+ * Nav = meniul public complet. Desen Fractal, Terapie craniosacrală, Explorări și Blog
+ * rămân în proiect, dar nu sunt legate de nicăieri (doar trimiterile externe din Povestea mea).
  */
 
 export const nav: { to: string; label: Copy }[] = [
   { to: "/", label: { ro: "Acasă", en: "Home", it: "Home" } },
-  { to: "/desen-fractal", label: { ro: "Desen", en: "Drawing", it: "Disegno" } },
-  { to: "/galerie", label: { ro: "Pânze", en: "Canvases", it: "Tele" } },
-  { to: "/terapie-craniosacrala", label: { ro: "Întâlniri", en: "Encounters", it: "Incontri" } },
-  { to: "/explorari", label: { ro: "Explorări", en: "Explorations", it: "Esplorazioni" } },
+  { to: "/galerie", label: { ro: "Picturi", en: "Paintings", it: "Dipinti" } },
+  { to: "/proiecte-artistice", label: { ro: "Proiecte artistice", en: "Art projects", it: "Progetti artistici" } },
   { to: "/despre", label: { ro: "Povestea mea", en: "My story", it: "La mia storia" } },
   { to: "/contact", label: { ro: "Contact", en: "Contact", it: "Contatti" } },
 ];

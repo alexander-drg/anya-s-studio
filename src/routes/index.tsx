@@ -3,7 +3,6 @@ import { createFileRoute, Link } from "@tanstack/react-router";
 
 import brandusa from "@/assets/brandusa.webp";
 import desen11 from "@/assets/desen_fractal_11.webp";
-import drawing from "@/assets/desen_fractal_16-1.webp";
 import heroImage from "@/assets/workshop-hero.jpeg";
 import { ContinuousLine } from "@/components/ContinuousLine";
 import { Reveal } from "@/components/Reveal";
@@ -14,11 +13,9 @@ import {
   isFeatured,
   sortArtworks,
   conceptLine,
-  connectionLine,
   descriptorParts,
   myStory,
   professionalDescriptor,
-  registers,
   seriesInfo,
   testimonials,
   untitledLabel,
@@ -108,38 +105,14 @@ function Home() {
         </div>
       </section>
 
-      <section className="page-shell section-space-compact border-t border-border">
-        <Reveal><p className="label-xs mb-7">Trei registre</p></Reveal>
-        <div className="grid gap-x-6 gap-y-10 md:grid-cols-3">
-          {registers.map((r, i) => {
-            const img = i === 0 ? preview[0]?.src : i === 2 ? drawing : null;
-            return (
-              <Reveal key={r.to} delay={i * 70} className={img ? "" : "flex flex-col border-t border-border pt-5"}>
-                <Link to={r.to} className="group flex h-full flex-col">
-                  {img ? (
-                    <div className="img-zoom aspect-[4/3]"><img src={img} alt={t(r.title)} loading="lazy" className="h-full w-full object-cover" /></div>
-                  ) : null}
-                  <p className="label-xs mt-4">{t(r.word)}</p>
-                  <h2 className="mt-2 font-serif text-2xl font-light">{t(r.title)}</h2>
-                  <p className="mt-2 max-w-sm text-sm text-muted-foreground">{t(r.line)}</p>
-                  <span className="label-xs quiet-link mt-4 inline-block">→</span>
-                </Link>
-              </Reveal>
-            );
-          })}
-        </div>
-        <Reveal delay={200} className="mt-10 border-t border-border pt-6">
-          <p className="max-w-2xl font-serif text-xl leading-snug font-light italic md:text-2xl">{t(connectionLine)}</p>
-        </Reveal>
-      </section>
 
       <section className="page-shell section-space">
         <Reveal className="flex flex-wrap items-end justify-between gap-4 border-t border-border pt-5">
           <div>
             <p className="label-xs">{t(seriesInfo.title)}</p>
-            <h2 className="mt-2 font-serif text-3xl font-light">Pânze</h2>
+            <h2 className="mt-2 font-serif text-3xl font-light">Picturi</h2>
           </div>
-          <Link to="/galerie" className="label-xs quiet-link">Descoperă toate pânzele →</Link>
+          <Link to="/galerie" className="label-xs quiet-link">Descoperă picturile →</Link>
         </Reveal>
         <div className="mt-7 grid grid-cols-2 gap-3 md:grid-cols-4 md:gap-5">
           {preview.map((artwork, index) => (
@@ -195,9 +168,8 @@ function Home() {
             <div className="img-zoom aspect-[4/3]"><img src={desen11} alt="Desen în lucru" loading="lazy" className="h-full w-full object-cover" /></div>
           </Reveal>
           <Reveal delay={80} className="border-t border-border pt-4 md:col-span-4 md:col-start-8 md:pt-4">
-            <h2 className="font-serif text-3xl font-light">Explorări</h2>
-            <p className="mt-3 text-muted-foreground">Ateliere, experimente, procese și proiecte în desfășurare.</p>
-            <Link to="/explorari" className="label-xs quiet-link mt-5 inline-block">Explorări →</Link>
+            <h2 className="font-serif text-3xl font-light">Proiecte artistice</h2>
+            <Link to="/proiecte-artistice" className="label-xs quiet-link mt-5 inline-block">Proiecte artistice →</Link>
           </Reveal>
         </div>
       </section>

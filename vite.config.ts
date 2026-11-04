@@ -15,11 +15,8 @@ const base = process.env["BASE_PATH"] ?? "/anya-s-studio/";
 const staticPages = [
   { path: "/" },
   { path: "/despre" },
-  { path: "/desen-fractal" },
-  { path: "/terapie-craniosacrala" },
   { path: "/galerie" },
-  { path: "/explorari" },
-  { path: "/blog" },
+  { path: "/proiecte-artistice" },
   { path: "/contact" },
 
 ];

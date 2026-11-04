@@ -12,6 +12,8 @@ import { useT } from "@/lib/i18n";
 export const Route = createFileRoute("/desen-fractal")({
   head: () => ({
     meta: [
+      // Ascunsă de pe site-ul public (nelegată); păstrată pentru reutilizare.
+      { name: "robots", content: "noindex, nofollow" },
       { title: "Metoda Desenului Fractal · Brîndușa Nicolescu" },
       {
         name: "description",
