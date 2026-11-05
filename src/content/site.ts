@@ -97,7 +97,7 @@ export const ARTIST_NAME = "Brîndușa Nicolescu";
 /** Cele trei registre distincte ale practicii · nu sunt aceeași practică. */
 export const registers: { to: string; word: Copy; title: Copy; line: Copy }[] = [
   {
-    to: "/galerie",
+    to: "/picturi",
     word: { ro: "Culoare", en: "Colour", it: "Colore" },
     title: { ro: "Artă", en: "Art", it: "Arte" },
     line: {
