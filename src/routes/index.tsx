@@ -112,12 +112,12 @@ function Home() {
             <p className="label-xs">{t(seriesInfo.title)}</p>
             <h2 className="mt-2 font-serif text-3xl font-light">Picturi</h2>
           </div>
-          <Link to="/galerie" className="label-xs quiet-link">Descoperă picturile →</Link>
+          <Link to="/picturi/acrilice" className="label-xs quiet-link">Descoperă picturile →</Link>
         </Reveal>
         <div className="mt-7 grid grid-cols-2 gap-3 md:grid-cols-4 md:gap-5">
           {preview.map((artwork, index) => (
             <Reveal key={artwork.id} delay={index * 55}>
-              <Link to="/galerie" className="img-zoom block aspect-square">
+              <Link to="/picturi/acrilice" className="img-zoom block aspect-square">
                 <img src={artwork.src} alt="Lucrare Fluid Art, Trieste 2024" loading="lazy" className="h-full w-full object-contain" />
               </Link>
               <p className="label-xs mt-2">{artwork.title ? t(artwork.title) : t(untitledLabel)}</p>
@@ -168,8 +168,8 @@ function Home() {
             <div className="img-zoom aspect-[4/3]"><img src={desen11} alt="Desen în lucru" loading="lazy" className="h-full w-full object-cover" /></div>
           </Reveal>
           <Reveal delay={80} className="border-t border-border pt-4 md:col-span-4 md:col-start-8 md:pt-4">
-            <h2 className="font-serif text-3xl font-light">Proiecte artistice</h2>
-            <Link to="/proiecte-artistice" className="label-xs quiet-link mt-5 inline-block">Proiecte artistice →</Link>
+            <h2 className="font-serif text-3xl font-light">Expoziții selectate</h2>
+            <Link to="/expozitii" className="label-xs quiet-link mt-5 inline-block">Expoziții selectate →</Link>
           </Reveal>
         </div>
       </section>

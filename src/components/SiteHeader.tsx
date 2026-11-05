@@ -78,21 +78,33 @@ export function SiteHeader() {
           <div className="hidden items-center lg:flex">
             <nav className="flex items-center gap-7">
               {nav.slice(1).map((item) => (
-                <Link
-                  key={item.to}
-                  to={item.to}
-                  className={`quiet-link text-[0.72rem] tracking-[0.22em] uppercase transition-opacity ${
-                    transparent ? "opacity-90 hover:opacity-100" : "opacity-85 hover:opacity-100"
-                  }`}
-                  style={{
-                    color: transparent
-                      ? "var(--color-hero-foreground)"
-                      : "var(--color-foreground)",
-                  }}
-                  activeProps={{ className: "opacity-100" }}
-                >
-                  {t(item.label)}
-                </Link>
+                <div key={item.to} className="group relative">
+                  <Link
+                    to={item.to}
+                    className={`quiet-link text-[0.72rem] tracking-[0.22em] uppercase transition-opacity ${
+                      transparent ? "opacity-90 hover:opacity-100" : "opacity-85 hover:opacity-100"
+                    }`}
+                    style={{
+                      color: transparent ? "var(--color-hero-foreground)" : "var(--color-foreground)",
+                    }}
+                    activeProps={{ className: "opacity-100" }}
+                  >
+                    {t(item.label)}
+                  </Link>
+                  {item.children && (
+                    <div className="invisible absolute top-full left-0 pt-4 opacity-0 transition-opacity duration-200 group-focus-within:visible group-focus-within:opacity-100 group-hover:visible group-hover:opacity-100">
+                      <ul className="min-w-[14rem] space-y-3 border border-border bg-background px-5 py-4 text-foreground">
+                        {item.children.map((c) => (
+                          <li key={c.to}>
+                            <Link to={c.to} className="quiet-link text-[0.7rem] tracking-[0.18em] uppercase opacity-80 hover:opacity-100" activeProps={{ className: "opacity-100" }}>
+                              {t(c.label)}
+                            </Link>
+                          </li>
+                        ))}
+                      </ul>
+                    </div>
+                  )}
+                </div>
               ))}
             </nav>
             <LangToggle />
@@ -135,6 +147,17 @@ export function SiteHeader() {
                 >
                   {t(item.label)}
                 </Link>
+                {item.children && (
+                  <ul className="mt-3 space-y-2 border-l border-border pl-4">
+                    {item.children.map((c) => (
+                      <li key={c.to}>
+                        <Link to={c.to} onClick={() => setOpen(false)} className="label-xs block py-1" activeProps={{ className: "text-foreground" }}>
+                          {t(c.label)}
+                        </Link>
+                      </li>
+                    ))}
+                  </ul>
+                )}
               </li>
             ))}
           </ul>
