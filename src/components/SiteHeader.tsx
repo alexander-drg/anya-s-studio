@@ -8,6 +8,7 @@ export function SiteHeader() {
   const t = useT();
   const { lang, setLang } = useLang();
   const [open, setOpen] = useState(false);
+  const [openMenu, setOpenMenu] = useState<string | null>(null);
   const [scrolled, setScrolled] = useState(false);
   const pathname = useRouterState({ select: (s) => s.location.pathname });
   const overHero = pathname === "/" || pathname === "";
@@ -76,9 +77,17 @@ export function SiteHeader() {
           </Link>
 
           <div className="hidden items-center lg:flex">
-            <nav className="flex items-center gap-7">
+            <nav className="flex items-center gap-7" onMouseLeave={() => setOpenMenu(null)}>
               {nav.slice(1).map((item) => (
-                <div key={item.to} className="group relative">
+                <div
+                  key={item.to}
+                  className="relative"
+                  onMouseEnter={() => setOpenMenu(item.children ? item.to : null)}
+                  onFocus={() => setOpenMenu(item.children ? item.to : null)}
+                  onBlur={(e) => {
+                    if (!e.currentTarget.contains(e.relatedTarget as Node)) setOpenMenu(null);
+                  }}
+                >
                   <Link
                     to={item.to}
                     className={`quiet-link text-[0.72rem] tracking-[0.22em] uppercase transition-opacity ${
@@ -92,11 +101,20 @@ export function SiteHeader() {
                     {t(item.label)}
                   </Link>
                   {item.children && (
-                    <div className="invisible absolute top-full left-0 pt-4 opacity-0 transition-opacity duration-200 group-focus-within:visible group-focus-within:opacity-100 group-hover:visible group-hover:opacity-100">
+                    <div
+                      className={`absolute top-full left-0 z-50 pt-4 transition-opacity duration-200 ${
+                        openMenu === item.to ? "visible opacity-100" : "invisible opacity-0"
+                      }`}
+                    >
                       <ul className="min-w-[14rem] space-y-3 border border-border bg-background px-5 py-4 text-foreground">
                         {item.children.map((c) => (
                           <li key={c.to}>
-                            <Link to={c.to} className="quiet-link text-[0.7rem] tracking-[0.18em] uppercase opacity-80 hover:opacity-100" activeProps={{ className: "opacity-100" }}>
+                            <Link
+                              to={c.to}
+                              onClick={() => setOpenMenu(null)}
+                              className="quiet-link text-[0.7rem] tracking-[0.18em] uppercase opacity-80 hover:opacity-100"
+                              activeProps={{ className: "opacity-100" }}
+                            >
                               {t(c.label)}
                             </Link>
                           </li>
