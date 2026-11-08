@@ -187,9 +187,9 @@ export const values: { title: Copy; line: Copy }[] = [
 
 /** Statement-ul artistic principal · cuvintele clientei, sursă de adevăr în română. */
 export const artistStatement: Copy = {
-  ro: "Există momente în care culoarea spune ceea ce cuvintele nu pot spune.\nExistă momente în care liniștea devine cea mai profundă formă de dialog.\nÎntâlnirea dintre cele două este viziunea mea.",
-  en: "There are moments when colour says what words cannot say.\nThere are moments when silence becomes the deepest form of dialogue.\nThe meeting of the two is my vision.",
-  it: "Ci sono momenti in cui il colore dice ciò che le parole non possono dire.\nCi sono momenti in cui il silenzio diventa la forma più profonda di dialogo.\nL'incontro tra i due è la mia visione.",
+  ro: "Prin culoare, linie și punct mă apropii de ceva foarte sincer din mine.\nNu prin forță și nici prin analiză, ci cu tandrețe, răbdare și libertatea de a descoperi.",
+  en: "Through colour, line and dot I draw closer to something very sincere within me.\nNot through force or analysis, but with tenderness, patience and the freedom to discover.",
+  it: "Attraverso colore, linea e punto mi avvicino a qualcosa di molto sincero dentro di me.\nNon con la forza e nemmeno con l'analisi, ma con tenerezza, pazienza e la libertà di scoprire.",
 };
 
 /**
