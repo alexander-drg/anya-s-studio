@@ -27,6 +27,7 @@ import { Route as PicturiIndexRouteImport } from './routes/picturi.index'
 import { Route as PicturiAcriliceRouteImport } from './routes/picturi.acrilice'
 import { Route as PicturiAcuarelaRouteImport } from './routes/picturi.acuarela'
 import { Route as PicturiColectiiDonatiiRouteImport } from './routes/picturi.colectii-donatii'
+import { Route as PicturiFascinatiiRouteImport } from './routes/picturi.fascinatii'
 import { Route as PicturiGraficaRouteImport } from './routes/picturi.grafica'
 
 const IndexRoute = IndexRouteImport.update({
@@ -119,6 +120,11 @@ const PicturiColectiiDonatiiRoute = PicturiColectiiDonatiiRouteImport.update({
   path: '/picturi/colectii-donatii',
   getParentRoute: () => rootRouteImport,
 } as any)
+const PicturiFascinatiiRoute = PicturiFascinatiiRouteImport.update({
+  id: '/picturi/fascinatii',
+  path: '/picturi/fascinatii',
+  getParentRoute: () => rootRouteImport,
+} as any)
 const PicturiGraficaRoute = PicturiGraficaRouteImport.update({
   id: '/picturi/grafica',
   path: '/picturi/grafica',
@@ -141,6 +147,7 @@ export interface FileRoutesByFullPath {
   '/picturi/acrilice': typeof PicturiAcriliceRoute
   '/picturi/acuarela': typeof PicturiAcuarelaRoute
   '/picturi/colectii-donatii': typeof PicturiColectiiDonatiiRoute
+  '/picturi/fascinatii': typeof PicturiFascinatiiRoute
   '/picturi/grafica': typeof PicturiGraficaRoute
   '/blog/': typeof BlogIndexRoute
   '/expozitii/': typeof ExpozitiiIndexRoute
@@ -162,6 +169,7 @@ export interface FileRoutesByTo {
   '/picturi/acrilice': typeof PicturiAcriliceRoute
   '/picturi/acuarela': typeof PicturiAcuarelaRoute
   '/picturi/colectii-donatii': typeof PicturiColectiiDonatiiRoute
+  '/picturi/fascinatii': typeof PicturiFascinatiiRoute
   '/picturi/grafica': typeof PicturiGraficaRoute
   '/blog': typeof BlogIndexRoute
   '/expozitii': typeof ExpozitiiIndexRoute
@@ -184,6 +192,7 @@ export interface FileRoutesById {
   '/picturi/acrilice': typeof PicturiAcriliceRoute
   '/picturi/acuarela': typeof PicturiAcuarelaRoute
   '/picturi/colectii-donatii': typeof PicturiColectiiDonatiiRoute
+  '/picturi/fascinatii': typeof PicturiFascinatiiRoute
   '/picturi/grafica': typeof PicturiGraficaRoute
   '/blog/': typeof BlogIndexRoute
   '/expozitii/': typeof ExpozitiiIndexRoute
@@ -207,6 +216,7 @@ export interface FileRouteTypes {
     | '/picturi/acrilice'
     | '/picturi/acuarela'
     | '/picturi/colectii-donatii'
+    | '/picturi/fascinatii'
     | '/picturi/grafica'
     | '/blog/'
     | '/expozitii/'
@@ -228,6 +238,7 @@ export interface FileRouteTypes {
     | '/picturi/acrilice'
     | '/picturi/acuarela'
     | '/picturi/colectii-donatii'
+    | '/picturi/fascinatii'
     | '/picturi/grafica'
     | '/blog'
     | '/expozitii'
@@ -249,6 +260,7 @@ export interface FileRouteTypes {
     | '/picturi/acrilice'
     | '/picturi/acuarela'
     | '/picturi/colectii-donatii'
+    | '/picturi/fascinatii'
     | '/picturi/grafica'
     | '/blog/'
     | '/expozitii/'
@@ -271,6 +283,7 @@ export interface RootRouteChildren {
   PicturiAcriliceRoute: typeof PicturiAcriliceRoute
   PicturiAcuarelaRoute: typeof PicturiAcuarelaRoute
   PicturiColectiiDonatiiRoute: typeof PicturiColectiiDonatiiRoute
+  PicturiFascinatiiRoute: typeof PicturiFascinatiiRoute
   PicturiGraficaRoute: typeof PicturiGraficaRoute
   BlogIndexRoute: typeof BlogIndexRoute
   ExpozitiiIndexRoute: typeof ExpozitiiIndexRoute
@@ -405,6 +418,13 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof PicturiColectiiDonatiiRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/picturi/fascinatii': {
+      id: '/picturi/fascinatii'
+      path: '/picturi/fascinatii'
+      fullPath: '/picturi/fascinatii'
+      preLoaderRoute: typeof PicturiFascinatiiRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/picturi/grafica': {
       id: '/picturi/grafica'
       path: '/picturi/grafica'
@@ -431,6 +451,7 @@ const rootRouteChildren: RootRouteChildren = {
   PicturiAcriliceRoute: PicturiAcriliceRoute,
   PicturiAcuarelaRoute: PicturiAcuarelaRoute,
   PicturiColectiiDonatiiRoute: PicturiColectiiDonatiiRoute,
+  PicturiFascinatiiRoute: PicturiFascinatiiRoute,
   PicturiGraficaRoute: PicturiGraficaRoute,
   BlogIndexRoute: BlogIndexRoute,
   ExpozitiiIndexRoute: ExpozitiiIndexRoute,

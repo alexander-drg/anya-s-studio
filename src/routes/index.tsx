@@ -14,6 +14,7 @@ import {
   sortArtworks,
   conceptLine,
   descriptorParts,
+  exhibitionsLabel,
   myStory,
   professionalDescriptor,
   seriesInfo,
@@ -168,8 +169,8 @@ function Home() {
             <div className="img-zoom aspect-[4/3]"><img src={desen11} alt="Desen în lucru" loading="lazy" className="h-full w-full object-cover" /></div>
           </Reveal>
           <Reveal delay={80} className="border-t border-border pt-4 md:col-span-4 md:col-start-8 md:pt-4">
-            <h2 className="font-serif text-3xl font-light">Expoziții selectate</h2>
-            <Link to="/expozitii" className="label-xs quiet-link mt-5 inline-block">Expoziții selectate →</Link>
+            <h2 className="font-serif text-3xl font-light">{t(exhibitionsLabel)}</h2>
+            <Link to="/expozitii" className="label-xs quiet-link mt-5 inline-block">{t(exhibitionsLabel)} →</Link>
           </Reveal>
         </div>
       </section>

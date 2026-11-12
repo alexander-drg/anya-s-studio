@@ -3,7 +3,7 @@ import { createFileRoute } from "@tanstack/react-router";
 import brandusa from "@/assets/brandusa.webp";
 import fractalWorkshop from "@/assets/desenfractal_17.webp";
 import { Reveal } from "@/components/Reveal";
-import { artistPath, externalWork, whyIPaint } from "@/content/site";
+import { artistPath, externalWork, uapMembership, whyIPaint } from "@/content/site";
 import { useT, type Copy } from "@/lib/i18n";
 
 export const Route = createFileRoute("/despre")({
@@ -60,6 +60,7 @@ function Despre() {
             {t(pageTitle)}
           </h1>
           <p className="label-xs mt-4 text-muted-foreground">{t(subtitle)}</p>
+          <p className="mt-4 max-w-md font-serif text-lg font-light">{t(uapMembership)}</p>
         </Reveal>
         <Reveal delay={120} className="md:col-span-4 md:col-start-9">
           <img src={brandusa} alt="Portret Brîndușa Nicolescu" className="w-full object-cover" />

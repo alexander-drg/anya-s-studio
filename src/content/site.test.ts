@@ -21,3 +21,23 @@ describe("artwork visibility", () => {
     expect(isFeatured(hidden)).toBe(false);
   });
 });
+
+import { nav, exhibitionCategories, offeredWorks } from "./site";
+describe("final structure", () => {
+  it("Picturi has exactly Acrilice, Acuarelă, Grafică, Fascinații", () => {
+    const kids = nav.find((n) => n.to === "/picturi")!.children!.map((c) => c.label.ro);
+    expect(kids).toEqual(["Acrilice", "Acuarelă", "Grafică", "Fascinații"]);
+  });
+  it("exhibitions section is named Expoziții alese", () => {
+    expect(nav.find((n) => n.to === "/expozitii")!.label.ro).toBe("Expoziții alese");
+  });
+  it("lists 1 solo, 3 group, 1 international exhibition and 2 offered works", () => {
+    expect(exhibitionCategories.map((c) => c.entries.length)).toEqual([1, 3, 1]);
+    expect(offeredWorks.length).toBe(2);
+  });
+  it("does not invent links for exhibitions without one", () => {
+    const all = exhibitionCategories.flatMap((c) => c.entries);
+    expect(all.find((e) => e.id === "ex-2025-espressioni")!.link).toBeUndefined();
+    expect(all.find((e) => e.id === "ex-2026-femailart")!.link).toBeUndefined();
+  });
+});

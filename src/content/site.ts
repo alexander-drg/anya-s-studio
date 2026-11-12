@@ -52,6 +52,8 @@ import type { Copy } from "@/lib/i18n";
 
 export type NavItem = { to: string; label: Copy; children?: { to: string; label: Copy }[] };
 
+export const exhibitionsLabel: Copy = { ro: "Expoziții alese", en: "Chosen exhibitions", it: "Mostre scelte" };
+
 export const nav: NavItem[] = [
   { to: "/", label: { ro: "Acasă", en: "Home", it: "Home" } },
   {
@@ -61,14 +63,14 @@ export const nav: NavItem[] = [
       { to: "/picturi/acrilice", label: { ro: "Acrilice", en: "Acrylics", it: "Acrilici" } },
       { to: "/picturi/acuarela", label: { ro: "Acuarelă", en: "Watercolour", it: "Acquerello" } },
       { to: "/picturi/grafica", label: { ro: "Grafică", en: "Graphic works", it: "Grafica" } },
-      { to: "/picturi/colectii-donatii", label: { ro: "Colecții / Donații", en: "Collections / Donations", it: "Collezioni / Donazioni" } },
+      { to: "/picturi/fascinatii", label: { ro: "Fascinații", en: "Fascinations", it: "Fascinazioni" } },
     ],
   },
   {
     to: "/expozitii",
-    label: { ro: "Expoziții selectate", en: "Selected exhibitions", it: "Mostre selezionate" },
+    label: exhibitionsLabel,
     children: [
-      { to: "/expozitii/personale", label: { ro: "Expoziții personale", en: "Solo exhibitions", it: "Mostre personali" } },
+      { to: "/expozitii/personale", label: { ro: "Expoziție personală", en: "Solo exhibition", it: "Mostra personale" } },
       { to: "/expozitii/de-grup", label: { ro: "Expoziții de grup", en: "Group exhibitions", it: "Mostre collettive" } },
       { to: "/expozitii/internationale", label: { ro: "Expoziții internaționale", en: "International exhibitions", it: "Mostre internazionali" } },
     ],
@@ -376,9 +378,9 @@ export const seriesInfo = {
   size: { ro: "50 cm", en: "50 cm", it: "50 cm" } as Copy,
   place: { ro: "Trieste, Italia · 2024", en: "Trieste, Italy · 2024", it: "Trieste, Italia · 2024" } as Copy,
   intro: {
-    ro: "Lucrări în acrilic, tehnica Fluid Art, de aproximativ 50 cm, parte dintr-o expoziție din 2024, la Trieste. Fiecare poartă un titlu legat de o emoție și/sau un sentiment.",
-    en: "Acrylic works in the Fluid Art technique, around 50 cm, part of a 2024 exhibition in Trieste. Each carries a title connected to an emotion and/or a feeling.",
-    it: "Opere in acrilico, tecnica Fluid Art, di circa 50 cm, parte di una mostra del 2024 a Trieste. Ognuna porta un titolo legato a un'emozione e/o a un sentimento.",
+    ro: "„Mi-a fost străin, dar în acel moment l-am lăsat liber să curgă împreună cu clipa, răscolind dorurile.”",
+    en: "“It was foreign to me, but in that moment I let it flow freely together with the instant, stirring up longings.”",
+    it: "«Mi era estraneo, ma in quel momento l'ho lasciato libero di scorrere insieme all'attimo, risvegliando nostalgie.»",
   } as Copy,
 };
 
@@ -443,9 +445,9 @@ export const watercolorSeriesInfo: SeriesInfo = {
     it: "Acquerello su carta",
   } as Copy,
   intro: {
-    ro: "Lucrări în acuarelă, aflate astăzi în colecții private. Titlurile și detaliile se adaugă pe măsură ce ajung.",
-    en: "Watercolour works, now in private collections. Titles and details are added as they arrive.",
-    it: "Opere ad acquerello, oggi in collezioni private. Titoli e dettagli verranno aggiunti man mano.",
+    ro: "„De când am întâlnit-o prima dată, m-au sedus transparența, claritatea și prospețimea ei.\nCât control, câtă apă, câtă întâmplare?”",
+    en: "“From the first time I met it, I was seduced by its transparency, clarity and freshness.\nHow much control, how much water, how much chance?”",
+    it: "«Da quando l'ho incontrato la prima volta, mi hanno sedotta la sua trasparenza, la sua chiarezza e la sua freschezza.\nQuanto controllo, quanta acqua, quanto caso?»",
   } as Copy,
 };
 
@@ -461,11 +463,25 @@ export const graphicSeriesInfo: SeriesInfo = {
   technique: { ro: "Grafică · liner", en: "Graphic · fineliner", it: "Grafica · fineliner" },
   techniqueLong: { ro: "Grafică, liner pe hârtie", en: "Graphic work, fineliner on paper", it: "Grafica, fineliner su carta" },
   intro: {
-    ro: "Lucrări de grafică realizate cu liner. Titlurile și detaliile se adaugă pe măsură ce ajung.",
-    en: "Graphic works made with fineliner. Titles and details are added as they arrive.",
-    it: "Opere grafiche realizzate con fineliner. Titoli e dettagli verranno aggiunti man mano.",
+    ro: "„O obsesie, poate. O rutină aproape obligatorie. O construcție din fire de linii, în care fiecare gest adaugă ceva, iar repetiția deschide drumuri neașteptate, infinite.”",
+    en: "“An obsession, perhaps. An almost compulsory routine. A construction of threads of lines, in which every gesture adds something, and repetition opens unexpected, infinite paths.”",
+    it: "«Un'ossessione, forse. Una routine quasi obbligatoria. Una costruzione di fili di linee, in cui ogni gesto aggiunge qualcosa e la ripetizione apre strade inaspettate, infinite.»",
   },
 };
+
+/** Fascinații · 1–2 lucrări în curs. Imaginile reale nu au fost încă furnizate; NU se inventează. */
+export const fascinationsSeriesInfo: SeriesInfo = {
+  title: { ro: "Fascinații", en: "Fascinations", it: "Fascinazioni" },
+  technique: { ro: "Lucrare în curs", en: "Work in progress", it: "Opera in corso" },
+  techniqueLong: { ro: "Lucrare în curs", en: "Work in progress", it: "Opera in corso" },
+  intro: {
+    ro: "„Sunt lucruri care mă atrag fără să știu imediat de ce. O formă, o culoare, un detaliu. Le privesc, mă privesc și jocul începe.”",
+    en: "“There are things that draw me in without my knowing right away why. A shape, a colour, a detail. I look at them, I look at myself, and the game begins.”",
+    it: "«Ci sono cose che mi attirano senza che io sappia subito perché. Una forma, un colore, un dettaglio. Le guardo, mi guardo e il gioco comincia.»",
+  },
+};
+
+export const fascinations: Artwork[] = [];
 
 export const graphics: Artwork[] = [
   { id: "gr-01", src: grafica01, originalSrc: panzaClient04, title: null, published: true, featured: false },
@@ -485,7 +501,7 @@ export type CollectionEntry = {
 };
 export const collections: CollectionEntry[] = [];
 
-/** Expoziții selectate · conținut de la clientă (încă nefurnizat). */
+/** Expoziții alese · conținut furnizat de clientă. */
 export type Exhibition = {
   id: string;
   title: Copy;
@@ -493,14 +509,38 @@ export type Exhibition = {
   location?: Copy;
   text?: Copy;
   photo?: string;
+  /** Link extern, doar dacă a fost furnizat de clientă. */
+  link?: string;
   published: boolean;
 };
 export type ExhibitionCategory = { slug: "personale" | "de-grup" | "internationale"; title: Copy; entries: Exhibition[] };
 export const exhibitionCategories: ExhibitionCategory[] = [
-  { slug: "personale", title: { ro: "Expoziții personale", en: "Solo exhibitions", it: "Mostre personali" }, entries: [] },
-  { slug: "de-grup", title: { ro: "Expoziții de grup", en: "Group exhibitions", it: "Mostre collettive" }, entries: [] },
-  { slug: "internationale", title: { ro: "Expoziții internaționale", en: "International exhibitions", it: "Mostre internazionali" }, entries: [] },
+  { slug: "personale", title: { ro: "Expoziție personală", en: "Solo exhibition", it: "Mostra personale" }, entries: [
+    { id: "ex-2024-sedimenti", title: { ro: "„I sedimenti della Vita”", en: "“I sedimenti della Vita”", it: "«I sedimenti della Vita»" }, year: "2024", location: { ro: "Hilton, Trieste, Italia", en: "Hilton, Trieste, Italy", it: "Hilton, Trieste, Italia" }, link: "https://www.leviedellefoto.it/2024/07/01/i-sedimenti-della-vita-mostra-personale-di-brindusa-nicolescu-a-cura-de-le-vie-delle-foto/", published: true },
+  ] },
+  { slug: "de-grup", title: { ro: "Expoziții de grup", en: "Group exhibitions", it: "Mostre collettive" }, entries: [
+    { id: "ex-2025-oltre", title: { ro: "„Oltre il Silenzio”", en: "“Oltre il Silenzio”", it: "«Oltre il Silenzio»" }, year: "2025", location: { ro: "Hilton, Trieste, Italia", en: "Hilton, Trieste, Italy", it: "Hilton, Trieste, Italia" }, link: "https://www.leviedellefoto.it/2025/10/26/oltre-il-silenzio-2025-evento-benefico-a-favore-del-centro-antiviolenza-goap-di-trieste/", published: true },
+    { id: "ex-2025-espressioni", title: { ro: "„Espressioni a Confronto”", en: "“Espressioni a Confronto”", it: "«Espressioni a Confronto»" }, year: "2025", location: { ro: "Magazin 26, Trieste, Italia", en: "Magazin 26, Trieste, Italy", it: "Magazin 26, Trieste, Italia" }, published: true },
+    { id: "ex-2026-golfo", title: { ro: "„I magici colori del nostro golfo”", en: "“I magici colori del nostro golfo”", it: "«I magici colori del nostro golfo»" }, year: "2026", location: { ro: "Sala Veruda Palazzo Costanzi, Trieste, Italia", en: "Sala Veruda Palazzo Costanzi, Trieste, Italy", it: "Sala Veruda Palazzo Costanzi, Trieste, Italia" }, link: "https://bora.la/2026/01/29/i-magici-colori-del-nostro-golfo-mostra-darte-contemporanea/", published: true },
+  ] },
+  { slug: "internationale", title: { ro: "Expoziții internaționale", en: "International exhibitions", it: "Mostre internazionali" }, entries: [
+    { id: "ex-2026-femailart", title: { ro: "„Fe-Mail-Art”", en: "“Fe-Mail-Art”", it: "«Fe-Mail-Art»" }, year: "2026", location: { ro: "Muzeul de Artă, Constanța, România", en: "Muzeul de Artă (Art Museum), Constanța, Romania", it: "Muzeul de Artă (Museo d'Arte), Costanza, Romania" }, published: true },
+  ] },
 ];
+
+/** Lucrări oferite · secțiune secundară la finalul paginii Expoziții alese. */
+export const offeredWorksTitle: Copy = { ro: "Lucrări oferite", en: "Donated works", it: "Opere donate" };
+export const offeredWorks: Exhibition[] = [
+    { id: "of-2025-attesa", title: { ro: "„Il tempo dell'attesa”", en: "“Il tempo dell'attesa”", it: "«Il tempo dell'attesa»" }, year: "2025", location: { ro: "IRCCS Burlo Garofolo, Trieste, Italia", en: "IRCCS Burlo Garofolo, Trieste, Italy", it: "IRCCS Burlo Garofolo, Trieste, Italia" }, published: true },
+    { id: "of-2025-religione", title: { ro: "„La nuova religione”", en: "“La nuova religione”", it: "«La nuova religione»" }, year: "2025", location: { ro: "Accademia Cranio Sacrale, Trieste, Italia", en: "Accademia Cranio Sacrale, Trieste, Italy", it: "Accademia Cranio Sacrale, Trieste, Italia" }, published: true },
+];
+
+/** Povestea mea · linia de apartenență UAP (furnizată de clientă). */
+export const uapMembership: Copy = {
+  ro: "Sunt membră a Uniunii Artiștilor Plastici din România din 1997, la secția Pictură.",
+  en: "I have been a member of the Union of Fine Artists of Romania (Uniunea Artiștilor Plastici din România) since 1997, in the Painting section.",
+  it: "Sono membro dell'Unione degli Artisti Plastici di Romania (Uniunea Artiștilor Plastici din România) dal 1997, nella sezione Pittura.",
+};
 
 /**
  * Povestea mea · structura finală (textul integral al clientei).

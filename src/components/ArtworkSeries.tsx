@@ -9,10 +9,13 @@ export function ArtworkSeriesPage({
   heading,
   series,
   works,
+  emptySlots = 0,
 }: {
   heading: Copy;
   series: SeriesInfo;
   works: Artwork[];
+  /** Spații discrete rezervate când lucrările reale nu au sosit încă. */
+  emptySlots?: number;
 }) {
   const t = useT();
   const [open, setOpen] = useState<Artwork | null>(null);
@@ -33,7 +36,11 @@ export function ArtworkSeriesPage({
           </h1>
         </Reveal>
         <Reveal delay={100} className="md:col-span-6 md:col-start-7 md:pt-8">
-          <p className="max-w-xl text-muted-foreground">{t(series.intro)}</p>
+          <p className="max-w-xl font-serif text-lg leading-relaxed font-light md:text-xl">
+            {t(series.intro).split("\n").map((line) => (
+              <span key={line} className="block">{line}</span>
+            ))}
+          </p>
         </Reveal>
       </section>
 
@@ -61,6 +68,10 @@ export function ArtworkSeriesPage({
               </button>
             </Reveal>
           ))}
+          {works.length === 0 &&
+            Array.from({ length: emptySlots }, (_, i) => (
+              <div key={i} className="aspect-square border border-dashed border-border" aria-hidden="true" />
+            ))}
         </div>
       </section>
 

@@ -14,6 +14,7 @@ export const Route = createFileRoute("/picturi/colectii-donatii")({
       { property: "og:description", content: "Lucrări ale Brîndușei Nicolescu în colecții și donații." },
       { property: "og:type", content: "website" },
       { name: "twitter:card", content: "summary_large_image" },
+      { name: "robots", content: "noindex" },
     ],
   }),
   component: Colectii,

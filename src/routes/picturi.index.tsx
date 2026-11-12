@@ -4,7 +4,7 @@ import { Placeholder } from "@/components/Placeholder";
 import { Reveal } from "@/components/Reveal";
 import {
   artworks,
-  collections,
+  fascinations,
   graphics,
   isPublished,
   nav,
@@ -19,10 +19,10 @@ export const Route = createFileRoute("/picturi/")({
       { title: "Picturi · Brîndușa Nicolescu" },
       {
         name: "description",
-        content: "Picturile Brîndușei Nicolescu: acrilice, acuarelă, grafică, colecții și donații.",
+        content: "Picturile Brîndușei Nicolescu: acrilice, acuarelă, grafică și fascinații.",
       },
       { property: "og:title", content: "Picturi · Brîndușa Nicolescu" },
-      { property: "og:description", content: "Acrilice · Acuarelă · Grafică · Colecții / Donații." },
+      { property: "og:description", content: "Acrilice · Acuarelă · Grafică · Fascinații." },
       { property: "og:type", content: "website" },
       { name: "twitter:card", content: "summary_large_image" },
     ],
@@ -34,7 +34,7 @@ const covers: (string | undefined)[] = [
   sortArtworks(artworks.filter(isPublished))[0]?.src,
   watercolors.filter(isPublished)[0]?.src,
   graphics.filter(isPublished)[0]?.src,
-  collections.find((c) => c.published && c.src)?.src,
+  fascinations.filter(isPublished)[0]?.src,
 ];
 
 function Picturi() {

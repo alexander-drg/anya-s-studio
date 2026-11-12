@@ -19,7 +19,7 @@ const staticPages = [
   { path: "/picturi/acrilice" },
   { path: "/picturi/acuarela" },
   { path: "/picturi/grafica" },
-  { path: "/picturi/colectii-donatii" },
+  { path: "/picturi/fascinatii" },
   { path: "/expozitii" },
   { path: "/expozitii/personale" },
   { path: "/expozitii/de-grup" },
